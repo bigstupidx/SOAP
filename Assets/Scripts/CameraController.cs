@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour {
     // Move the camera
     private void moveCamera()
     {
-        string direction = avatar_controller_script.getAvatarDirection();
+        //string direction = avatar_controller_script.getAvatarDirection();
         // code
     }
 }
