@@ -3,14 +3,15 @@ using System.Collections;
 
 public class TouchInput : MonoBehaviour {
 
-    private int screen_width;
-    private Vector2 touch_position;
+    private int screen_width;           // Width of the mobile device
+    private Vector2 touch_position;     // The pixel position of the players touch
     private Vector3 mouse_position;     // For testing in unity editor
-    public AvatarController avatar_controller_script;
+    public AvatarController avatar_controller_script;   // Reference to the AvatarController script
 
 	// Use this for initialization
 	void Start () 
     {
+        // Get screen width
         screen_width = Screen.width;
 	}
 	
@@ -29,6 +30,7 @@ public class TouchInput : MonoBehaviour {
         {
             touch_position = Input.GetTouch(0).position;
 
+            // Left = turn ccw, Right = turn cw
             if (touch_position.x <= screen_width / 2)
             {
                 avatar_controller_script.turnAvatar(false);
