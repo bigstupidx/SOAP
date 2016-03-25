@@ -9,7 +9,7 @@ public class AvatarController : MonoBehaviour {
     private string avatar_direction;            // The direction the avatar is moving
     private Vector3 avatar_vector_direction;    // The avatar vector direction
     private int avatar_speed;                   // The speed at which the avatar moves
-    private Vector2 default_avatar_position = new Vector2(0, -2);   // The avatars starting position
+    public Vector2 default_avatar_position;     // The avatars starting position
     public TailMovement tail_movement_script;
     Dictionary<string, string> cw_movement = new Dictionary<string, string>();  // Defines the next direction for clockwise turn
     Dictionary<string, string> ccw_movement = new Dictionary<string, string>(); // Defines the next direction for counter-clockwise turn
@@ -43,13 +43,20 @@ public class AvatarController : MonoBehaviour {
         
         float current_distance = Vector3.Distance(transform.position, previous_avatar_position);
 
-        // Update tails if the avatar has travelled min_distance
+        // Update tails if the avatar has travelled greater than min_distance
         if (current_distance >= min_distance)
         {
             tail_movement_script.tailFollow(previous_avatar_position);
             previous_avatar_position = transform.position;
         }
 	}
+
+    // When the avatar is out of the camera's view end the game
+    void OnBecameInvisible()
+    {
+        Debug.Log("GAME OVER!");
+        Time.timeScale = 0;
+    }
 
 
     // Turn the avatar clockwise (true) or counterclockwise (false)
