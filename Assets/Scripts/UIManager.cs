@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour {
 
     public void restartLvl()
     {
-        Debug.Log("Restarting the level!");
+        //Debug.Log("Restarting the level!");
         SceneManager.LoadScene(1);
         unPause();
     }

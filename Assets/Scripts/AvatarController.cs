@@ -18,6 +18,10 @@ public class AvatarController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+        // RECODE: On restart onbecameinvisible is called which sets timescale to zero
+        // this ensures timescale is reset to one when lvl is reloaded
+        Time.timeScale = 1;
+
         avatar_direction = "up";
         transform.position = default_avatar_position;
         avatar_speed = 2;
