@@ -12,7 +12,7 @@ public class Store_Init : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{	
-		SoomlaStore.Initialize(new MayhemStoreAssets());
+		SoomlaStore.Initialize(new SOAPStoreAssets());
 	}
 	
 
