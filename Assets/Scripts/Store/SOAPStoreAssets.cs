@@ -29,7 +29,7 @@ public class SOAPStoreAssets : IStoreAssets {
     /// <returns>All virtual goods in your game.</returns>
     public VirtualGood[] GetGoods()
     {
-        return new VirtualGood[] { NO_ADS_LTVG, AVATAR_NAME_1_M, AVATAR_NAME_1_C };
+        return new VirtualGood[] { NO_ADS_LTVG, SNAKE_AVATAR_C, SNAKE_AVATAR_M, HADOKEN_AVATAR_C, HADOKEN_AVATAR_M };
     }
 
     /// <summary>
@@ -55,8 +55,11 @@ public class SOAPStoreAssets : IStoreAssets {
 
     public const string SOAP_CURRENCY_ITEM_ID = "soap_coins";
 
-    public const string AVATAR_NAME_1_ITEM_ID = "generic_avatar_1";
-    public const string AVATAR_NAME_1_PRODUCT_ID = "soap_generic_avatar_1";
+    public const string SNAKE_AVATAR_ITEM_ID = "snake_avatar";
+    public const string SNAKE_AVATAR_PRODUCT_ID = "soap_snake_avatar";
+
+    public const string HADOKEN_AVATAR_ITEM_ID = "hadoken_avatar";
+    public const string HADOKEN_AVATAR_PRODUCT_ID = "soap_hadoken_avatar";
 
     public const string NO_ADS_LIFETIME_PRODUCT_ID = "soap_no_ads";
 
@@ -71,20 +74,36 @@ public class SOAPStoreAssets : IStoreAssets {
 
     /** LifeTimeVGs - can only be purchased once and lasts forever **/
 
-    // Purchase avatar 1 with virtual currency
-    public static VirtualGood AVATAR_NAME_1_C = new LifetimeVG(
-        "Avatar 1", 													// name
-        "Unlock Avatar 1",				 								// description
-        AVATAR_NAME_1_ITEM_ID,										    // item id
+    // Purchase snake with virtual currency
+    public static VirtualGood SNAKE_AVATAR_C = new LifetimeVG(
+        "Snake", 													    // name
+        "Unlock Snake Avatar",				 							// description
+        SNAKE_AVATAR_ITEM_ID,										    // item id
         new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
     );
 
-    // Purchase avatar 1 with real money
-    public static VirtualGood AVATAR_NAME_1_M = new LifetimeVG(
-        "Avatar 1", 													// name
-        "Unlock Avatar 1",				 								// description
-        AVATAR_NAME_1_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(AVATAR_NAME_1_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+    // Purchase snake with real money
+    public static VirtualGood SNAKE_AVATAR_M = new LifetimeVG(
+        "Snake", 													    // name
+        "Unlock Snake Avatar",				 							// description
+        SNAKE_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(SNAKE_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+    );
+
+    // Purchase hadoken with virtual currency
+    public static VirtualGood HADOKEN_AVATAR_C = new LifetimeVG(
+        "Hadoken", 												    	// name
+        "Unlock Hadoken Avatar",				 						// description
+        HADOKEN_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 10000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase hadoken with real money
+    public static VirtualGood HADOKEN_AVATAR_M = new LifetimeVG(
+        "Hadoken", 													    // name
+        "Unlock Hadoken Avatar",				 						// description
+        HADOKEN_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(HADOKEN_AVATAR_PRODUCT_ID, 2.49)	        // the way this virtual good is purchased
     );
 
     // Remove all ads from the game
@@ -100,7 +119,7 @@ public class SOAPStoreAssets : IStoreAssets {
 
     public static VirtualCategory GENERAL_CATEGORY = new VirtualCategory(
         "General",
-        new List<string>(new string[] { AVATAR_NAME_1_ITEM_ID })
+        new List<string>(new string[] { SNAKE_AVATAR_ITEM_ID })
     );
 
 }

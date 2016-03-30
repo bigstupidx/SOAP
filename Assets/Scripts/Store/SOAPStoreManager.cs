@@ -66,6 +66,35 @@ public class SOAPStoreManager : MonoBehaviour {
     }
 
 
+    // Get the virtual and real money cost of the item
+    public string[] getPrices(string item_id)
+    {
+        string[] price_list = new string[2];
+        price_list[0] = "test";
+
+        PurchasableVirtualItem virtual_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(item_id);
+        PurchasableVirtualItem market_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId("soap_" + item_id);
+        
+        // Get cost in coins
+        PurchaseWithVirtualItem virtual_purchase = (PurchaseWithVirtualItem)virtual_item.PurchaseType;
+        price_list[0] = virtual_purchase.Amount.ToString();
+
+        // Get cost in real money
+        PurchaseWithMarket market_purchase = (PurchaseWithMarket)market_item.PurchaseType;
+        price_list[1] = market_purchase.MarketItem.Price.ToString();
+
+        return price_list;
+    }
+
+
+    public void updatePrices(string item_id)
+    {
+        string[] price_list = getPrices(item_id);
+        coin_buy_button.GetComponentInChildren<Text>().text = price_list[0];
+        money_buy_button.GetComponentInChildren<Text>().text = price_list[1];
+    }
+
+
     //public void buyAvatar1()
     //{
     //    StoreInventory.BuyItem(SOAPStoreAssets.AVATAR_NAME_1_PRODUCT_ID);   
@@ -76,25 +105,25 @@ public class SOAPStoreManager : MonoBehaviour {
 
     public void buyAvatar1()
     {
-        bool can_afford = StoreInventory.CanAfford(SOAPStoreAssets.AVATAR_NAME_1_ITEM_ID);
-        Debug.Log(can_afford);
+        //bool can_afford = StoreInventory.CanAfford(SOAPStoreAssets.AVATAR_NAME_1_ITEM_ID);
+        //Debug.Log(can_afford);
 
-        string itemId = SOAPStoreAssets.AVATAR_NAME_1_ITEM_ID;
-        double result = 0.0;
+        //string itemId = SOAPStoreAssets.AVATAR_NAME_1_ITEM_ID;
+        //double result = 0.0;
 
-        PurchasableVirtualItem item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(itemId);
-        if( item.PurchaseType.GetType() == typeof(PurchaseWithVirtualItem) ){
-            PurchaseWithVirtualItem purchaseType = (PurchaseWithVirtualItem)item.PurchaseType;
-            result = purchaseType.Amount;
-        }
-        else {
-            PurchaseWithMarket purchaseType = (PurchaseWithMarket)item.PurchaseType;
-            result = purchaseType.MarketItem.Price;
-        }
+        //PurchasableVirtualItem item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(itemId);
+        //if( item.PurchaseType.GetType() == typeof(PurchaseWithVirtualItem) ){
+        //    PurchaseWithVirtualItem purchaseType = (PurchaseWithVirtualItem)item.PurchaseType;
+        //    result = purchaseType.Amount;
+        //}
+        //else {
+        //    PurchaseWithMarket purchaseType = (PurchaseWithMarket)item.PurchaseType;
+        //    result = purchaseType.MarketItem.Price;
+        //}
 
-        coin_buy_button.GetComponentInChildren<Text>().text = result.ToString();
+        //coin_buy_button.GetComponentInChildren<Text>().text = result.ToString();
 
-        Debug.Log(">>>>>>>>>>>>>>" + result);
+        //Debug.Log(">>>>>>>>>>>>>>" + result);
     }
 
 
