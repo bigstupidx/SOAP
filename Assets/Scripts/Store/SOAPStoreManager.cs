@@ -11,6 +11,8 @@ public class SOAPStoreManager : MonoBehaviour {
 
     public Button coin_buy_button;
     public Button money_buy_button;
+    public GameObject already_bought_sign;
+    private string avatar_item_id;
 
 
 
@@ -29,6 +31,9 @@ public class SOAPStoreManager : MonoBehaviour {
         StoreEvents.OnRestoreTransactionsStarted += OnRestoreTransactionsStarted;
         StoreEvents.OnRestoreTransactionsFinished += OnRestoreTransactionsFinished;
         DontDestroyOnLoad(this.gameObject);
+
+        // For testing coin purchases
+        //StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 10000);
 	}
 
 	// Update is called once per frame
@@ -42,6 +47,7 @@ public class SOAPStoreManager : MonoBehaviour {
     public void onItemPurchased(PurchasableVirtualItem pvi, string payload)
     {
         //PowerUpManager.changeBalanceText(pvi.ItemId);
+        Debug.Log("Bought stuff with real money");
     }
 
 
@@ -66,11 +72,16 @@ public class SOAPStoreManager : MonoBehaviour {
     }
 
 
+    public void setAvatarID(string item_id)
+    {
+        avatar_item_id = item_id;
+    }
+
+
     // Get the virtual and real money cost of the item
     public string[] getPrices(string item_id)
     {
         string[] price_list = new string[2];
-        price_list[0] = "test";
 
         PurchasableVirtualItem virtual_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(item_id);
         PurchasableVirtualItem market_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId("soap_" + item_id);
@@ -92,40 +103,42 @@ public class SOAPStoreManager : MonoBehaviour {
         string[] price_list = getPrices(item_id);
         coin_buy_button.GetComponentInChildren<Text>().text = price_list[0];
         money_buy_button.GetComponentInChildren<Text>().text = price_list[1];
+
+        bool can_afford = StoreInventory.CanAfford(item_id);
+
+        // If user cannot afford disable the coin buy button
+        if (can_afford) { coin_buy_button.enabled = true; }
+        else { coin_buy_button.enabled = false; }
+
+        // If user already bought don't show the buy buttons
+        if (StoreInventory.GetItemBalance(item_id) == 1 || StoreInventory.GetItemBalance("soap_" + item_id) == 1)
+        {
+            coin_buy_button.gameObject.SetActive(false);
+            money_buy_button.gameObject.SetActive(false);
+            already_bought_sign.SetActive(true);
+        }
+        else
+        {
+            coin_buy_button.gameObject.SetActive(true);
+            money_buy_button.gameObject.SetActive(true);
+            already_bought_sign.SetActive(false);
+        }
     }
 
 
-    //public void buyAvatar1()
-    //{
-    //    StoreInventory.BuyItem(SOAPStoreAssets.AVATAR_NAME_1_PRODUCT_ID);   
-    //}
-
-
-
-
-    public void buyAvatar1()
+    public void buyAvatarWithCoin()
     {
-        //bool can_afford = StoreInventory.CanAfford(SOAPStoreAssets.AVATAR_NAME_1_ITEM_ID);
-        //Debug.Log(can_afford);
-
-        //string itemId = SOAPStoreAssets.AVATAR_NAME_1_ITEM_ID;
-        //double result = 0.0;
-
-        //PurchasableVirtualItem item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(itemId);
-        //if( item.PurchaseType.GetType() == typeof(PurchaseWithVirtualItem) ){
-        //    PurchaseWithVirtualItem purchaseType = (PurchaseWithVirtualItem)item.PurchaseType;
-        //    result = purchaseType.Amount;
-        //}
-        //else {
-        //    PurchaseWithMarket purchaseType = (PurchaseWithMarket)item.PurchaseType;
-        //    result = purchaseType.MarketItem.Price;
-        //}
-
-        //coin_buy_button.GetComponentInChildren<Text>().text = result.ToString();
-
-        //Debug.Log(">>>>>>>>>>>>>>" + result);
+        StoreInventory.BuyItem(avatar_item_id);
+        Debug.Log(string.Format("Just bought a new avatar with coins: {0}", avatar_item_id));
     }
 
+
+    public void buyAvatarWithMoney()
+    {
+        StoreInventory.BuyItem("soap_" + avatar_item_id);
+        Debug.Log(string.Format("Just bought a new avatar with money: {0}", avatar_item_id));
+    }
+    
 
     public void buyRemoveAds()
     {
