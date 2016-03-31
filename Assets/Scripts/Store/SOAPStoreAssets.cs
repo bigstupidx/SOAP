@@ -29,7 +29,9 @@ public class SOAPStoreAssets : IStoreAssets {
     /// <returns>All virtual goods in your game.</returns>
     public VirtualGood[] GetGoods()
     {
-        return new VirtualGood[] { NO_ADS_LTVG, SNAKE_AVATAR_C, SNAKE_AVATAR_M, HADOKEN_AVATAR_C, HADOKEN_AVATAR_M };
+        return new VirtualGood[] { NO_ADS_LTVG, SNAKE_AVATAR_C, SNAKE_AVATAR_M, HADOKEN_AVATAR_C, HADOKEN_AVATAR_M, 
+                                    YOSHI_AVATAR_C, YOSHI_AVATAR_M
+                                };
     }
 
     /// <summary>
@@ -60,6 +62,9 @@ public class SOAPStoreAssets : IStoreAssets {
 
     public const string HADOKEN_AVATAR_ITEM_ID = "hadoken_avatar";
     public const string HADOKEN_AVATAR_PRODUCT_ID = "soap_hadoken_avatar";
+
+    public const string YOSHI_AVATAR_ITEM_ID = "yoshi_avatar";
+    public const string YOSHI_AVATAR_PRODUCT_ID = "soap_yoshi_avatar";
 
     public const string NO_ADS_LIFETIME_PRODUCT_ID = "soap_no_ads";
 
@@ -104,6 +109,22 @@ public class SOAPStoreAssets : IStoreAssets {
         "Unlock Hadoken Avatar",				 						// description
         HADOKEN_AVATAR_PRODUCT_ID,										// product id
         new PurchaseWithMarket(HADOKEN_AVATAR_PRODUCT_ID, 2.49)	        // the way this virtual good is purchased
+    );
+
+    // Purchase yoshi with virtual currency
+    public static VirtualGood YOSHI_AVATAR_C = new LifetimeVG(
+        "Yoshi", 												    	// name
+        "Unlock yoshi Avatar",				 						    // description
+        YOSHI_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 8500)	    // the way this virtual good is purchased
+    );
+
+    // Purchase yoshi with real money
+    public static VirtualGood YOSHI_AVATAR_M = new LifetimeVG(
+        "Yoshi", 													    // name
+        "Unlock yoshi Avatar",	    			 						// description
+        YOSHI_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(YOSHI_AVATAR_PRODUCT_ID, 1.78)	        // the way this virtual good is purchased
     );
 
     // Remove all ads from the game

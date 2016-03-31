@@ -47,6 +47,7 @@ public class gridsnap : MonoBehaviour {
                 child.localScale = Vector3.Lerp(child.localScale, new Vector3(1.4f, 1.4f, 1f), t);
                 avatar_name = child.name;
                 store_manager_script.updatePrices(avatar_name);
+                store_manager_script.setAvatarID(avatar_name);
             }
             else {
                 child.localScale = Vector3.Lerp(child.localScale, new Vector3(1f, 1f, 1f), t);
