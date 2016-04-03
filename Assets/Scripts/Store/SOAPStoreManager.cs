@@ -12,6 +12,7 @@ public class SOAPStoreManager : MonoBehaviour {
     public Button coin_buy_button;
     public Button money_buy_button;
     public GameObject already_bought_sign;
+    public Text coin_text;
     private string avatar_item_id;
 
 
@@ -21,19 +22,17 @@ public class SOAPStoreManager : MonoBehaviour {
     {
         // TODO: comment out initialization and put on splash screen
         SoomlaStore.Initialize(new SOAPStoreAssets());
-        // These events should be called on the splash screen!!
-        // Test it out on sunday
-        //problem was that store which had this script on it was turned off by default and only executed when 
-        //the store was entered
-        //meaning i wasn't catching the events being generated
+        // These evnt catchers need to be on a gameobject that is never turned off and is never destroyed
         StoreEvents.OnItemPurchased += onItemPurchased;
         StoreEvents.OnGoodBalanceChanged += OnGoodBalanceChanged;
+        StoreEvents.OnCurrencyBalanceChanged += OnCurrencyBalanceChanged;
         StoreEvents.OnRestoreTransactionsStarted += OnRestoreTransactionsStarted;
         StoreEvents.OnRestoreTransactionsFinished += OnRestoreTransactionsFinished;
         DontDestroyOnLoad(this.gameObject);
 
         // For testing coin purchases
-        //StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 10000);
+        StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 50);
+        //StoreInventory.TakeItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 130000);
 	}
 
 	// Update is called once per frame
@@ -46,7 +45,6 @@ public class SOAPStoreManager : MonoBehaviour {
     // Change inventory balance on gamescreen when item purchased
     public void onItemPurchased(PurchasableVirtualItem pvi, string payload)
     {
-        //PowerUpManager.changeBalanceText(pvi.ItemId);
         Debug.Log("Bought stuff with real money");
     }
 
@@ -54,24 +52,32 @@ public class SOAPStoreManager : MonoBehaviour {
     // Change inventory balance when item balance changed (by clicking power-up button from gamescreen)
     public void OnGoodBalanceChanged(VirtualGood vg, int balance, int amountAdded)
     {
-        //PowerUpManager.changeBalanceText(vg.ItemId);
+        // Code
     }
 
 
-    // Print message saying transactions are being restored
+    // Change the currency balance text when the balance changed
+    public void OnCurrencyBalanceChanged(VirtualCurrency vc, int balance, int amountAdded)
+    {
+        coin_text.text = "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
+    }
+
+
+    // Print message saying transactions are being restored (necessary for iOS)
     public void OnRestoreTransactionsStarted()
     {
         Debug.Log("The transactions are being restored.");
     }
 
 
-    // Print message saying transactions are restored
+    // Print message saying transactions are restored (necessary for iOS)
     public void OnRestoreTransactionsFinished(bool success)
     {
         Debug.Log("The transactions are now restored.");
     }
 
 
+    // Set by the grid snap script
     public void setAvatarID(string item_id)
     {
         avatar_item_id = item_id;

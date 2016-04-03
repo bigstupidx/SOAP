@@ -7,9 +7,9 @@ public class TouchInput : MonoBehaviour {
     private Vector2 touch_position;     // The pixel position of the players touch
     private Vector3 mouse_position;     // For testing in unity editor
     public AvatarController avatar_controller_script;   // Reference to the AvatarController script
-    private float time_of_last_tap = 0;
-    private float minimum_tap_time = 0.3f;
-    public bool tap_valid = true;
+    private float time_of_last_tap = 0;     // The time when the last tap occured
+    private float minimum_tap_time = 0.3f;  // Anything under this number is considered a double tap
+    public bool tap_valid = true;           // Is the tap a double tap; when a double tap occurs this is false
 
 	// Use this for initialization
 	void Start () 
