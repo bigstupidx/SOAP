@@ -10,6 +10,7 @@ public class spawn_tiles : MonoBehaviour
 	private int next_tile = 0;
 	List<GameObject> tile_list = new List<GameObject>();
 	private Vector3 previous_tile_size;
+	private BoxCollider2D tile_collider;
 	
 	// Use this for initialization
 	void Start () 
@@ -40,6 +41,8 @@ public class spawn_tiles : MonoBehaviour
 		}
 		
 		tile_list.Reverse();
+		tile_collider = tile_list[3].GetComponent<BoxCollider2D>();
+		tile_collider.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -67,6 +70,8 @@ public class spawn_tiles : MonoBehaviour
 			{
 				tile_list.Insert(0, tile_prefabs[next_tile]);
 				tile_list[0].SetActive(true);
+				tile_collider = tile_list[0].GetComponent<BoxCollider2D>();
+				tile_collider.enabled = true;
 				i++;
 			}
 		}
