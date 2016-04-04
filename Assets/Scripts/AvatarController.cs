@@ -133,4 +133,17 @@ public class AvatarController : MonoBehaviour {
 
         transform.position += avatar_vector_direction * Time.deltaTime * avatar_speed;
     }
+
+
+    // When the play collides with anything that is a trigger....
+	void OnTriggerEnter2D(Collider2D coll) 
+	{
+		// Obstacle collision: the player "dies", avatar setActive is set to false.
+		if (coll.gameObject.tag == "obstacle")
+		{
+			// Disables the Collider2D component
+			Debug.Log("This is the collider: " + coll.gameObject.name);
+			this.gameObject.SetActive(false);
+		}
+	}
 }
