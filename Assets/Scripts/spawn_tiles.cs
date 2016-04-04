@@ -10,6 +10,8 @@ public class spawn_tiles : MonoBehaviour
 	private int next_tile = 0;
 	List<GameObject> tile_list = new List<GameObject>();
 	private Vector3 previous_tile_size;
+	private Vector3 current_tile_size;
+	private Vector3 offset_tile_size;
 	private BoxCollider2D tile_collider;
 	
 	// Use this for initialization
@@ -33,7 +35,9 @@ public class spawn_tiles : MonoBehaviour
 				if (i >= 1)
 				{
 					previous_tile_size = tile_list[i-1].GetComponent<SpriteRenderer>().bounds.size;
-					tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + previous_tile_size.y, 0);
+					current_tile_size = tile_list[i].GetComponent<SpriteRenderer>().bounds.size;
+					offset_tile_size = new Vector3(0, Mathf.Abs(previous_tile_size.y - current_tile_size.y),0);
+					tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + current_tile_size.y, 0);
 				}
 				
 				i++;
@@ -82,7 +86,9 @@ public class spawn_tiles : MonoBehaviour
 		add_next_tile();
 		
 		previous_tile_size = tile_list[1].GetComponent<SpriteRenderer>().bounds.size;
-		tile_list[0].transform.position = new Vector3(0, tile_list[1].transform.position.y + previous_tile_size.y, 0);
+		current_tile_size = tile_list[0].GetComponent<SpriteRenderer>().bounds.size;
+		offset_tile_size = new Vector3(0, Mathf.Abs(previous_tile_size.y - current_tile_size.y),0);
+		tile_list[0].transform.position = new Vector3(0, tile_list[1].transform.position.y + current_tile_size.y, 0);
 	}
 
 }
