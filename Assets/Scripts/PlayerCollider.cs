@@ -14,5 +14,12 @@ public class PlayerCollider : MonoBehaviour {
             other.gameObject.SetActive(false);
             tail_movement_script.grow_tail = true;
         }
+
+        // Collect Coins
+        if (other.gameObject.tag == "grow")
+        {
+            other.gameObject.SetActive(false);
+            // TODO: Add code to increase coins here
+        }
     }
 }

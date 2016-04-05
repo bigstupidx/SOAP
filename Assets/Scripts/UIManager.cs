@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour {
 
     public GameObject[] ui_menus;
     public GameObject pause_menu;
+    public GameObject game_over_menu;
+    public GameObject pause_button;
     private bool isPaused = false;
 
 	// Use this for initialization
@@ -14,27 +16,24 @@ public class UIManager : MonoBehaviour {
     {
         DontDestroyOnLoad(this.gameObject);
 	}
+
+
 	
 
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown("Cancel") && !isPaused && SceneManager.GetActiveScene().buildIndex > 0)
-        {
-           doPause();
-        }
 
-        else if (Input.GetButtonDown("Cancel") && isPaused && SceneManager.GetActiveScene().buildIndex > 0)
-        {
-            unPause();
-        }
 	}
 
 
     public void startGame()
     {
         setMenuState(false);
+
+        // TODO: This may change when the splash screen is added
         SceneManager.LoadScene(1);
+        pause_button.SetActive(true);
     }
 
 
@@ -49,10 +48,15 @@ public class UIManager : MonoBehaviour {
     }
 
 
-    // Pause the game
-    private void doPause()
+    public void activate_game_over_menu()
     {
-        isPaused = !isPaused;
+        game_over_menu.SetActive(true);
+    }
+
+    // Pause the game
+    public void doPause()
+    {
+        //isPaused = !isPaused;
         Time.timeScale = 0;
         pause_menu.SetActive(true);
     }
@@ -60,14 +64,14 @@ public class UIManager : MonoBehaviour {
     // Unpause the game
     public void unPause()
     {
-        isPaused = !isPaused;
+        //isPaused = !isPaused;
         Time.timeScale = 1;
         pause_menu.SetActive(false);
     }
 
     public void restartLvl()
     {
-        //Debug.Log("Restarting the level!");
+        // TODO: This may change when the splash screen is added
         SceneManager.LoadScene(1);
         unPause();
     }
@@ -77,6 +81,7 @@ public class UIManager : MonoBehaviour {
     {
         unPause();
         Destroy(this.gameObject);
+        // TODO: This may change when the splash screen is added
         SceneManager.LoadScene(0);
     }
 }

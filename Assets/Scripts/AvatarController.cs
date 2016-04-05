@@ -16,6 +16,7 @@ public class AvatarController : MonoBehaviour {
     public float temp_boost = 50f;              // The boost to give avatar when a double tap occurs so avatar doesn't collide with its tail
     private bool tap_valid = true;              // False if the player double taps. Signals when to apply the boost
     private Vector3 previous_vector_avatar_direction;   // The avatars previous vector direction
+    public GameObject game_over_panel;
 
 
 	// Use this for initialization
@@ -59,14 +60,6 @@ public class AvatarController : MonoBehaviour {
     }
 
 
-    // When the avatar is out of the camera's view end the game
-    void OnBecameInvisible()
-    {
-        Debug.Log("GAME OVER!");
-        Time.timeScale = 0;
-    }
-
-
     // Set whether or not a double tap occured
     public void setTapValid(bool tap)
     {
@@ -94,8 +87,6 @@ public class AvatarController : MonoBehaviour {
             moveAvatar();
         }
     }
-
-
 
 
     // The vector direction the avatar must move
@@ -133,17 +124,4 @@ public class AvatarController : MonoBehaviour {
 
         transform.position += avatar_vector_direction * Time.deltaTime * avatar_speed;
     }
-
-
-    // When the play collides with anything that is a trigger....
-	void OnTriggerEnter2D(Collider2D coll) 
-	{
-		// Obstacle collision: the player "dies", avatar setActive is set to false.
-		if (coll.gameObject.tag == "obstacle")
-		{
-			// Disables the Collider2D component
-			Debug.Log("This is the collider: " + coll.gameObject.name);
-			this.gameObject.SetActive(false);
-		}
-	}
 }
