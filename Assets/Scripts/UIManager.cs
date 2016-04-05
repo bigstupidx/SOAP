@@ -17,9 +17,6 @@ public class UIManager : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
 	}
 
-
-	
-
 	// Update is called once per frame
 	void Update ()
     {
@@ -73,6 +70,8 @@ public class UIManager : MonoBehaviour {
     {
         // TODO: This may change when the splash screen is added
         SceneManager.LoadScene(1);
+        // RECODE: Find a better place to put this
+        game_over_menu.SetActive(false);
         unPause();
     }
 
