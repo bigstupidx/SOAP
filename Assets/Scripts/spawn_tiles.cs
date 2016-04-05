@@ -36,11 +36,29 @@ public class spawn_tiles : MonoBehaviour
 				{
 					previous_tile_size = tile_list[i-1].GetComponent<SpriteRenderer>().bounds.size;
 					current_tile_size = tile_list[i].GetComponent<SpriteRenderer>().bounds.size;
-					offset_tile_size = new Vector3(0, Mathf.Abs(previous_tile_size.y - current_tile_size.y),0);
-					tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + current_tile_size.y, 0);
+					offset_tile_size = new Vector3(0, Mathf.Abs(current_tile_size.y - previous_tile_size.y),0);
+
+					if (previous_tile_size.y > current_tile_size.y)
+					{
+						tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + previous_tile_size.y - (offset_tile_size.y / 2), 0);
+					}
+
+					else if(previous_tile_size.y < current_tile_size.y)
+					{
+						tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + current_tile_size.y - (offset_tile_size.y / 2), 0);
+					}
+
+					else
+					{
+						tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + current_tile_size.y, 0);
+					}
+
 				}
-				
+
+				Debug.Log("Position is: " + tile_list[i].transform.position.y);
+				Debug.Log("previous_tile_size is: " + previous_tile_size.y);
 				i++;
+
 			}
 		}
 		
@@ -87,8 +105,24 @@ public class spawn_tiles : MonoBehaviour
 		
 		previous_tile_size = tile_list[1].GetComponent<SpriteRenderer>().bounds.size;
 		current_tile_size = tile_list[0].GetComponent<SpriteRenderer>().bounds.size;
-		offset_tile_size = new Vector3(0, Mathf.Abs(previous_tile_size.y - current_tile_size.y),0);
-		tile_list[0].transform.position = new Vector3(0, tile_list[1].transform.position.y + current_tile_size.y, 0);
+		offset_tile_size = new Vector3(0, Mathf.Abs(current_tile_size.y - previous_tile_size.y),0);
+
+		if (previous_tile_size.y > current_tile_size.y)
+		{
+			tile_list[0].transform.position = new Vector3(0, tile_list[1].transform.position.y + previous_tile_size.y - (offset_tile_size.y / 2), 0);
+		}
+
+		else if(previous_tile_size.y < current_tile_size.y)
+		{
+			tile_list[0].transform.position = new Vector3(0, tile_list[1].transform.position.y + current_tile_size.y - (offset_tile_size.y / 2), 0);
+		}
+
+		else
+		{
+			tile_list[0].transform.position = new Vector3(0, tile_list[1].transform.position.y + current_tile_size.y, 0);
+		}
+
+		//tile_list[0].transform.position = new Vector3(0, tile_list[1].transform.position.y + offset_tile_size.y, 0);
 	}
 
 }
