@@ -33,13 +33,11 @@ public class TouchInput : MonoBehaviour {
     // Determine whether user clicked on right or left side of the screen
     public void sideTouched()
     {
-        if (Input.GetTouch(0).phase == TouchPhase.Began && tap_valid)
+        if (Input.GetTouch(0).phase == TouchPhase.Began && tap_valid && !BlockRaycast.IsPointerOverUIObject())
         {
-
             // Check if the player tapped too fast
             tap_valid = Time.time > time_of_last_tap + minimum_tap_time;
             avatar_controller_script.setTapValid(tap_valid);
-            //Debug.Log(string.Format("{0}:{1}:{2}", Time.time, time_of_last_tap + minimum_tap_time, tap_valid));
             touch_position = Input.GetTouch(0).position;
 
             // Left = turn ccw, Right = turn cw
@@ -61,12 +59,11 @@ public class TouchInput : MonoBehaviour {
     // For testing in the editor
     public void editorSideTouched()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !BlockRaycast.IsPointerOverUIObject())
         {
             tap_valid = Time.time > time_of_last_tap + minimum_tap_time;
             avatar_controller_script.setTapValid(tap_valid);
             mouse_position = Input.mousePosition;
-            //Debug.Log(string.Format("{0}:{1}:{2}", Time.time, time_of_last_tap + minimum_tap_time, tap_valid));
 
             if (mouse_position.x <= screen_width / 2)
             {

@@ -132,6 +132,13 @@ public class SOAPStoreManager : MonoBehaviour {
     }
 
 
+    // Give player coins
+    public void giveCoins()
+    {
+        StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 5);
+    }
+
+
     public void buyAvatarWithCoin()
     {
         StoreInventory.BuyItem(avatar_item_id);

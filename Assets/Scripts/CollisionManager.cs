@@ -3,8 +3,9 @@ using System.Collections;
 
 public class CollisionManager : MonoBehaviour {
 
-    private UIManager ui_manager_script;
-    public TailMovement tail_movement_script;
+    private UIManager ui_manager_script;            // Used to activate the game over screen
+    public TailMovement tail_movement_script;       // Used to grow the avatars tail
+    private SOAPStoreManager store_manager_script;  // Used to give player coins
     private Camera game_cam_ref;
 	private CameraController challenge_room_camera;
 
@@ -14,6 +15,9 @@ public class CollisionManager : MonoBehaviour {
     {
 	    GameObject temp_1 = GameObject.Find("UI");
         if (temp_1 != null) { ui_manager_script = temp_1.GetComponent<UIManager>(); }
+
+        GameObject temp_2 = GameObject.Find("store_container");
+        if (temp_2 != null) { store_manager_script = temp_2.GetComponent<SOAPStoreManager>(); }
 
 		game_cam_ref = Camera.main;
 
@@ -49,7 +53,7 @@ public class CollisionManager : MonoBehaviour {
         if (coll.gameObject.tag == "coin")
         {
             coll.gameObject.SetActive(false);
-            // TODO: Add code to increase coins here
+            store_manager_script.giveCoins();
         }
 
         if (coll.gameObject.tag == "cam_hold_trigger")
