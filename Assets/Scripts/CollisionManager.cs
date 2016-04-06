@@ -5,12 +5,19 @@ public class CollisionManager : MonoBehaviour {
 
     private UIManager ui_manager_script;
     public TailMovement tail_movement_script;
+    private Camera game_cam_ref;
+	private CameraController challenge_room_camera;
+
 
 	// Use this for initialization
 	void Start () 
     {
 	    GameObject temp_1 = GameObject.Find("UI");
         if (temp_1 != null) { ui_manager_script = temp_1.GetComponent<UIManager>(); }
+
+		game_cam_ref = Camera.main;
+
+		challenge_room_camera = game_cam_ref.GetComponent<CameraController>();
 	}
 	
 	// Update is called once per frame
@@ -43,6 +50,11 @@ public class CollisionManager : MonoBehaviour {
         {
             coll.gameObject.SetActive(false);
             // TODO: Add code to increase coins here
+        }
+
+        if (coll.gameObject.tag == "cam_hold_trigger")
+        {
+			challenge_room_camera.hold_camera();
         }
 
 
