@@ -6,6 +6,9 @@ public class CollisionManager : MonoBehaviour {
     private UIManager ui_manager_script;            // Used to activate the game over screen
     public TailMovement tail_movement_script;       // Used to grow the avatars tail
     private SOAPStoreManager store_manager_script;  // Used to give player coins
+    private Camera game_cam_ref;
+	private CameraController challenge_room_camera;
+
 
 	// Use this for initialization
 	void Start () 
@@ -15,6 +18,10 @@ public class CollisionManager : MonoBehaviour {
 
         GameObject temp_2 = GameObject.Find("store_container");
         if (temp_2 != null) { store_manager_script = temp_2.GetComponent<SOAPStoreManager>(); }
+
+		game_cam_ref = Camera.main;
+
+		challenge_room_camera = game_cam_ref.GetComponent<CameraController>();
 	}
 	
 	// Update is called once per frame
@@ -48,6 +55,13 @@ public class CollisionManager : MonoBehaviour {
             coll.gameObject.SetActive(false);
             store_manager_script.giveCoins();
         }
+
+        if (coll.gameObject.tag == "cam_hold_trigger")
+        {
+			challenge_room_camera.hold_camera();
+        }
+
+
     }
 
 
