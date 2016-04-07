@@ -61,6 +61,11 @@ public class CollisionManager : MonoBehaviour {
 			challenge_room_camera.hold_camera();
         }
 
+		if (coll.gameObject.tag == "cam_release_trigger")
+        {
+			coll.gameObject.SetActive(false);
+			challenge_room_camera.release_camera();
+        }
 
     }
 
