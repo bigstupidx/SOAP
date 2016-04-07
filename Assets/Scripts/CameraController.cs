@@ -39,5 +39,10 @@ public class CameraController : MonoBehaviour {
 	{
 		cam_is_hold = true;
 	}
+
+	public void release_camera()
+	{
+		cam_is_hold = false;
+	}
 }
 
