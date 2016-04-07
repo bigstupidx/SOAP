@@ -26,14 +26,15 @@ public class TouchInput : MonoBehaviour {
         //    sideTouched();
         //}
 
-        editorSideTouched();
+        sideTouched();
+        //editorSideTouched();
 	}
 
 
     // Determine whether user clicked on right or left side of the screen
     public void sideTouched()
     {
-        if (Input.GetTouch(0).phase == TouchPhase.Began && tap_valid && !BlockRaycast.IsPointerOverUIObject())
+        if (Input.GetTouch(0).phase == TouchPhase.Began && !BlockRaycast.IsPointerOverUIObject())
         {
             // Check if the player tapped too fast
             tap_valid = Time.time > time_of_last_tap + minimum_tap_time;
