@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class AvatarController : MonoBehaviour {
 
     private float min_distance = 0.65f;         // The minimum distance between elements in the snake
-    private Vector3 previous_avatar_position;   // The avatars position when it travelled min_distance 
+    private Vector3 previous_avatar_position;   // The avatars position before it travelled min_distance 
     private string avatar_direction;            // The direction the avatar is moving
     private Vector3 avatar_vector_direction;    // The avatar vector direction
     private int avatar_speed;                   // The speed at which the avatar moves
@@ -13,10 +13,9 @@ public class AvatarController : MonoBehaviour {
     public TailMovement tail_movement_script;
     Dictionary<string, string> cw_movement = new Dictionary<string, string>();  // Defines the next direction for clockwise turn
     Dictionary<string, string> ccw_movement = new Dictionary<string, string>(); // Defines the next direction for counter-clockwise turn
-    public float temp_boost = 50f;              // The boost to give avatar when a double tap occurs so avatar doesn't collide with its tail
+    public float temp_boost = 10f;              // The boost to give avatar when a double tap occurs so avatar doesn't collide with its tail
     private bool tap_valid = true;              // False if the player double taps. Signals when to apply the boost
     private Vector3 previous_vector_avatar_direction;   // The avatars previous vector direction
-    public GameObject game_over_panel;
 
 
 	// Use this for initialization
@@ -31,17 +30,18 @@ public class AvatarController : MonoBehaviour {
         avatar_speed = 2;
         previous_avatar_position = transform.position - new Vector3(0,min_distance,0);
 
-        cw_movement.Add("up", "right");
-        cw_movement.Add("right", "down");
-        cw_movement.Add("down", "left");
-        cw_movement.Add("left", "up");
+        //cw_movement.Add("up", "right");
+        //cw_movement.Add("right", "down");
+        //cw_movement.Add("down", "left");
+        //cw_movement.Add("left", "up");
 
-        ccw_movement.Add("up", "left");
-        ccw_movement.Add("left", "down");
-        ccw_movement.Add("down", "right");
-        ccw_movement.Add("right", "up");
+        //ccw_movement.Add("up", "left");
+        //ccw_movement.Add("left", "down");
+        //ccw_movement.Add("down", "right");
+        //ccw_movement.Add("right", "up");
 
         avatar_vector_direction = Vector3.up;
+        previous_vector_avatar_direction = avatar_vector_direction;
 	}
 
     // Update is called once per frame
@@ -67,47 +67,58 @@ public class AvatarController : MonoBehaviour {
     }
 
 
-    // Turn the avatar clockwise (true) or counterclockwise (false)
-    public void turnAvatar(bool rotation)
+    // Rotate the avatar +/- 90 degrees
+    // Angle provided must be in radians
+    public void rotate_avatar(float angle)
     {
-        string previous_avatar_direction = avatar_direction;
-
-        if (rotation)
-        {
-            avatar_direction = cw_movement[avatar_direction];
-            avatar_vector_direction = determineDirection(avatar_direction);
-            previous_vector_avatar_direction = determineDirection(previous_avatar_direction);
-            moveAvatar();
-        }
-        else
-        {
-            avatar_direction = ccw_movement[avatar_direction];
-            avatar_vector_direction = determineDirection(avatar_direction);
-            previous_vector_avatar_direction = determineDirection(previous_avatar_direction);
-            moveAvatar();
-        }
+        float cos_angle = Mathf.Cos(angle);
+        float sin_angle = Mathf.Sin(angle);
+        avatar_vector_direction.x = previous_vector_avatar_direction.x * cos_angle - previous_vector_avatar_direction.y * sin_angle;
+        avatar_vector_direction.y = previous_vector_avatar_direction.x * sin_angle + previous_vector_avatar_direction.y * cos_angle;
+        //moveAvatar();
     }
+
+    // Turn the avatar clockwise (true) or counterclockwise (false)
+    //public void turnAvatar(bool rotation)
+    //{
+    //    string previous_avatar_direction = avatar_direction;
+
+    //    if (rotation)
+    //    {
+    //        avatar_direction = cw_movement[avatar_direction];
+    //        avatar_vector_direction = determineDirection(avatar_direction);
+    //        previous_vector_avatar_direction = determineDirection(previous_avatar_direction);
+    //        moveAvatar();
+    //    }
+    //    else
+    //    {
+    //        avatar_direction = ccw_movement[avatar_direction];
+    //        avatar_vector_direction = determineDirection(avatar_direction);
+    //        previous_vector_avatar_direction = determineDirection(previous_avatar_direction);
+    //        moveAvatar();
+    //    }
+    //}
 
 
     // The vector direction the avatar must move
-    public Vector3 determineDirection(string direction)
-    {
-        switch (direction)
-        {
-            case "up":
-                return Vector3.up;
+    //public Vector3 determineDirection(string direction)
+    //{
+    //    switch (direction)
+    //    {
+    //        case "up":
+    //            return Vector3.up;
 
-            case "right":
-                return Vector3.right;
+    //        case "right":
+    //            return Vector3.right;
 
-            case "left":
-                return Vector3.left;
+    //        case "left":
+    //            return Vector3.left;
 
-            case "down":
-                return Vector3.down;
-        }
-        return Vector3.zero;
-    }
+    //        case "down":
+    //            return Vector3.down;
+    //    }
+    //    return Vector3.zero;
+    //}
 
 
     // Move the avatar in the direction specified
@@ -123,5 +134,6 @@ public class AvatarController : MonoBehaviour {
         }
 
         transform.position += avatar_vector_direction * Time.deltaTime * avatar_speed;
+        previous_vector_avatar_direction = avatar_vector_direction;
     }
 }

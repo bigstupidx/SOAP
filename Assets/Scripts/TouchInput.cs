@@ -10,6 +10,9 @@ public class TouchInput : MonoBehaviour {
     private float time_of_last_tap = 0;     // The time when the last tap occured
     private float minimum_tap_time = 0.3f;  // Anything under this number is considered a double tap
     public bool tap_valid = true;           // Is the tap a double tap; when a double tap occurs this is false
+    private bool side_touched;
+    private bool pre_side_touched;
+
 
 	// Use this for initialization
 	void Start () 
@@ -26,8 +29,8 @@ public class TouchInput : MonoBehaviour {
         //    sideTouched();
         //}
 
-        sideTouched();
-        //editorSideTouched();
+        //sideTouched();
+        editorSideTouched();
 	}
 
 
@@ -36,23 +39,31 @@ public class TouchInput : MonoBehaviour {
     {
         if (Input.GetTouch(0).phase == TouchPhase.Began && !BlockRaycast.IsPointerOverUIObject())
         {
-            // Check if the player tapped too fast
-            tap_valid = Time.time > time_of_last_tap + minimum_tap_time;
-            avatar_controller_script.setTapValid(tap_valid);
+            // Left = true right = false
             touch_position = Input.GetTouch(0).position;
+            side_touched = touch_position.x <= screen_width/2;
+            tap_valid = Time.time > time_of_last_tap + minimum_tap_time || side_touched != pre_side_touched;
+            avatar_controller_script.setTapValid(tap_valid);
+
+            // Check if the player tapped too fast
+            //tap_valid = Time.time > time_of_last_tap + minimum_tap_time;
+            //avatar_controller_script.setTapValid(tap_valid);
+            //touch_position = Input.GetTouch(0).position;
 
             // Left = turn ccw, Right = turn cw
-            if (touch_position.x <= screen_width / 2)
+            //if (touch_position.x <= screen_width / 2)
+            if (side_touched)
             {
-                avatar_controller_script.turnAvatar(false);
+                avatar_controller_script.rotate_avatar(Mathf.PI/2);
             }
 
             else
             {
-                avatar_controller_script.turnAvatar(true);
+                avatar_controller_script.rotate_avatar(-Mathf.PI/2);
             }
 
             time_of_last_tap = Time.time;
+            pre_side_touched = side_touched;
         }
     }
 
@@ -62,21 +73,29 @@ public class TouchInput : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0) && !BlockRaycast.IsPointerOverUIObject())
         {
-            tap_valid = Time.time > time_of_last_tap + minimum_tap_time;
-            avatar_controller_script.setTapValid(tap_valid);
-            mouse_position = Input.mousePosition;
 
-            if (mouse_position.x <= screen_width / 2)
+            mouse_position = Input.mousePosition;
+            side_touched = mouse_position.x <= screen_width/2;
+            tap_valid = Time.time > time_of_last_tap + minimum_tap_time || side_touched != pre_side_touched;
+            avatar_controller_script.setTapValid(tap_valid);
+
+            //tap_valid = Time.time > time_of_last_tap + minimum_tap_time;
+            //avatar_controller_script.setTapValid(tap_valid);
+            //mouse_position = Input.mousePosition;
+
+            //if (mouse_position.x <= screen_width / 2)
+            if (side_touched)
             {
-                avatar_controller_script.turnAvatar(false);
+                avatar_controller_script.rotate_avatar(Mathf.PI/2);
             }
 
             else
             {
-                avatar_controller_script.turnAvatar(true);
+                avatar_controller_script.rotate_avatar(-Mathf.PI/2);
             }
 
             time_of_last_tap = Time.time;
+            pre_side_touched = side_touched;
         }
     }
 
