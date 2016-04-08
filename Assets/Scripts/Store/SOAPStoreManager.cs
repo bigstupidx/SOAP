@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class SOAPStoreManager : MonoBehaviour {
 
     // TODO: MAKE SURE TO RESET ITEM BALANCES TO ZERO BEFORE PUBLISH
-    // TODO: PUT THIS CLASS ON A GAME OBJECT THAT IS ACTIVE AND ONLY LOADS ONCE (SPLASH SCREEN)
-
     public Button coin_buy_button;
     public Button money_buy_button;
     public GameObject already_bought_sign;
@@ -16,20 +14,9 @@ public class SOAPStoreManager : MonoBehaviour {
     private string avatar_item_id;
 
 
-
 	// Use this for initialization
 	void Start () 
     {
-        // TODO: comment out initialization and put on splash screen
-        SoomlaStore.Initialize(new SOAPStoreAssets());
-        // These evnt catchers need to be on a gameobject that is never turned off and is never destroyed
-        StoreEvents.OnItemPurchased += onItemPurchased;
-        StoreEvents.OnGoodBalanceChanged += OnGoodBalanceChanged;
-        StoreEvents.OnCurrencyBalanceChanged += OnCurrencyBalanceChanged;
-        StoreEvents.OnRestoreTransactionsStarted += OnRestoreTransactionsStarted;
-        StoreEvents.OnRestoreTransactionsFinished += OnRestoreTransactionsFinished;
-        DontDestroyOnLoad(this.gameObject);
-
         // For testing coin purchases
         StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 50);
         //StoreInventory.TakeItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 130000);
@@ -42,39 +29,12 @@ public class SOAPStoreManager : MonoBehaviour {
 	}
 
 
-    // Change inventory balance on gamescreen when item purchased
-    public void onItemPurchased(PurchasableVirtualItem pvi, string payload)
-    {
-        Debug.Log("Bought stuff with real money");
-    }
-
-
-    // Change inventory balance when item balance changed (by clicking power-up button from gamescreen)
-    public void OnGoodBalanceChanged(VirtualGood vg, int balance, int amountAdded)
-    {
-        // Code
-    }
-
-
-    // Change the currency balance text when the balance changed
-    public void OnCurrencyBalanceChanged(VirtualCurrency vc, int balance, int amountAdded)
+    // Change the store currency text (called by SOAPStoreEvents)
+    public void setCoinText()
     {
         coin_text.text = "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
     }
-
-
-    // Print message saying transactions are being restored (necessary for iOS)
-    public void OnRestoreTransactionsStarted()
-    {
-        Debug.Log("The transactions are being restored.");
-    }
-
-
-    // Print message saying transactions are restored (necessary for iOS)
-    public void OnRestoreTransactionsFinished(bool success)
-    {
-        Debug.Log("The transactions are now restored.");
-    }
+    
 
 
     // Set by the grid snap script
