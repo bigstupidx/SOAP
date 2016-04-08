@@ -15,22 +15,47 @@ public class ChallengeRoomLogic : MonoBehaviour
 	public GameObject top_door_ref;
 	public GameObject bottom_door_ref;
 
+	private int grow_counter = 0;
+
+	private Camera game_cam_ref;
+	private CameraController challenge_room_camera;
+
 	// Use this for initialization
 	void Start () 
 	{
-
+		game_cam_ref = Camera.main;
+		challenge_room_camera = game_cam_ref.GetComponent<CameraController>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(cam_hold_ref.gameObject.activeSelf == false)
+		if (grow_counter > grow_obj_list.Length )
 		{
-			Debug.Log("The game object is: " + cam_hold_ref.gameObject.activeSelf);
-			foreach(GameObject item in grow_obj_list)
-			{
-				item.gameObject.SetActive(true);
-			}
+			challenge_room_camera.release_camera();
+			hide_challenge_doors();
 		}
+	}
+
+	public void show_grow_objects()
+	{
+		if (grow_counter < grow_obj_list.Length)
+		{
+			grow_obj_list[grow_counter].SetActive(true);
+		}
+
+		grow_counter++;
+	}
+
+	public void show_challenge_doors()
+	{
+		top_door_ref.SetActive(true);
+		bottom_door_ref.SetActive(true);	
+	}
+
+	public void hide_challenge_doors()
+	{
+		top_door_ref.SetActive(false);
+		bottom_door_ref.SetActive(false);	
 	}
 }
