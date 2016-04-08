@@ -30,16 +30,6 @@ public class AvatarController : MonoBehaviour {
         avatar_speed = 2;
         previous_avatar_position = transform.position - new Vector3(0,min_distance,0);
 
-        //cw_movement.Add("up", "right");
-        //cw_movement.Add("right", "down");
-        //cw_movement.Add("down", "left");
-        //cw_movement.Add("left", "up");
-
-        //ccw_movement.Add("up", "left");
-        //ccw_movement.Add("left", "down");
-        //ccw_movement.Add("down", "right");
-        //ccw_movement.Add("right", "up");
-
         avatar_vector_direction = Vector3.up;
         previous_vector_avatar_direction = avatar_vector_direction;
 	}
@@ -77,48 +67,6 @@ public class AvatarController : MonoBehaviour {
         avatar_vector_direction.y = previous_vector_avatar_direction.x * sin_angle + previous_vector_avatar_direction.y * cos_angle;
         //moveAvatar();
     }
-
-    // Turn the avatar clockwise (true) or counterclockwise (false)
-    //public void turnAvatar(bool rotation)
-    //{
-    //    string previous_avatar_direction = avatar_direction;
-
-    //    if (rotation)
-    //    {
-    //        avatar_direction = cw_movement[avatar_direction];
-    //        avatar_vector_direction = determineDirection(avatar_direction);
-    //        previous_vector_avatar_direction = determineDirection(previous_avatar_direction);
-    //        moveAvatar();
-    //    }
-    //    else
-    //    {
-    //        avatar_direction = ccw_movement[avatar_direction];
-    //        avatar_vector_direction = determineDirection(avatar_direction);
-    //        previous_vector_avatar_direction = determineDirection(previous_avatar_direction);
-    //        moveAvatar();
-    //    }
-    //}
-
-
-    // The vector direction the avatar must move
-    //public Vector3 determineDirection(string direction)
-    //{
-    //    switch (direction)
-    //    {
-    //        case "up":
-    //            return Vector3.up;
-
-    //        case "right":
-    //            return Vector3.right;
-
-    //        case "left":
-    //            return Vector3.left;
-
-    //        case "down":
-    //            return Vector3.down;
-    //    }
-    //    return Vector3.zero;
-    //}
 
 
     // Move the avatar in the direction specified
