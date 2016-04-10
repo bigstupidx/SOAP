@@ -8,6 +8,7 @@ public class CollisionManager : MonoBehaviour {
     private SOAPStoreManager store_manager_script;  // Used to give player coins
     private Camera game_cam_ref;
 	private CameraController challenge_room_camera;
+    public SoundManager sound_manager_script;
 
 
 	// Use this for initialization
@@ -40,14 +41,18 @@ public class CollisionManager : MonoBehaviour {
             // TODO: Add animation or fx call here
             this.gameObject.SetActive(false);
             ui_manager_script.activate_game_over_menu();
+
+            sound_manager_script.playSFX(SoundManager.CRASH_SFX);
         }
 
         // Collect tails
         if (coll.gameObject.tag == "grow")
         {
-			coll.transform.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
+            coll.transform.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
             coll.gameObject.SetActive(false);
             tail_movement_script.grow_tail = true;
+
+            sound_manager_script.playSFX(SoundManager.TAIL_SFX);
         }
 
         // Collect coins
@@ -55,6 +60,7 @@ public class CollisionManager : MonoBehaviour {
         {
             coll.gameObject.SetActive(false);
             store_manager_script.giveCoins();
+            sound_manager_script.playSFX(SoundManager.COIN_SFX);
         }
 
         if (coll.gameObject.tag == "cam_hold_trigger")
