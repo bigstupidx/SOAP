@@ -55,8 +55,8 @@ public class spawn_tiles : MonoBehaviour
 
 				}
 
-				Debug.Log("Position is: " + tile_list[i].transform.position.y);
-				Debug.Log("previous_tile_size is: " + previous_tile_size.y);
+                //Debug.Log("Position is: " + tile_list[i].transform.position.y);
+                //Debug.Log("previous_tile_size is: " + previous_tile_size.y);
 				i++;
 
 			}
