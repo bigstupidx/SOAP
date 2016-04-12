@@ -20,16 +20,27 @@ public class ChallengeRoomLogic : MonoBehaviour
 	private Camera game_cam_ref;
 	private CameraController challenge_room_camera;
 
+	public GameObject[] spinning_obj_list;
+
+	public GameObject obstacle_manager_ref;
+	private ObstacleManager obstacle_manager_script;
+
 	// Use this for initialization
 	void Start () 
 	{
 		game_cam_ref = Camera.main;
 		challenge_room_camera = game_cam_ref.GetComponent<CameraController>();
+		obstacle_manager_script = obstacle_manager_ref.GetComponent<ObstacleManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (spinning_obj_list[0].activeSelf == true)
+		{	
+			obstacle_manager_script.spinWalls();
+		}
+
 		if (grow_counter > grow_obj_list.Length )
 		{
 			challenge_room_camera.release_camera();

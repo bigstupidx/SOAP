@@ -16,10 +16,11 @@ public class ObstacleManager : MonoBehaviour {
 
     private int[] spike_speed = { 5, 9, 12 };        // Speed at which spikes moves (mapped to spike_obstacles array)
     private int[] wall_speed = { 5, 9, 12 };         // Speed at which wall moves (mapped to moving_wall_obstacles array)
-    private int[] platform_speed = { 5, 9, 12 };     // Speed at which platforms moves (mapped to moving_platform_obstacles array)
-    private int[] spinning_speed = { 5, 9, 12 };     // Speed at which spinners rotates (mapped to spinning_obstacles array)
+    private int[] platform_speed = { 1, 3, 5 };     // Speed at which platforms moves (mapped to moving_platform_obstacles array)
+    private int[] spinning_speed = { 30, 50, 70 };     // Speed at which spinners rotates (mapped to spinning_obstacles array)
 
     private float[] spike_timing = { 8, 2, 3, 4 };   // Time offset at which spikes begin to move after entering the tile
+
 	// The above can be done for other obstacles if necessary
 
     // Use this for initialization
@@ -44,15 +45,31 @@ public class ObstacleManager : MonoBehaviour {
 
 
     // Move walls in the tile
-    private void moveWalls()
+	public void moveWalls()
     {
         for (int i = 0; i < moving_wall_obstacles.Length; i++)
         {
             // code to move walls and time their offsets (if required)
+			if (moving_wall_obstacles[i].GetComponent<IsMoving>().is_moving_right == true)
+			{
+				moving_wall_obstacles[i].transform.Translate(platform_speed[0] * Time.deltaTime, 0, 0);
+			}
+
+			else
+			{
+				moving_wall_obstacles[i].transform.Translate(platform_speed[0] * -Time.deltaTime, 0, 0);
+			}
         }
     }
 
     // Same as obove for other arrays (other than static_obstacles)
 
-
+	public void spinWalls()
+    {
+		for (int i = 0; i < spinning_obstacles.Length; i++)
+        {
+            // code to move walls and time their offsets (if required)
+			spinning_obstacles[i].transform.Rotate(0, 0, spinning_speed[1] * Time.deltaTime);
+        }
+    }
 }
