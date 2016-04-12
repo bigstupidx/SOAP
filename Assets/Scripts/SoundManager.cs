@@ -36,7 +36,6 @@ public class SoundManager : MonoBehaviour
 
     public void playSFX(int index)
     {
-        Debug.Log(index);
         sfx_source.PlayOneShot(sfx_clips[index]);
     }
 }
