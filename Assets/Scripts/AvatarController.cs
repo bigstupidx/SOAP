@@ -32,10 +32,12 @@ public class AvatarController : MonoBehaviour {
 
         avatar_vector_direction = Vector3.up;
         previous_vector_avatar_direction = avatar_vector_direction;
+
+        //InvokeRepeating("moveAvatar", 0.5f, 0.5f);
 	}
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         moveAvatar();
 
@@ -65,7 +67,6 @@ public class AvatarController : MonoBehaviour {
         float sin_angle = Mathf.Sin(angle);
         avatar_vector_direction.x = previous_vector_avatar_direction.x * cos_angle - previous_vector_avatar_direction.y * sin_angle;
         avatar_vector_direction.y = previous_vector_avatar_direction.x * sin_angle + previous_vector_avatar_direction.y * cos_angle;
-        //moveAvatar();
     }
 
 
@@ -81,7 +82,8 @@ public class AvatarController : MonoBehaviour {
             tap_valid = true;
         }
 
-        transform.position += avatar_vector_direction * Time.deltaTime * avatar_speed;
+        //transform.position += avatar_vector_direction;
+        transform.position += avatar_vector_direction * Time.fixedDeltaTime * avatar_speed;
         previous_vector_avatar_direction = avatar_vector_direction;
     }
 }
