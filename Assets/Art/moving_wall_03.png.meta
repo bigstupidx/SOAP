@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3a55effd5248a2749a5699485c078958
-timeCreated: 1460508298
+guid: d270c12c7fef81b4fa6d8e0de354b525
+timeCreated: 1460506793
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: debris_safe_0
+    21300000: moving_wall_03_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,25 +51,21 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: debris_safe_0
+    - name: moving_wall_03_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 58
-        height: 58
+        x: 307
+        y: 751
+        width: 42
+        height: 292
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -27, y: 29}
-        - {x: -29, y: 24}
-        - {x: -29, y: -25}
-        - {x: -19, y: -29}
-        - {x: 17, y: -29}
-        - {x: 29, y: -20}
-        - {x: 29, y: 18}
-        - {x: 18, y: 29}
+      - - {x: -21, y: 146}
+        - {x: -21, y: -146}
+        - {x: 21, y: -146}
+        - {x: 21, y: 146}
     outline: []
   spritePackingTag: 
   userData: 
