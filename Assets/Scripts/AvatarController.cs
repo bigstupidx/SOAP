@@ -8,7 +8,7 @@ public class AvatarController : MonoBehaviour {
     private Vector3 previous_avatar_position;   // The avatars position before it travelled min_distance 
     private string avatar_direction;            // The direction the avatar is moving
     private Vector3 avatar_vector_direction;    // The avatar vector direction
-    private int avatar_speed;                   // The speed at which the avatar moves
+    public int avatar_speed;                   // The speed at which the avatar moves
     public Vector2 default_avatar_position;     // The avatars starting position
     public TailMovement tail_movement_script;
     Dictionary<string, string> cw_movement = new Dictionary<string, string>();  // Defines the next direction for clockwise turn
@@ -27,7 +27,7 @@ public class AvatarController : MonoBehaviour {
 
         avatar_direction = "up";
         transform.position = default_avatar_position;
-        avatar_speed = 2;
+        //avatar_speed = 2;
         previous_avatar_position = transform.position - new Vector3(0,min_distance,0);
 
         avatar_vector_direction = Vector3.up;
