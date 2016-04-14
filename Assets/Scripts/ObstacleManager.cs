@@ -73,12 +73,18 @@ public class ObstacleManager : MonoBehaviour {
             // code to move walls and time their offsets (if required)
 			if (moving_wall_obstaclesUD[i].GetComponent<IsMoving>().is_moving == true)
 			{
-				moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[0] * Time.deltaTime, 0);
+				if (moving_wall_obstaclesUD[i].transform.parent.parent.gameObject.activeSelf == true)
+				{
+					moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[0] * Time.deltaTime, 0);
+				}
 			}
 
 			else
 			{
-				moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[0] * -Time.deltaTime, 0);
+				if(moving_wall_obstaclesUD[i].transform.parent.parent.gameObject.activeSelf == true)
+				{
+					moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[0] * -Time.deltaTime, 0);
+				}
 
 			}
         }
