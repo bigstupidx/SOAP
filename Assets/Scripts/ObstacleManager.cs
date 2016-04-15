@@ -56,12 +56,18 @@ public class ObstacleManager : MonoBehaviour {
             // code to move walls and time their offsets (if required)
 			if (moving_wall_obstaclesLR[i].GetComponent<IsMoving>().is_moving == true)
 			{
-				moving_wall_obstaclesLR[i].transform.Translate(platform_speed[0] * Time.deltaTime, 0, 0);
+				if(moving_wall_obstaclesLR[i].transform.parent.parent.gameObject.activeSelf == true)
+				{
+					moving_wall_obstaclesLR[i].transform.Translate(platform_speed[0] * Time.deltaTime, 0, 0);
+				}
 			}
 
 			else
 			{
-				moving_wall_obstaclesLR[i].transform.Translate(platform_speed[0] * -Time.deltaTime, 0, 0);
+				if(moving_wall_obstaclesLR[i].transform.parent.parent.gameObject.activeSelf == true)
+				{
+					moving_wall_obstaclesLR[i].transform.Translate(platform_speed[0] * -Time.deltaTime, 0, 0);
+				}
 			}
         }
     }
@@ -96,8 +102,11 @@ public class ObstacleManager : MonoBehaviour {
     {
 		for (int i = 0; i < spinning_obstacles.Length; i++)
         {
-            // code to move walls and time their offsets (if required)
-			spinning_obstacles[i].transform.Rotate(0, 0, spinning_speed[1] * Time.deltaTime);
+			if(spinning_obstacles[i].transform.parent.parent.gameObject.activeSelf == true)
+			{
+            	// code to move walls and time their offsets (if required)
+				spinning_obstacles[i].transform.Rotate(0, 0, spinning_speed[1] * Time.deltaTime);
+			}
         }
     }
 
@@ -105,7 +114,10 @@ public class ObstacleManager : MonoBehaviour {
     {
 		for (int i = 0; i < falling_obstacles.Length; i++)
 		{
-			falling_obstacles[i].GetComponent<Rigidbody2D>().isKinematic = false;
+			if(falling_obstacles[i].transform.parent.parent.gameObject.activeSelf == true)
+			{
+				falling_obstacles[i].GetComponent<Rigidbody2D>().isKinematic = false;
+			}
 		}
     }
 }

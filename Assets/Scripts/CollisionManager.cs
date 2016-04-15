@@ -31,8 +31,8 @@ public class CollisionManager : MonoBehaviour {
 	}
 
     // When the play collides with anything that is a trigger....
-    void OnTriggerEnter2D(Collider2D coll)
-    {
+	void OnCollisionEnter2D(Collision2D coll)
+    {	
         // Obstacle collision: the player "dies", avatar setActive is set to false.
         if (coll.gameObject.tag == "obstacle")
         {
