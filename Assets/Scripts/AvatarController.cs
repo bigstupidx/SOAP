@@ -17,6 +17,7 @@ public class AvatarController : MonoBehaviour {
     private bool tap_valid = true;              // False if the player double taps. Signals when to apply the boost
     private Vector3 previous_vector_avatar_direction;   // The avatars previous vector direction
 
+    private Rigidbody2D rigid_body;     // Used to give avatar velocity
 
 	// Use this for initialization
 	void Start () 
@@ -32,6 +33,8 @@ public class AvatarController : MonoBehaviour {
 
         avatar_vector_direction = Vector3.up;
         previous_vector_avatar_direction = avatar_vector_direction;
+
+        rigid_body = this.GetComponent<Rigidbody2D>();
 
         //InvokeRepeating("moveAvatar", 0.5f, 0.5f);
 	}
@@ -78,12 +81,15 @@ public class AvatarController : MonoBehaviour {
         {
             Vector3 previous_pos = transform.position;
             // Use fixed delta time to apply the boost otherwise the boost will not be consistent
-            transform.position += previous_vector_avatar_direction * Time.fixedDeltaTime * temp_boost;
+            rigid_body.velocity = avatar_vector_direction * avatar_speed;
+            //transform.position += previous_vector_avatar_direction * Time.fixedDeltaTime * temp_boost;
             tap_valid = true;
         }
 
         //transform.position += avatar_vector_direction;
-        transform.position += avatar_vector_direction * Time.fixedDeltaTime * avatar_speed;
+        //transform.position += avatar_vector_direction * Time.fixedDeltaTime * avatar_speed;
+        rigid_body.velocity = avatar_vector_direction*avatar_speed;
+
         previous_vector_avatar_direction = avatar_vector_direction;
     }
 }

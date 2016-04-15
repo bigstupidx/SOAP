@@ -7,7 +7,7 @@ public static class GroupCommand
     private static void GroupSelected()
     {
         if (!Selection.activeTransform) return;
-        var go = new GameObject(Selection.activeTransform.name + "_grp");
+        var go = new GameObject(Selection.activeTransform.name + "_gr");
         Undo.RegisterCreatedObjectUndo(go, "Group Selected");
         go.transform.SetParent(Selection.activeTransform.parent, false);
         foreach (var transform in Selection.transforms) Undo.SetTransformParent(transform, go.transform, "Group Selected");
