@@ -39,7 +39,7 @@ public class RegularTiles : MonoBehaviour
 
 		if (obstacle_manager_script.falling_obstacles.Length > 0)
 		{
-			if (obstacle_manager_script.falling_obstacles[0].activeSelf == false)
+			if (this.gameObject.activeSelf == false)
 			{
 				for (int i = 0; i < obstacle_manager_script.falling_obstacles.Length; i++)
 				{
