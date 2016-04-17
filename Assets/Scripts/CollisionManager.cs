@@ -45,23 +45,6 @@ public class CollisionManager : MonoBehaviour {
             sound_manager_script.playSFX(SoundManager.CRASH_SFX);
         }
 
-        // Collect tails
-        if (coll.gameObject.tag == "grow")
-        {
-            coll.transform.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
-            coll.gameObject.SetActive(false);
-            tail_movement_script.grow_tail = true;
-
-            sound_manager_script.playSFX(SoundManager.TAIL_SFX);
-        }
-
-        // Collect coins
-        if (coll.gameObject.tag == "coin")
-        {
-            coll.gameObject.SetActive(false);
-            store_manager_script.giveCoins();
-            sound_manager_script.playSFX(SoundManager.COIN_SFX);
-        }
 
         if (coll.gameObject.tag == "cam_hold_trigger")
         {
@@ -76,6 +59,30 @@ public class CollisionManager : MonoBehaviour {
 			//challenge_room_camera.release_camera();
         //}
 
+    }
+
+
+    // Collect coins and grow tails
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Collect coins
+        if (other.gameObject.tag == "coin")
+        {
+            other.gameObject.SetActive(false);
+            store_manager_script.giveCoins();
+            sound_manager_script.playSFX(SoundManager.COIN_SFX);
+        }
+
+
+        // Collect tails
+        if (other.gameObject.tag == "grow")
+        {
+            other.transform.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
+            other.gameObject.SetActive(false);
+            tail_movement_script.grow_tail = true;
+
+            sound_manager_script.playSFX(SoundManager.TAIL_SFX);
+        }
     }
 
 

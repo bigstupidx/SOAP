@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class GroupCommand
 {
-    [MenuItem("GameObject/Group Selected %g")]
+    [MenuItem("Custom/Group Selected %g")]
     private static void GroupSelected()
     {
         if (!Selection.activeTransform) return;
