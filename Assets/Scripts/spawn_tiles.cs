@@ -8,16 +8,20 @@ public class spawn_tiles : MonoBehaviour
 	private int starting_tiles;
 	private int initial_tiles = 4;
 	private int next_tile = 0;
-	List<GameObject> tile_list = new List<GameObject>();
+	public List<GameObject> tile_list = new List<GameObject>();
 	private Vector3 previous_tile_size;
 	private Vector3 current_tile_size;
 	private Vector3 offset_tile_size;
 	private BoxCollider2D tile_collider;
+
+	public bool IsFirst;
 	
 	// Use this for initialization
 	void Start () 
 	{
 		tile_list.Clear();
+		IsFirst = true;
+
 		for(int i = 0; i < initial_tiles;)
 		{
 			starting_tiles = Random.Range(0, tile_prefabs.Length);
@@ -76,6 +80,7 @@ public class spawn_tiles : MonoBehaviour
 	
 	public void add_next_tile()
 	{
+		IsFirst = false;
 		tile_list[3].SetActive(false);
 		tile_list.RemoveAt(3);
 		
