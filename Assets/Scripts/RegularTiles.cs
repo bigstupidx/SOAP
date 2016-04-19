@@ -61,7 +61,7 @@ public class RegularTiles : MonoBehaviour
 				obstacle_manager_script.dropBalls();
 			}
 
-			else if(falling_trigger_reset. IsTouching(the_player.GetComponent<Collider2D>()))
+			else if(falling_trigger_reset.IsTouching(the_player.GetComponent<Collider2D>()))
 			{
 				for (int i = 0; i < obstacle_manager_script.falling_obstacles.Length; i++)
 				{
