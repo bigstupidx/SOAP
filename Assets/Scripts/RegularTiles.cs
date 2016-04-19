@@ -11,6 +11,13 @@ public class RegularTiles : MonoBehaviour
 	private GameObject tile_spawner_ref;
 	private spawn_tiles spawn_tiles_script;
 
+	public GameObject falling_trigger_ref;
+	private BoxCollider2D falling_trigger;
+	public GameObject falling_trigger_reset_ref;
+	private BoxCollider2D falling_trigger_reset;
+
+	private GameObject the_player;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -22,6 +29,11 @@ public class RegularTiles : MonoBehaviour
 
 		tile_spawner_ref = GameObject.Find("Tile_Spawner");
 		spawn_tiles_script = tile_spawner_ref.GetComponent<spawn_tiles>();
+
+		falling_trigger = falling_trigger_ref.gameObject.GetComponent<BoxCollider2D>();
+		falling_trigger_reset = falling_trigger_reset_ref.gameObject.GetComponent<BoxCollider2D>();
+
+		the_player = GameObject.FindGameObjectWithTag("Player"); 
 	}
 	
 	// Update is called once per frame
@@ -44,27 +56,18 @@ public class RegularTiles : MonoBehaviour
 
 		if (obstacle_manager_script.falling_obstacles.Length > 0)
 		{
-
-			if (spawn_tiles_script.tile_list[3].name == this.gameObject.name)
+			if (falling_trigger.IsTouching(the_player.GetComponent<Collider2D>()))
 			{	
-				if(spawn_tiles_script.IsFirst == false)
-				{
-					for (int i = 0; i < obstacle_manager_script.falling_obstacles.Length; i++)
-					{
-						obstacle_manager_script.falling_obstacles[i].gameObject.transform.position = falling_obj_position_list[i];
-						obstacle_manager_script.falling_obstacles[i].gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-					}
-				}
-
-				else
-				{
-					obstacle_manager_script.dropBalls();
-				}
+				obstacle_manager_script.dropBalls();
 			}
 
-			else
+			else if(falling_trigger_reset. IsTouching(the_player.GetComponent<Collider2D>()))
 			{
-				obstacle_manager_script.dropBalls();
+				for (int i = 0; i < obstacle_manager_script.falling_obstacles.Length; i++)
+				{
+					obstacle_manager_script.falling_obstacles[i].gameObject.transform.position = falling_obj_position_list[i];
+					obstacle_manager_script.falling_obstacles[i].gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+				}
 			}
 		}
 	}

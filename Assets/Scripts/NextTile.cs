@@ -26,6 +26,7 @@ public class NextTile : MonoBehaviour
 		if (coll.gameObject.tag == "Player")
 		{
 			spawn_tiles_script.move_tile();
+			this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 		}
 	}
 }
