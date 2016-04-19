@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
-
+// group selected game objects
 public static class GroupCommand
 {
     [MenuItem("Custom/Group Selected %g")]
