@@ -23,6 +23,7 @@ public class ObstacleManager : MonoBehaviour {
 	//private int[] falling_speed = { 30, 50, 70 };
     private float[] spike_timing = { 8, 2, 3, 4 };   // Time offset at which spikes begin to move after entering the tile
 
+    private Animator the_animator;
 	// The above can be done for other obstacles if necessary
 
     // Use this for initialization
@@ -39,14 +40,28 @@ public class ObstacleManager : MonoBehaviour {
 
 
     // Move spikes in the tile
-    private void moveSpikes()
+	public void moveSpikes()
     {
         for (int i = 0; i < spike_obstacles.Length; i++)
         {
-            // code to move spike and time their offsets (if required)
+            if (spike_obstacles[i].transform.parent.gameObject.activeSelf == true)
+            {
+				the_animator = spike_obstacles[i].GetComponent<Animator>();
+
+				the_animator.SetBool("is_moving", true);
+			}
         }
     }
 
+	public void stopSpikes()
+	{
+		for (int i = 0; i < spike_obstacles.Length; i++)
+		{
+			the_animator = spike_obstacles[i].GetComponent<Animator>();
+
+			the_animator.SetBool("is_moving", false);
+		}
+	}
 
     // Move walls in the tile
 	public void moveWallsLR()
