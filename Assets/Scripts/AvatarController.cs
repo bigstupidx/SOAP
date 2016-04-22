@@ -81,7 +81,7 @@ public class AvatarController : MonoBehaviour {
         {
             Vector3 previous_pos = transform.position;
             // Use fixed delta time to apply the boost otherwise the boost will not be consistent
-            rigid_body.velocity = avatar_vector_direction * avatar_speed;
+            rigid_body.velocity = previous_vector_avatar_direction * avatar_speed;
             //transform.position += previous_vector_avatar_direction * Time.fixedDeltaTime * temp_boost;
             tap_valid = true;
         }
