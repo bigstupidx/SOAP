@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b7a08562ec290494399b5f4daf979bbf
-timeCreated: 1460597479
+timeCreated: 1461199249
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -101,19 +101,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 797
-        y: 764
+        y: 810
         width: 74
-        height: 300
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 254
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -37, y: 150}
-        - {x: -37, y: -139}
-        - {x: -8, y: -150}
-        - {x: 14, y: -150}
-        - {x: 37, y: -135}
-        - {x: 37, y: 150}
+      - - {x: -37, y: 0}
+        - {x: -37, y: -254}
+        - {x: 37, y: -254}
+        - {x: 37, y: 0}
     - name: seperate_3
       rect:
         serializedVersion: 2
@@ -256,6 +254,23 @@ TextureImporter:
         - {x: 38, y: -164.5}
         - {x: 53, y: -160.5}
         - {x: 75, y: -153.5}
+    - name: seperate_9
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 763
+        width: 74
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 23.5}
+        - {x: -37, y: -7.5}
+        - {x: -11, y: -23.5}
+        - {x: 7, y: -23.5}
+        - {x: 37, y: -10.5}
+        - {x: 37, y: 23.5}
     outline: []
   spritePackingTag: 
   userData: 
