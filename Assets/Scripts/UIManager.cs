@@ -27,9 +27,7 @@ public class UIManager : MonoBehaviour {
     public void startGame()
     {
         setMenuState(false);
-
-        // TODO: This may change when the splash screen is added
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         pause_button.SetActive(true);
     }
 
@@ -69,7 +67,7 @@ public class UIManager : MonoBehaviour {
     public void restartLvl()
     {
         // TODO: This may change when the splash screen is added
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         // RECODE: Find a better place to put this
         game_over_menu.SetActive(false);
         unPause();
@@ -81,6 +79,6 @@ public class UIManager : MonoBehaviour {
         unPause();
         Destroy(this.gameObject);
         // TODO: This may change when the splash screen is added
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

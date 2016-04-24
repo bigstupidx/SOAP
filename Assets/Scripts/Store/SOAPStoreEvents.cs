@@ -1,21 +1,25 @@
-﻿using UnityEngine;
+﻿// -
+// This script registers to listen for the specified subset of events 
+// fired by Soomla events. It then handles these events.
+//
+// IMPORTANT: Put this class on a gameobject that is always active, 
+// never destroyed, and only loads once (SPLASH SCREEN)
+// -
+
+
+using UnityEngine;
 using System.Collections;
 using Soomla.Store;
 using UnityEngine.UI;
 
 public class SOAPStoreEvents : MonoBehaviour {
 
-    // TODO: PUT THIS CLASS ON A GAME OBJECT THAT IS ACTIVE AND ONLY LOADS ONCE (SPLASH SCREEN)
-
     private SOAPStoreManager store_manager_script;
 
-	// Use this for initialization
+	// Register to listen to the following Soomla events
 	void Start () 
     {
-        // TODO: comment out initialization and put on splash screen
-        SoomlaStore.Initialize(new SOAPStoreAssets());
-
-        // These event catchers need to be on a gameobject that is never turned off, never destroyed, and only loads once
+        // These event catchers need to be on a gameobject that is never turned off, 
         StoreEvents.OnItemPurchased += onItemPurchased;
         StoreEvents.OnGoodBalanceChanged += OnGoodBalanceChanged;
         StoreEvents.OnCurrencyBalanceChanged += OnCurrencyBalanceChanged;
