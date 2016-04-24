@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b7a08562ec290494399b5f4daf979bbf
-timeCreated: 1461199249
+timeCreated: 1461537107
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -75,7 +75,7 @@ TextureImporter:
         width: 100
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -50, y: 300}
@@ -85,12 +85,12 @@ TextureImporter:
     - name: seperate_1
       rect:
         serializedVersion: 2
-        x: 153
-        y: 964
+        x: 129
+        y: 969
         width: 600
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -300, y: 50}
@@ -100,19 +100,19 @@ TextureImporter:
     - name: seperate_2
       rect:
         serializedVersion: 2
-        x: 797
-        y: 810
+        x: 746
+        y: 840
         width: 74
-        height: 254
+        height: 237
       alignment: 9
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -37, y: 0}
-        - {x: -37, y: -254}
-        - {x: 37, y: -254}
+        - {x: -37, y: -237}
+        - {x: 37, y: -237}
         - {x: 37, y: 0}
-    - name: seperate_3
+    - name: seperate_4
       rect:
         serializedVersion: 2
         x: 221
@@ -120,14 +120,14 @@ TextureImporter:
         width: 100
         height: 102
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -50, y: 51}
         - {x: -50, y: -51}
         - {x: 50, y: -51}
         - {x: 50, y: 51}
-    - name: seperate_4
+    - name: seperate_5
       rect:
         serializedVersion: 2
         x: 457
@@ -135,7 +135,7 @@ TextureImporter:
         width: 52
         height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -24, y: 26}
@@ -146,7 +146,7 @@ TextureImporter:
         - {x: 26, y: -13}
         - {x: 26, y: 16}
         - {x: 16, y: 26}
-    - name: seperate_5
+    - name: seperate_6
       rect:
         serializedVersion: 2
         x: 559
@@ -154,7 +154,7 @@ TextureImporter:
         width: 72
         height: 72
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -20, y: 36}
@@ -167,7 +167,7 @@ TextureImporter:
         - {x: 36, y: -25}
         - {x: 36, y: 16}
         - {x: 29, y: 36}
-    - name: seperate_6
+    - name: seperate_7
       rect:
         serializedVersion: 2
         x: 426
@@ -175,7 +175,7 @@ TextureImporter:
         width: 52
         height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -24, y: 26}
@@ -186,7 +186,7 @@ TextureImporter:
         - {x: 26, y: -13}
         - {x: 26, y: 16}
         - {x: 16, y: 26}
-    - name: seperate_7
+    - name: seperate_8
       rect:
         serializedVersion: 2
         x: 159
@@ -194,7 +194,7 @@ TextureImporter:
         width: 400
         height: 76
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -139, y: 38}
@@ -207,7 +207,7 @@ TextureImporter:
         - {x: 200, y: -23}
         - {x: 200, y: 27}
         - {x: 136, y: 38}
-    - name: seperate_8
+    - name: seperate_9
       rect:
         serializedVersion: 2
         x: 620
@@ -215,62 +215,156 @@ TextureImporter:
         width: 342
         height: 333
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 104, y: -137.5}
-        - {x: 137, y: -105.5}
+      - - {x: 137, y: -105.5}
         - {x: 157, y: -75.5}
         - {x: 165, y: -57.5}
         - {x: 171, y: -39.5}
-        - {x: 171, y: 50.5}
-        - {x: 161, y: 82.5}
-        - {x: 145, y: 110.5}
-        - {x: 130, y: 128.5}
-        - {x: 103, y: 153.5}
-        - {x: 85, y: 163.5}
-        - {x: 79, y: 166.5}
-        - {x: -81, y: 166.5}
-        - {x: -103, y: 152.5}
-        - {x: -123, y: 135.5}
-        - {x: -138, y: 118.5}
-        - {x: -148, y: 104.5}
+        - {x: 171, y: 49.5}
+        - {x: 170, y: 51.5}
+        - {x: 166, y: 55.5}
+        - {x: 95, y: 55.5}
+        - {x: 95, y: 143.5}
+        - {x: 93, y: 145.5}
+        - {x: 90, y: 145.5}
+        - {x: 88, y: 143.5}
+        - {x: 88, y: 99.5}
+        - {x: 28, y: 99.5}
+        - {x: 28, y: 166.5}
+        - {x: -80, y: 166.5}
+        - {x: -104, y: 153.5}
+        - {x: -123, y: 136.5}
+        - {x: -149, y: 104.5}
         - {x: -163, y: 78.5}
-        - {x: -170, y: 51.5}
-        - {x: -171, y: 48.5}
-        - {x: -171, y: -33.5}
-        - {x: -170, y: -38.5}
-        - {x: -167, y: -51.5}
-        - {x: -159, y: -73.5}
-        - {x: -145, y: -95.5}
-        - {x: -131, y: -113.5}
+        - {x: -171, y: 49.5}
+        - {x: -171, y: -41.5}
+        - {x: -161, y: -74.5}
+        - {x: -131, y: -114.5}
         - {x: -109, y: -133.5}
         - {x: -84, y: -148.5}
         - {x: -76, y: -152.5}
         - {x: -66, y: -156.5}
         - {x: -54, y: -160.5}
         - {x: -31, y: -166.5}
-        - {x: 28, y: -166.5}
-        - {x: 38, y: -164.5}
-        - {x: 53, y: -160.5}
+        - {x: 31, y: -166.5}
+        - {x: 53, y: -161.5}
         - {x: 75, y: -153.5}
-    - name: seperate_9
+        - {x: 104, y: -137.5}
+    - name: seperate_3
       rect:
         serializedVersion: 2
-        x: 797
-        y: 763
+        x: 746
+        y: 777
         width: 74
-        height: 47
+        height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -37, y: 23.5}
-        - {x: -37, y: -7.5}
-        - {x: -11, y: -23.5}
-        - {x: 7, y: -23.5}
-        - {x: 37, y: -10.5}
-        - {x: 37, y: 23.5}
+      - - {x: -37, y: 31.5}
+        - {x: -37, y: -20.5}
+        - {x: -8, y: -31.5}
+        - {x: 14, y: -31.5}
+        - {x: 37, y: -16.5}
+        - {x: 37, y: 31.5}
+    - name: seperate_10
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 792
+        width: 74
+        height: 234
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 234}
+        - {x: -37, y: 0}
+        - {x: 37, y: 0}
+        - {x: 37, y: 234}
+    - name: seperate_11
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1026
+        width: 74
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 33}
+        - {x: -37, y: 18}
+        - {x: -37, y: -33}
+        - {x: 37, y: -33}
+        - {x: 37, y: 18}
+        - {x: 7, y: 33}
+    - name: seperate_12
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1003
+        width: 227
+        height: 74
+      alignment: 9
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -227, y: 37}
+        - {x: -227, y: -37}
+        - {x: 0, y: -37}
+        - {x: 0, y: 37}
+    - name: seperate_13
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1003
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 37}
+        - {x: -36.5, y: 7}
+        - {x: -36.5, y: -7}
+        - {x: -21.5, y: -37}
+        - {x: 36.5, y: -37}
+        - {x: 36.5, y: 37}
+    - name: seperate_14
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 917
+        width: 221
+        height: 74
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 37}
+        - {x: 0, y: -37}
+        - {x: 221, y: -37}
+        - {x: 221, y: 37}
+    - name: seperate_15
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 917
+        width: 79
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.5, y: 37}
+        - {x: -39.5, y: -37}
+        - {x: 24.5, y: -37}
+        - {x: 39.5, y: -14}
+        - {x: 39.5, y: 8}
+        - {x: 28.5, y: 37}
     outline: []
   spritePackingTag: 
   userData: 
