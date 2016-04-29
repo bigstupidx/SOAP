@@ -129,7 +129,7 @@ public class ObstacleManager : MonoBehaviour {
     {
 		for (int i = 0; i < falling_obstacles.Length; i++)
 		{
-			if(falling_obstacles[i].transform.parent.parent.gameObject.activeSelf == true)
+			if(falling_obstacles[i].transform.parent.parent.parent.gameObject.activeSelf == true)
 			{
 				falling_obstacles[i].GetComponent<Rigidbody2D>().isKinematic = false;
 			}
