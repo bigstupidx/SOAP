@@ -1,0 +1,58 @@
+fileFormatVersion: 2
+guid: d56a787313fff427595e4a839dc51a1d
+timeCreated: 1456421500
+licenseType: Store
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 0
+      settings: {}
+    Editor:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+    WP8:
+      enabled: 1
+      settings: {}
+    WindowsStoreApps:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+labels:
+- profile
+- facebook
+- twitter
+- google plus
+- google+
+- social
+- social login
+- facebook connect
+- rate app
+- app store rating
+- rating
+- sharing
+- sharing plugin
+- post to wall
+- post to feed
+- fb wall
+- fb plugin
+- like
+- like button
+- share
+- share button
+- gifting
+- friends
+- friends list
+- leaderboard
+- cloudsave
+- photon
+- stan
+- stans assets
+- prime31
