@@ -26,6 +26,9 @@ public class ObstacleManager : MonoBehaviour {
     private Animator the_animator;
 	// The above can be done for other obstacles if necessary
 
+	private Vector2 force_push_left = new Vector2(-6.0f, 0.0f);
+	private Vector2 force_push_right = new Vector2(6.0f, 0.0f);
+
     // Use this for initialization
 	void Start () 
 	{
@@ -120,7 +123,17 @@ public class ObstacleManager : MonoBehaviour {
 			if(spinning_obstacles[i].transform.parent.parent.gameObject.activeSelf == true)
 			{
             	// code to move walls and time their offsets (if required)
-				spinning_obstacles[i].transform.Rotate(0, 0, spinning_speed[1] * Time.deltaTime);
+				//spinning_obstacles[i].transform.Rotate(0, 0, spinning_speed[1] * Time.deltaTime);
+
+				if(spinning_obstacles[i].transform.parent.gameObject.tag == "obstacle_spin_counterclockwise")
+				{
+					spinning_obstacles[i].transform.Rotate(0, 0, spinning_speed[1] * Time.deltaTime);
+				}
+
+				if(spinning_obstacles[i].transform.parent.gameObject.tag == "obstacle_spin_clockwise")
+				{
+					spinning_obstacles[i].transform.Rotate(0, 0, spinning_speed[1] * -Time.deltaTime);
+				}
 			}
         }
     }
@@ -132,6 +145,16 @@ public class ObstacleManager : MonoBehaviour {
 			if(falling_obstacles[i].transform.parent.parent.parent.gameObject.activeSelf == true)
 			{
 				falling_obstacles[i].GetComponent<Rigidbody2D>().isKinematic = false;
+
+				if(falling_obstacles[i].gameObject.tag == "force_push_left")
+				{
+					falling_obstacles[i].GetComponent<Rigidbody2D>().AddForce(force_push_left);
+				}
+
+				if(falling_obstacles[i].gameObject.tag == "force_push_right")
+				{
+					falling_obstacles[i].GetComponent<Rigidbody2D>().AddForce(force_push_right);
+				}
 			}
 		}
     }

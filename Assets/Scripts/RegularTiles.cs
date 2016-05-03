@@ -56,12 +56,12 @@ public class RegularTiles : MonoBehaviour
 
 		if (obstacle_manager_script.falling_obstacles.Length > 0)
 		{
-			if (obstacle_trigger.IsTouching(the_player.GetComponent<Collider2D>()))
+			if (obstacle_trigger.IsTouching(the_player.GetComponent<CircleCollider2D>()))
 			{	
 				obstacle_manager_script.dropBalls();
 			}
 
-			else if(obstacle_trigger_reset.IsTouching(the_player.GetComponent<Collider2D>()))
+			else if(obstacle_trigger_reset.IsTouching(the_player.GetComponent<CircleCollider2D>()))
 			{
 				for (int i = 0; i < obstacle_manager_script.falling_obstacles.Length; i++)
 				{
@@ -73,12 +73,12 @@ public class RegularTiles : MonoBehaviour
 
 		if (obstacle_manager_script.spike_obstacles.Length > 0)
 		{
-			if (obstacle_trigger.IsTouching(the_player.GetComponent<Collider2D>())) 
+			if (obstacle_trigger.IsTouching(the_player.GetComponent<CircleCollider2D>())) 
 			{
 				obstacle_manager_script.moveSpikes();
 			}
 
-			else if (obstacle_trigger_reset.IsTouching(the_player.GetComponent<Collider2D>()))
+			else if (obstacle_trigger_reset.IsTouching(the_player.GetComponent<CircleCollider2D>()))
 			{
 				obstacle_manager_script.stopSpikes();
 			}
