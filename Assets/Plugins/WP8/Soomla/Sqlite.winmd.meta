@@ -1,7 +1,38 @@
 fileFormatVersion: 2
-guid: 59a9f8e9b3f5140fbabaef99e25e32d1
-timeCreated: 1457889385
-licenseType: Free
+guid: d8bb6ccdf5a7c4d1e82b9bd832696f97
+labels:
+- profile
+- facebook
+- twitter
+- google plus
+- google+
+- social
+- social login
+- facebook connect
+- rate app
+- app store rating
+- rating
+- sharing
+- sharing plugin
+- post to wall
+- post to feed
+- fb wall
+- fb plugin
+- like
+- like button
+- share
+- share button
+- gifting
+- friends
+- friends list
+- leaderboard
+- cloudsave
+- photon
+- stan
+- stans assets
+- prime31
+timeCreated: 1456421500
+licenseType: Store
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
@@ -9,6 +40,13 @@ PluginImporter:
   isPreloaded: 0
   platformData:
     Any:
+      enabled: 0
+      settings: {}
+    Editor:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+    WP8:
       enabled: 1
       settings: {}
   userData: 

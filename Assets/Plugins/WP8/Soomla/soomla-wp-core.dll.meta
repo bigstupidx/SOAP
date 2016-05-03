@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 02a8e9641d2fe4149a537ae410dad2d4
-timeCreated: 1457889385
-licenseType: Free
+guid: 054dddb50e6734d92aa06bb54fdaef0a
+timeCreated: 1456421499
+licenseType: Store
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
@@ -25,3 +25,34 @@ PluginImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+labels:
+- profile
+- facebook
+- twitter
+- google plus
+- google+
+- social
+- social login
+- facebook connect
+- rate app
+- app store rating
+- rating
+- sharing
+- sharing plugin
+- post to wall
+- post to feed
+- fb wall
+- fb plugin
+- like
+- like button
+- share
+- share button
+- gifting
+- friends
+- friends list
+- leaderboard
+- cloudsave
+- photon
+- stan
+- stans assets
+- prime31
