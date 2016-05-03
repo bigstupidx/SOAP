@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: dab81b860f20b4e928021800f580404f
-timeCreated: 1457889385
-licenseType: Free
+guid: 00abd2623a83f4743bd79bbf78f0e575
+timeCreated: 1456421500
+licenseType: Store
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
@@ -10,3 +10,34 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+labels:
+- profile
+- facebook
+- twitter
+- google plus
+- google+
+- social
+- social login
+- facebook connect
+- rate app
+- app store rating
+- rating
+- sharing
+- sharing plugin
+- post to wall
+- post to feed
+- fb wall
+- fb plugin
+- like
+- like button
+- share
+- share button
+- gifting
+- friends
+- friends list
+- leaderboard
+- cloudsave
+- photon
+- stan
+- stans assets
+- prime31
