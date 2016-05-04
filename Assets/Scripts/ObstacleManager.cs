@@ -18,7 +18,7 @@ public class ObstacleManager : MonoBehaviour {
 
     private int[] spike_speed = { 5, 9, 12 };        // Speed at which spikes moves (mapped to spike_obstacles array)
     private int[] wall_speed = { 5, 9, 12 };         // Speed at which wall moves (mapped to moving_wall_obstacles array)
-    private int[] platform_speed = { 1, 3, 5 };     // Speed at which platforms moves (mapped to moving_platform_obstacles array)
+    private int[] platform_speed = { 1, 2, 4 };     // Speed at which platforms moves (mapped to moving_platform_obstacles array)
     private int[] spinning_speed = { 30, 50, 70 };     // Speed at which spinners rotates (mapped to spinning_obstacles array)
 	//private int[] falling_speed = { 30, 50, 70 };
     private float[] spike_timing = { 8, 2, 3, 4 };   // Time offset at which spikes begin to move after entering the tile
@@ -49,9 +49,19 @@ public class ObstacleManager : MonoBehaviour {
         {
             if (spike_obstacles[i].transform.parent.gameObject.activeSelf == true)
             {
-				the_animator = spike_obstacles[i].GetComponent<Animator>();
+				if(spike_obstacles[i].transform.parent.parent.gameObject.tag == "no_spike_delay")
+				{
+					the_animator = spike_obstacles[i].GetComponent<Animator>();
 
-				the_animator.SetBool("is_moving", true);
+					the_animator.SetBool("is_moving", true);
+				}
+
+				if(spike_obstacles[i].transform.parent.parent.gameObject.tag == "half_spike_delay")
+				{
+					the_animator = spike_obstacles[i].GetComponent<Animator>();
+
+					StartCoroutine(spikeDelayTime(the_animator, 2.0f));
+				}
 			}
         }
     }
@@ -76,7 +86,20 @@ public class ObstacleManager : MonoBehaviour {
 			{
 				if(moving_wall_obstaclesLR[i].transform.parent.parent.gameObject.activeSelf == true)
 				{
-					moving_wall_obstaclesLR[i].transform.Translate(platform_speed[0] * Time.deltaTime, 0, 0);
+					if(moving_wall_obstaclesLR[i].transform.parent.gameObject.tag == "move_wall_normal_speed")
+					{
+						moving_wall_obstaclesLR[i].transform.Translate(platform_speed[1] * Time.deltaTime, 0, 0);
+					}
+
+					if(moving_wall_obstaclesLR[i].transform.parent.gameObject.tag == "move_wall_half_speed")
+					{
+						moving_wall_obstaclesLR[i].transform.Translate(platform_speed[0] * Time.deltaTime, 0, 0);
+					}
+
+					if(moving_wall_obstaclesLR[i].transform.parent.gameObject.tag == "move_wall_double_speed")
+					{
+						moving_wall_obstaclesLR[i].transform.Translate(platform_speed[2] * Time.deltaTime, 0, 0);
+					}
 				}
 			}
 
@@ -84,7 +107,20 @@ public class ObstacleManager : MonoBehaviour {
 			{
 				if(moving_wall_obstaclesLR[i].transform.parent.parent.gameObject.activeSelf == true)
 				{
-					moving_wall_obstaclesLR[i].transform.Translate(platform_speed[0] * -Time.deltaTime, 0, 0);
+					if(moving_wall_obstaclesLR[i].transform.parent.gameObject.tag == "move_wall_normal_speed")
+					{
+						moving_wall_obstaclesLR[i].transform.Translate(platform_speed[1] * -Time.deltaTime, 0, 0);
+					}
+
+					if(moving_wall_obstaclesLR[i].transform.parent.gameObject.tag == "move_wall_half_speed")
+					{
+						moving_wall_obstaclesLR[i].transform.Translate(platform_speed[0] * -Time.deltaTime, 0, 0);
+					}
+
+					if(moving_wall_obstaclesLR[i].transform.parent.gameObject.tag == "move_wall_double_speed")
+					{
+						moving_wall_obstaclesLR[i].transform.Translate(platform_speed[2] * -Time.deltaTime, 0, 0);
+					}
 				}
 			}
         }
@@ -158,4 +194,11 @@ public class ObstacleManager : MonoBehaviour {
 			}
 		}
     }
+
+	IEnumerator spikeDelayTime(Animator animator, float delay)
+ 	{
+     	yield return new WaitForSeconds(delay);
+ 
+		animator.SetBool("is_moving", true);
+ 	}
 }

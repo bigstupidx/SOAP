@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7d67f599823391b44a8bb2fd7d76bf05
-timeCreated: 1461806809
+timeCreated: 1462321074
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -107,14 +107,14 @@ TextureImporter:
         y: 809
         width: 48
         height: 261
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -24, y: 130.5}
-        - {x: -24, y: -130.5}
-        - {x: 24, y: -130.5}
-        - {x: 24, y: 130.5}
+      - - {x: -24, y: 0}
+        - {x: -24, y: -261}
+        - {x: 24, y: -261}
+        - {x: 24, y: 0}
     - name: seperate_02_3
       rect:
         serializedVersion: 2
@@ -283,14 +283,14 @@ TextureImporter:
         y: 776
         width: 47
         height: 261
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -23.5, y: 130.5}
-        - {x: -23.5, y: -130.5}
-        - {x: 23.5, y: -130.5}
-        - {x: 23.5, y: 130.5}
+      - - {x: -23.5, y: 261}
+        - {x: -23.5, y: 0}
+        - {x: 23.5, y: 0}
+        - {x: 23.5, y: 261}
     - name: seperate_02_11
       rect:
         serializedVersion: 2
@@ -375,14 +375,14 @@ TextureImporter:
         y: 697
         width: 261
         height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -130.5, y: 23.5}
-        - {x: -130.5, y: -23.5}
-        - {x: 130.5, y: -23.5}
-        - {x: 130.5, y: 23.5}
+      - - {x: -261, y: 23.5}
+        - {x: -261, y: -23.5}
+        - {x: 0, y: -23.5}
+        - {x: 0, y: 23.5}
     - name: seperate_02_17
       rect:
         serializedVersion: 2
@@ -408,14 +408,14 @@ TextureImporter:
         y: 622
         width: 261
         height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -130.5, y: 23.5}
-        - {x: -130.5, y: -23.5}
-        - {x: 130.5, y: -23.5}
-        - {x: 130.5, y: 23.5}
+      - - {x: 0, y: 23.5}
+        - {x: 0, y: -23.5}
+        - {x: 261, y: -23.5}
+        - {x: 261, y: 23.5}
     - name: seperate_02_19
       rect:
         serializedVersion: 2
