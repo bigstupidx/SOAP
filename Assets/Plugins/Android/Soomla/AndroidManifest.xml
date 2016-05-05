@@ -3,5 +3,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.soomla.SoomlaApp">
     <application/>
-    <uses-sdk android:minSdkVersion="9" />
+    <uses-sdk android:minSdkVersion="15" />
 </manifest>

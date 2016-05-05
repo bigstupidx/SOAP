@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using Soomla.Store;
+using Soomla.Profile;
 
 public class SplashInit : MonoBehaviour 
 {
@@ -22,7 +23,11 @@ public class SplashInit : MonoBehaviour
 		//fadeColorAnimationClip = image_ref.GetComponent<Animation>();
 		//fadeColorAnimationClip.Play ("FadeToColor");
 
+        // Initialize the store assets
         SoomlaStore.Initialize(new SOAPStoreAssets());
+
+        // Initialize soomla profile
+        SoomlaProfile.Initialize();
 		
 		Invoke("LoadDelayed", 1.0f);
 	}
