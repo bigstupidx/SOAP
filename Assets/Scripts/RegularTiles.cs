@@ -83,5 +83,10 @@ public class RegularTiles : MonoBehaviour
 				obstacle_manager_script.stopSpikes();
 			}
 		}
+
+		if (obstacle_manager_script.crush_wall_obstacles.Length > 0)
+		{
+			obstacle_manager_script.moveCrushWalls();
+		}
 	}
 }
