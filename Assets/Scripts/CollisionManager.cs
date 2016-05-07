@@ -48,8 +48,8 @@ public class CollisionManager : MonoBehaviour {
 
         if (coll.gameObject.tag == "cam_hold_trigger")
         {
-			coll.transform.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
-			coll.transform.parent.GetComponent<ChallengeRoomLogic>().show_challenge_doors();
+			coll.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
+			coll.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_challenge_doors();
 			coll.gameObject.SetActive(false);
 			challenge_room_camera.hold_camera();
         }
@@ -77,7 +77,7 @@ public class CollisionManager : MonoBehaviour {
         // Collect tails
         if (other.gameObject.tag == "grow")
         {
-            other.transform.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
+            other.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
             other.gameObject.SetActive(false);
             tail_movement_script.grow_tail = true;
 
