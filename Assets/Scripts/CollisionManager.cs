@@ -83,6 +83,13 @@ public class CollisionManager : MonoBehaviour {
 
             sound_manager_script.playSFX(SoundManager.TAIL_SFX);
         }
+
+        if (other.gameObject.tag == "challenge_gate")
+        {
+			other.gameObject.SetActive(false);
+			store_manager_script.challengeCoins();
+			sound_manager_script.playSFX(SoundManager.COIN_SFX);
+        }
     }
 
 
