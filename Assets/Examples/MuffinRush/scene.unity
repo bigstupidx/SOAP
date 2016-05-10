@@ -228,17 +228,17 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 510f1d1bc088449d581418af35b77934, type: 2}
-  m_RootGameObject: {fileID: 1561500370}
+  m_RootGameObject: {fileID: 547146005}
   m_IsPrefabParent: 0
---- !u!1 &1561500370
+--- !u!1 &547146005
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: 510f1d1bc088449d581418af35b77934, type: 2}
   m_PrefabInternal: {fileID: 432523370}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1561500372}
-  - 114: {fileID: 1561500371}
+  - 4: {fileID: 547146007}
+  - 114: {fileID: 547146006}
   m_Layer: 0
   m_Name: ExampleWindow
   m_TagString: Untagged
@@ -246,25 +246,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1561500371
+--- !u!114 &547146006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: 510f1d1bc088449d581418af35b77934,
     type: 2}
   m_PrefabInternal: {fileID: 432523370}
-  m_GameObject: {fileID: 1561500370}
+  m_GameObject: {fileID: 547146005}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c91f812985e634d2ba515e8c9f17ee23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fontSuffix: 
---- !u!4 &1561500372
+--- !u!4 &547146007
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: 510f1d1bc088449d581418af35b77934, type: 2}
   m_PrefabInternal: {fileID: 432523370}
-  m_GameObject: {fileID: 1561500370}
+  m_GameObject: {fileID: 547146005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.28738928, z: 0.6207099}
   m_LocalScale: {x: 1, y: 1, z: 1}
