@@ -28,7 +28,7 @@ public class ObstacleManager : MonoBehaviour {
 
 	private Vector2 force_push_left = new Vector2(-6.0f, 0.0f);
 	private Vector2 force_push_right = new Vector2(6.0f, 0.0f);
-	private Vector2 force_push_up = new Vector2(0.0f, 8.0f);
+	private Vector2 force_push_up = new Vector2(0.0f, 12.0f);
     // Use this for initialization
 	void Start () 
 	{

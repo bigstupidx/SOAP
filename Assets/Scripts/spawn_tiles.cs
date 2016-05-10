@@ -26,43 +26,57 @@ public class spawn_tiles : MonoBehaviour
 		{
 			starting_tiles = Random.Range(0, tile_prefabs.Length);
 
-			if(tile_list.Contains(tile_prefabs[starting_tiles]))
+			if (i == 0)
 			{
-				//Debug.Log("The GameObject is: " + tile_prefabs[starting_tiles]);
-			}
-			
-			else
-			{
-				tile_list.Add(tile_prefabs[starting_tiles]);
-				tile_list[i].SetActive(true);
-				
-				if (i >= 1)
+				if(tile_prefabs[starting_tiles].tag == "challenge_room")
 				{
-					previous_tile_size = tile_list[i-1].GetComponent<SpriteRenderer>().bounds.size;
-					current_tile_size = tile_list[i].GetComponent<SpriteRenderer>().bounds.size;
-					offset_tile_size = new Vector3(0, Mathf.Abs(current_tile_size.y - previous_tile_size.y),0);
-
-					if (previous_tile_size.y > current_tile_size.y)
-					{
-						tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + previous_tile_size.y - (offset_tile_size.y / 2), 0);
-					}
-
-					else if(previous_tile_size.y < current_tile_size.y)
-					{
-						tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + current_tile_size.y - (offset_tile_size.y / 2), 0);
-					}
-
-					else
-					{
-						tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + current_tile_size.y, 0);
-					}
-
+					tile_list.Add(tile_prefabs[starting_tiles]);
+					tile_list[i].SetActive(true);
+					i++;
 				}
 
-                //Debug.Log("Position is: " + tile_list[i].transform.position.y);
-                //Debug.Log("previous_tile_size is: " + previous_tile_size.y);
-				i++;
+			}
 
+			else
+			{
+				if(tile_list.Contains(tile_prefabs[starting_tiles]))
+				{
+					//Debug.Log("The GameObject is: " + tile_prefabs[starting_tiles]);
+				}
+
+				else
+				{
+					tile_list.Add(tile_prefabs[starting_tiles]);
+					tile_list[i].SetActive(true);
+					
+					if (i >= 1)
+					{
+						previous_tile_size = tile_list[i-1].GetComponent<SpriteRenderer>().bounds.size;
+						current_tile_size = tile_list[i].GetComponent<SpriteRenderer>().bounds.size;
+						offset_tile_size = new Vector3(0, Mathf.Abs(current_tile_size.y - previous_tile_size.y),0);
+
+						if (previous_tile_size.y > current_tile_size.y)
+						{
+							tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + previous_tile_size.y - (offset_tile_size.y / 2), 0);
+						}
+
+						else if(previous_tile_size.y < current_tile_size.y)
+						{
+							tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + current_tile_size.y - (offset_tile_size.y / 2), 0);
+						}
+
+						else
+						{
+							tile_list[i].transform.position = new Vector3(0, tile_list[i-1].transform.position.y + current_tile_size.y, 0);
+						}
+
+					}
+
+	                //Debug.Log("Position is: " + tile_list[i].transform.position.y);
+	                //Debug.Log("previous_tile_size is: " + previous_tile_size.y);
+					i++;
+
+				}
 			}
 		}
 		
