@@ -24,6 +24,8 @@ TagManager:
   - crush_wall_LR
   - crush_wall_RL
   - challenge_room
+  - challenge_gate
+  - force_push_up
   layers:
   - Default
   - TransparentFX
