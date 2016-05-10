@@ -220,17 +220,17 @@ public class ObstacleManager : MonoBehaviour {
 			{
 				falling_obstacles[i].GetComponent<Rigidbody2D>().isKinematic = false;
 
-				if(falling_obstacles[i].gameObject.tag == "force_push_left")
+				if(falling_obstacles[i].transform.parent.gameObject.tag == "force_push_left")
 				{
 					falling_obstacles[i].GetComponent<Rigidbody2D>().AddForce(force_push_left);
 				}
 
-				if(falling_obstacles[i].gameObject.tag == "force_push_right")
+				if(falling_obstacles[i].transform.parent.gameObject.tag == "force_push_right")
 				{
 					falling_obstacles[i].GetComponent<Rigidbody2D>().AddForce(force_push_right);
 				}
 
-				if(falling_obstacles[i].gameObject.tag == "force_push_up")
+				if(falling_obstacles[i].transform.parent.gameObject.tag == "force_push_up")
 				{
 					falling_obstacles[i].GetComponent<Rigidbody2D>().AddForce(force_push_up);
 				}

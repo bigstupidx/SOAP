@@ -16,6 +16,7 @@ public class RegularTiles : MonoBehaviour
 	public GameObject obstacle_trigger_reset_ref;
 	private BoxCollider2D obstacle_trigger_reset;
 
+	public GameObject coin_group;
 	private GameObject the_player;
 
 	// Use this for initialization
@@ -87,6 +88,22 @@ public class RegularTiles : MonoBehaviour
 		if (obstacle_manager_script.crush_wall_obstacles.Length > 0)
 		{
 			obstacle_manager_script.moveCrushWalls();
+		}
+
+		if(coin_group.transform.childCount > 0)
+		{
+			if(obstacle_trigger_reset.IsTouching(the_player.GetComponent<CircleCollider2D>()))
+			{
+				RestCoinGroup();
+			}
+		}
+	}
+
+	public void RestCoinGroup()
+	{
+		for (int i = 0; i < coin_group.transform.childCount; i++)
+		{
+			coin_group.transform.GetChild(i).gameObject.SetActive(true);
 		}
 	}
 }

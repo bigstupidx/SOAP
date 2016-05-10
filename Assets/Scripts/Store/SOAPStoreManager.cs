@@ -98,6 +98,11 @@ public class SOAPStoreManager : MonoBehaviour {
         StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 5);
     }
 
+	// Give player coins
+    public void challengeCoins()
+    {
+        StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 100);
+    }
 
     public void buyAvatarWithCoin()
     {
