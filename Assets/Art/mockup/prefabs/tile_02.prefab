@@ -2778,6 +2778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle_trigger_ref: {fileID: 0}
   obstacle_trigger_reset_ref: {fileID: 0}
+  coin_group: {fileID: 0}
 --- !u!114 &11488546
 MonoBehaviour:
   m_ObjectHideFlags: 1
