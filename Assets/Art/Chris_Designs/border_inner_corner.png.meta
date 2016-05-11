@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: d270c12c7fef81b4fa6d8e0de354b525
-timeCreated: 1460506793
+guid: 8705b39dba8310244992cde19dcc2407
+timeCreated: 1462836767
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: moving_wall_03_0
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -31,7 +30,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -39,7 +38,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -50,22 +49,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: moving_wall_03_0
-      rect:
-        serializedVersion: 2
-        x: 307
-        y: 751
-        width: 42
-        height: 292
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -21, y: 146}
-        - {x: -21, y: -146}
-        - {x: 21, y: -146}
-        - {x: 21, y: 146}
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 
