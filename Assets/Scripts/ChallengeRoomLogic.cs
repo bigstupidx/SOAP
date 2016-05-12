@@ -26,6 +26,7 @@ public class ChallengeRoomLogic : MonoBehaviour
 		{
 			challenge_room_camera.release_camera();
 			hide_challenge_doors();
+			grow_counter = 0;
 		}
 	}
 
@@ -41,13 +42,13 @@ public class ChallengeRoomLogic : MonoBehaviour
 
 	public void show_challenge_doors()
 	{
-		top_door_ref.SetActive(true);
-		bottom_door_ref.SetActive(true);	
+		top_door_ref.gameObject.SetActive(true);
+		bottom_door_ref.gameObject.SetActive(true);	
 	}
 
 	public void hide_challenge_doors()
 	{
-		top_door_ref.SetActive(false);
-		bottom_door_ref.SetActive(false);	
+		top_door_ref.gameObject.SetActive(false);
+		bottom_door_ref.gameObject.SetActive(false);	
 	}
 }

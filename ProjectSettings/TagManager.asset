@@ -26,6 +26,7 @@ TagManager:
   - challenge_room
   - challenge_gate
   - force_push_up
+  - beginner
   layers:
   - Default
   - TransparentFX
