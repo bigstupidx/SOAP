@@ -45,15 +45,6 @@ public class CollisionManager : MonoBehaviour {
             sound_manager_script.playSFX(SoundManager.CRASH_SFX);
         }
 
-
-        if (coll.gameObject.tag == "cam_hold_trigger")
-        {
-			coll.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
-			coll.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_challenge_doors();
-			coll.gameObject.SetActive(false);
-			challenge_room_camera.hold_camera();
-        }
-
 		//if (coll.gameObject.tag == "cam_release_trigger")
         //{
 			//challenge_room_camera.release_camera();
@@ -90,6 +81,15 @@ public class CollisionManager : MonoBehaviour {
 			store_manager_script.challengeCoins();
 			sound_manager_script.playSFX(SoundManager.COIN_SFX);
         }
+
+		if (other.gameObject.tag == "cam_hold_trigger")
+        {
+			other.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
+			other.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_challenge_doors();
+			other.gameObject.SetActive(false);
+			challenge_room_camera.hold_camera();
+        }
+
     }
 
 

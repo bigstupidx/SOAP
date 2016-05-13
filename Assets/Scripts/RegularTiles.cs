@@ -97,6 +97,16 @@ public class RegularTiles : MonoBehaviour
 				RestCoinGroup();
 			}
 		}
+
+		if (obstacle_trigger.IsTouching(the_player.GetComponent<CircleCollider2D>()))
+		{
+			obstacle_trigger.gameObject.SetActive(false);
+		}
+
+		if(obstacle_trigger_reset.IsTouching(the_player.GetComponent<CircleCollider2D>()))
+		{
+			obstacle_trigger.gameObject.SetActive(true);
+		}
 	}
 
 	public void RestCoinGroup()

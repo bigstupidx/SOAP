@@ -13,7 +13,7 @@ public class spawn_tiles : MonoBehaviour
 	private Vector3 current_tile_size;
 	private Vector3 offset_tile_size;
 	private BoxCollider2D tile_collider;
-
+	private ChallengeRoomLogic challenge_room_logic_script;
 	public bool IsFirst;
 	
 	// Use this for initialization
@@ -28,7 +28,7 @@ public class spawn_tiles : MonoBehaviour
 
 			if (i == 0)
 			{
-				if(tile_prefabs[starting_tiles].tag == "challenge_room")
+				if(tile_prefabs[starting_tiles].tag == "beginner")
 				{
 					tile_list.Add(tile_prefabs[starting_tiles]);
 					tile_list[i].SetActive(true);
@@ -113,6 +113,14 @@ public class spawn_tiles : MonoBehaviour
 				tile_list[0].SetActive(true);
 				tile_collider = tile_list[0].GetComponent<BoxCollider2D>();
 				tile_collider.enabled = true;
+
+				if(tile_list[0].gameObject.tag == "challenge_room")
+				{
+					Debug.Log("This is the challenge room!!!");
+					challenge_room_logic_script = tile_list[0].GetComponent<ChallengeRoomLogic>();
+					challenge_room_logic_script.cam_hold_ref.gameObject.SetActive(true);
+				}
+
 				i++;
 			}
 		}
