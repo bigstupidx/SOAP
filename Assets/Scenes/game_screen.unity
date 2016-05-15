@@ -4871,7 +4871,7 @@ GameObject:
   - 114: {fileID: 432473108}
   m_Layer: 0
   m_Name: tile_01
-  m_TagString: Untagged
+  m_TagString: hard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18835,7 +18835,7 @@ GameObject:
   - 114: {fileID: 1830748607}
   m_Layer: 0
   m_Name: tile_02
-  m_TagString: Untagged
+  m_TagString: intermediate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
