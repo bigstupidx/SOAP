@@ -1790,18 +1790,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1434798435}
-  - {fileID: 359321015}
-  - {fileID: 180975898}
-  - {fileID: 1979248508}
-  - {fileID: 668691714}
-  - {fileID: 823155573}
-  - {fileID: 173777133}
-  - {fileID: 765277751}
-  - {fileID: 716286492}
-  - {fileID: 613125474}
-  - {fileID: 801499893}
+  m_Children: [{fileID: 1434798435}, {fileID: 359321015}, {fileID: 180975898}, {fileID: 1979248508},
+    {fileID: 668691714}, {fileID: 823155573}, {fileID: 173777133}, {fileID: 765277751},
+    {fileID: 716286492}, {fileID: 613125474}, {fileID: 801499893}]
   m_Father: {fileID: 1143355304}
   m_RootOrder: 6
 --- !u!1 &117150767
@@ -7245,7 +7236,7 @@ GameObject:
   - 114: {fileID: 432473108}
   m_Layer: 0
   m_Name: tile_01
-  m_TagString: Untagged
+  m_TagString: hard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18690,56 +18681,18 @@ MonoBehaviour:
   - {fileID: 1174830341}
   - {fileID: 1178059532}
   - {fileID: 164191927}
-  static_obstacles:
-  - {fileID: 338333629}
-  - {fileID: 2047831448}
-  - {fileID: 92114671}
-  - {fileID: 1503504488}
-  - {fileID: 312595316}
-  - {fileID: 232180178}
-  - {fileID: 1606557665}
-  - {fileID: 748051960}
-  - {fileID: 1622353919}
-  - {fileID: 228135217}
-  - {fileID: 1775200224}
-  - {fileID: 994822141}
-  - {fileID: 705354491}
-  - {fileID: 0}
-  - {fileID: 1940352505}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1079096214}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 867063211}
-  - {fileID: 0}
-  - {fileID: 1359198093}
-  - {fileID: 1044164207}
-  - {fileID: 282079247}
-  - {fileID: 538859781}
-  - {fileID: 1633436576}
-  - {fileID: 1171417144}
-  - {fileID: 0}
-  - {fileID: 359097062}
-  - {fileID: 580016818}
-  - {fileID: 70318256}
-  - {fileID: 481621930}
-  - {fileID: 448114408}
-  - {fileID: 196458018}
-  - {fileID: 1131813856}
-  - {fileID: 1522213871}
-  - {fileID: 661090670}
-  - {fileID: 487321445}
-  - {fileID: 1898778415}
-  - {fileID: 270382986}
-  - {fileID: 1892238305}
-  - {fileID: 732490843}
-  - {fileID: 1528324236}
-  - {fileID: 282077236}
-  - {fileID: 1781368153}
+  static_obstacles: [{fileID: 338333629}, {fileID: 2047831448}, {fileID: 92114671},
+    {fileID: 1503504488}, {fileID: 312595316}, {fileID: 232180178}, {fileID: 1606557665},
+    {fileID: 748051960}, {fileID: 1622353919}, {fileID: 228135217}, {fileID: 1775200224},
+    {fileID: 994822141}, {fileID: 705354491}, {fileID: 0}, {fileID: 1940352505}, {
+      fileID: 0}, {fileID: 0}, {fileID: 1079096214}, {fileID: 0}, {fileID: 0}, {fileID: 0},
+    {fileID: 0}, {fileID: 0}, {fileID: 867063211}, {fileID: 0}, {fileID: 1359198093},
+    {fileID: 1044164207}, {fileID: 282079247}, {fileID: 538859781}, {fileID: 1633436576},
+    {fileID: 1171417144}, {fileID: 0}, {fileID: 359097062}, {fileID: 580016818}, {
+      fileID: 70318256}, {fileID: 481621930}, {fileID: 448114408}, {fileID: 196458018},
+    {fileID: 1131813856}, {fileID: 1522213871}, {fileID: 661090670}, {fileID: 487321445},
+    {fileID: 1898778415}, {fileID: 270382986}, {fileID: 1892238305}, {fileID: 732490843},
+    {fileID: 1528324236}, {fileID: 282077236}, {fileID: 1781368153}]
   falling_obstacles:
   - {fileID: 1808867879}
   - {fileID: 626934889}
@@ -18751,21 +18704,9 @@ MonoBehaviour:
   - {fileID: 1555557407}
   - {fileID: 274839386}
   - {fileID: 1674985563}
-  - {fileID: 1820580262}
-  - {fileID: 613497215}
-  - {fileID: 591007700}
-  - {fileID: 850310619}
-  - {fileID: 100349467}
-  - {fileID: 354013126}
-  - {fileID: 1619927395}
-  - {fileID: 1206784414}
-  - {fileID: 2105385447}
-  - {fileID: 1818435636}
-  - {fileID: 1132234623}
-  - {fileID: 1109333696}
-  - {fileID: 974484300}
-  - {fileID: 1099814827}
   - {fileID: 1341048383}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 762209028}
   - {fileID: 861702776}
   - {fileID: 825998079}
@@ -18783,6 +18724,73 @@ MonoBehaviour:
   - {fileID: 1916336000}
   - {fileID: 1793277346}
   - {fileID: 612344951}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1820580262}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 613497215}
+  - {fileID: 591007700}
+  - {fileID: 850310619}
+  - {fileID: 100349467}
+  - {fileID: 354013126}
+  - {fileID: 1619927395}
+  - {fileID: 1206784414}
+  - {fileID: 2105385447}
+  - {fileID: 1818435636}
+  - {fileID: 1132234623}
+  - {fileID: 1109333696}
+  - {fileID: 974484300}
+  - {fileID: 1099814827}
   - {fileID: 2003755949}
   - {fileID: 34339779}
   - {fileID: 1621663068}
@@ -28177,7 +28185,7 @@ GameObject:
   - 114: {fileID: 1830748607}
   m_Layer: 0
   m_Name: tile_02
-  m_TagString: Untagged
+  m_TagString: intermediate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
