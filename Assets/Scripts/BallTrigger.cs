@@ -13,20 +13,22 @@ public class BallTrigger : MonoBehaviour {
 
     public GameObject[] ball_trigger_go;
     public GameObject avatar;
+    public GameObject ball_reset_go;
 
-    private Vector2 force_push_left = new Vector2(1.0f, 0.0f);
-    private Vector2 force_push_right;
-    private Vector2 force_push_up;
+    private BoxCollider2D ball_reset_trigger;
+    private Vector2 force_push_left = new Vector2(-1.0f, 0.0f);
+    private Vector2 force_push_right = new Vector2(1.0f, 0.0f);
+    private Vector2 force_push_up = new Vector2(0.0f, 1.0f);
     private float[] force_array;
     private BoxCollider2D[] trigger_box_collider;
     private List<GameObject[]> ball_elements = new List<GameObject[]>();
-
-    
+    private List<Vector3[]> ball_original_positions = new List<Vector3[]>();
 
 
     // Use this for initialization
 	void Start () 
 	{
+        ball_reset_trigger = ball_reset_go.GetComponent<BoxCollider2D>();
         trigger_box_collider = new BoxCollider2D[ball_trigger_go.Length];
 
         for (int i = 0; i < ball_trigger_go.Length; i++)
@@ -37,6 +39,7 @@ public class BallTrigger : MonoBehaviour {
         for (int j = 0; j < ball_trigger_go.Length; j++)
         {
             ball_elements.Add(getBallChildren(ball_trigger_go[j]));
+            ball_original_positions.Add(getBallPosition(ball_trigger_go[j]));
         }
 
         //foreach (GameObject[] go in ball_elements)
@@ -56,17 +59,15 @@ public class BallTrigger : MonoBehaviour {
         {
             if (trigger_box_collider[i].IsTouching(avatar.GetComponent<CircleCollider2D>()))
             {
-                //foreach (GameObject ball in ball_elements[i])
-                //{
-                //    Debug.Log(ball.name);
-                //}
-
                 int force = getForce(ball_trigger_go[i].name);
-                dropBalls(ball_elements[i], force);
-
-                
-                
+                string force_tag = trigger_box_collider[i].tag;
+                dropBalls(ball_elements[i], force, force_tag);
             }
+        }
+
+        if (ball_reset_trigger.IsTouching(avatar.GetComponent<CircleCollider2D>()))
+        {
+            resetBallPositions();
         }
     }
 
@@ -90,6 +91,24 @@ public class BallTrigger : MonoBehaviour {
     }
 
 
+    // Return an array of ball original positions
+    private Vector3[] getBallPosition(GameObject trigger)
+    {
+        int ball_count = trigger.transform.childCount;
+        Vector3[] ball_position = new Vector3[ball_count];
+
+        int counter = 0;
+
+        foreach (Transform child in trigger.transform)
+        {
+            ball_position[counter] = child.transform.position;
+            counter++;
+        }
+
+        return ball_position;
+    }
+
+
     // Extract the force magnitude from the trigger name
     private int getForce(string trigger_name)
     {
@@ -107,38 +126,50 @@ public class BallTrigger : MonoBehaviour {
     }
 
 
-    private void dropBalls(GameObject[] ball_array, int force)
+    private void dropBalls(GameObject[] ball_array, int force, string force_tag)
     {
         foreach (GameObject ball in ball_array)
         {
-            Debug.Log(ball.name);
-            Debug.Log(force);
+            //Debug.Log(ball.name);
+            //Debug.Log(force);
 
             ball.GetComponent<Rigidbody2D>().isKinematic = false;
-            ball.GetComponent<Rigidbody2D>().AddForce(force_push_left*force);
+
+            switch (force_tag)
+            {
+                case "force_push_right":
+                    ball.GetComponent<Rigidbody2D>().AddForce(force_push_right * force);
+                    break;
+
+                case "force_push_left":
+                    ball.GetComponent<Rigidbody2D>().AddForce(force_push_left * force);
+                    break;
+
+                case "force_push_up":
+                    ball.GetComponent<Rigidbody2D>().AddForce(force_push_up * force);
+                    break;
+            }
         }
+    }
 
-        //for (int i = 0; i < falling_obstacles.Length; i++)
-        //{
-        //    if (falling_obstacles[i].transform.parent.parent.parent.gameObject.activeSelf == true)
-        //    {
-        //        falling_obstacles[i].GetComponent<Rigidbody2D>().isKinematic = false;
 
-        //        if (falling_obstacles[i].transform.parent.gameObject.tag == "force_push_left")
-        //        {
-        //            falling_obstacles[i].GetComponent<Rigidbody2D>().AddForce(force_push_left);
-        //        }
+    // Reset the ball positions to their original values
+    private void resetBallPositions()
+    {
+        int array_count = 0;
+        int ball_count = 0;
 
-        //        if (falling_obstacles[i].transform.parent.gameObject.tag == "force_push_right")
-        //        {
-        //            falling_obstacles[i].GetComponent<Rigidbody2D>().AddForce(force_push_right);
-        //        }
+        foreach (GameObject[] go in ball_elements)
+        {
+            foreach (GameObject ball in go)
+            {
+                ball.transform.position = ball_original_positions[array_count][ball_count];
+                ball.GetComponent<Rigidbody2D>().isKinematic = true;
+                ball_count++;
+            }
 
-        //        if (falling_obstacles[i].transform.parent.gameObject.tag == "force_push_up")
-        //        {
-        //            falling_obstacles[i].GetComponent<Rigidbody2D>().AddForce(force_push_up);
-        //        }
-        //    }
-        //}
+            array_count++;
+            ball_count = 0;
+        }
     }
 }
