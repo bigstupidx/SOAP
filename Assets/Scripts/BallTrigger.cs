@@ -11,18 +11,17 @@ using System.Text.RegularExpressions;
 
 public class BallTrigger : MonoBehaviour {
 
-    public GameObject[] ball_trigger_go;
-    public GameObject avatar;
-    public GameObject ball_reset_go;
+    public GameObject[] ball_trigger_go;    // Array of ball trigger game objects
+    public GameObject avatar;               // Avatar game object
+    public GameObject ball_reset_go;        // Reset trigger game object
 
-    private BoxCollider2D ball_reset_trigger;
-    private Vector2 force_push_left = new Vector2(-1.0f, 0.0f);
-    private Vector2 force_push_right = new Vector2(1.0f, 0.0f);
-    private Vector2 force_push_up = new Vector2(0.0f, 1.0f);
-    private float[] force_array;
-    private BoxCollider2D[] trigger_box_collider;
-    private List<GameObject[]> ball_elements = new List<GameObject[]>();
-    private List<Vector3[]> ball_original_positions = new List<Vector3[]>();
+    private BoxCollider2D ball_reset_trigger;       // Box collider component of reset trigger game object
+    private Vector2 force_push_left = new Vector2(-1.0f, 0.0f);     // Vector representing leftwards force
+    private Vector2 force_push_right = new Vector2(1.0f, 0.0f);     // Vector representing rightwards force
+    private Vector2 force_push_up = new Vector2(0.0f, 1.0f);        // Vector representing upwards force
+    private BoxCollider2D[] trigger_box_collider;       // Array of box collider components of trigger game objects
+    private List<GameObject[]> ball_elements = new List<GameObject[]>(); // Each array contains ball game objects corresponding to its trigger parent
+    private List<Vector3[]> ball_original_positions = new List<Vector3[]>(); // List of arrays of original ball positions
 
 
     // Use this for initialization
@@ -41,17 +40,10 @@ public class BallTrigger : MonoBehaviour {
             ball_elements.Add(getBallChildren(ball_trigger_go[j]));
             ball_original_positions.Add(getBallPosition(ball_trigger_go[j]));
         }
-
-        //foreach (GameObject[] go in ball_elements)
-        //{
-        //    foreach(GameObject ball in go){
-        //        Debug.Log(ball.name);
-        //    }
-        //}
 	}
 	
 
-	// Update is called once per frame
+	// Check if avatar collider is touching any of the triggers and apply force to its children
 	void Update () 
 	{
 
@@ -70,7 +62,6 @@ public class BallTrigger : MonoBehaviour {
             resetBallPositions();
         }
     }
-
 
 
     // Return an array of all children under the trigger GameObject
@@ -126,13 +117,11 @@ public class BallTrigger : MonoBehaviour {
     }
 
 
+    // Apply force to the balls under the trigger group according to force magnitude and tag 
     private void dropBalls(GameObject[] ball_array, int force, string force_tag)
     {
         foreach (GameObject ball in ball_array)
         {
-            //Debug.Log(ball.name);
-            //Debug.Log(force);
-
             ball.GetComponent<Rigidbody2D>().isKinematic = false;
 
             switch (force_tag)
@@ -173,3 +162,5 @@ public class BallTrigger : MonoBehaviour {
         }
     }
 }
+
+
