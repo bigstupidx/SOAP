@@ -53,7 +53,9 @@ public class BallTrigger : MonoBehaviour {
             {
                 int force = getForce(ball_trigger_go[i].name);
                 string force_tag = trigger_box_collider[i].tag;
-                dropBalls(ball_elements[i], force, force_tag);
+                Vector2 explosion_origin = ball_trigger_go[i].transform.position;
+                //Debug.Log(String.Format("The trigger go position is: {0}", explosion_origin));
+                dropBalls(ball_elements[i], force, force_tag, explosion_origin);
             }
         }
 
@@ -118,7 +120,7 @@ public class BallTrigger : MonoBehaviour {
 
 
     // Apply force to the balls under the trigger group according to force magnitude and tag 
-    private void dropBalls(GameObject[] ball_array, int force, string force_tag)
+    private void dropBalls(GameObject[] ball_array, int force, string force_tag, Vector2 explosion_origin)
     {
         foreach (GameObject ball in ball_array)
         {
@@ -136,6 +138,12 @@ public class BallTrigger : MonoBehaviour {
 
                 case "force_push_up":
                     ball.GetComponent<Rigidbody2D>().AddForce(force_push_up * force);
+                    break;
+
+                case "force_explode":
+                    Rigidbody2D rb2d = ball.GetComponent<Rigidbody2D>();
+                    int radius = 5;
+                    AddExplosionForce(rb2d, force, explosion_origin, radius);
                     break;
             }
         }
@@ -161,6 +169,22 @@ public class BallTrigger : MonoBehaviour {
             ball_count = 0;
         }
     }
+
+
+    // Adds an explosive outwards force to the game object
+    public static void AddExplosionForce(Rigidbody2D body, float expForce, Vector3 expPosition, float expRadius)
+    {
+        var dir = (body.transform.position - expPosition);
+        float calc = 1 - (dir.magnitude / expRadius);
+        if (calc <= 0)
+        {
+            calc = 0;
+        }
+
+        body.AddForce(dir.normalized * expForce * calc);
+    }
 }
+
+    
 
 
