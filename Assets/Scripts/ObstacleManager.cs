@@ -173,7 +173,20 @@ public class ObstacleManager : MonoBehaviour {
 			{
 				if (moving_wall_obstaclesUD[i].transform.parent.parent.gameObject.activeSelf == true)
 				{
-					moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[0] * Time.deltaTime, 0);
+                    if (moving_wall_obstaclesUD[i].transform.parent.gameObject.tag == "move_wall_normal_speed")
+                    {
+                        moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[1] *Time.deltaTime, 0);
+                    }
+
+                    if (moving_wall_obstaclesUD[i].transform.parent.gameObject.tag == "move_wall_half_speed")
+                    {
+                        moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[0] * Time.deltaTime, 0);
+                    }
+
+                    if (moving_wall_obstaclesUD[i].transform.parent.gameObject.tag == "move_wall_double_speed")
+                    {
+                        moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[2] * Time.deltaTime, 0);
+                    }
 				}
 			}
 
@@ -181,7 +194,20 @@ public class ObstacleManager : MonoBehaviour {
 			{
 				if(moving_wall_obstaclesUD[i].transform.parent.parent.gameObject.activeSelf == true)
 				{
-					moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[0] * -Time.deltaTime, 0);
+                    if (moving_wall_obstaclesUD[i].transform.parent.gameObject.tag == "move_wall_normal_speed")
+                    {
+                        moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[1] * -Time.deltaTime, 0);
+                    }
+
+                    if (moving_wall_obstaclesUD[i].transform.parent.gameObject.tag == "move_wall_half_speed")
+                    {
+                        moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[0] * -Time.deltaTime, 0);
+                    }
+
+                    if (moving_wall_obstaclesUD[i].transform.parent.gameObject.tag == "move_wall_double_speed")
+                    {
+                        moving_wall_obstaclesUD[i].transform.Translate(0, platform_speed[2] * -Time.deltaTime, 0);
+                    }
 				}
 
 			}
