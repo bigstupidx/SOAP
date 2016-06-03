@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5056494}
   m_Layer: 0
   m_Name: falling_obstacle
-  m_TagString: force_push_right
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
