@@ -13,7 +13,7 @@ public class ObstacleManager : MonoBehaviour {
 	public GameObject[] moving_wall_obstaclesUD;
 	public GameObject[] crush_wall_obstacles; 
     public GameObject[] spinning_obstacles;
-    public GameObject[] static_obstacles;
+    // public GameObject[] static_obstacles;
 	public GameObject[] falling_obstacles;
 
     private int[] spike_speed = { 5, 9, 12 };
