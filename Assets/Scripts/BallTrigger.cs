@@ -125,6 +125,7 @@ public class BallTrigger : MonoBehaviour {
         foreach (GameObject ball in ball_array)
         {
             ball.GetComponent<Rigidbody2D>().isKinematic = false;
+            //ball.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
             switch (force_tag)
             {
@@ -162,6 +163,7 @@ public class BallTrigger : MonoBehaviour {
             {
                 ball.transform.position = ball_original_positions[array_count][ball_count];
                 ball.GetComponent<Rigidbody2D>().isKinematic = true;
+                //ball.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 ball_count++;
             }
 
