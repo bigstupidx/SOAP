@@ -143,7 +143,7 @@ public class BallTrigger : MonoBehaviour {
 
                 case "force_explode":
                     Rigidbody2D rb2d = ball.GetComponent<Rigidbody2D>();
-                    int radius = 5;
+                    int radius = 10;
                     AddExplosionForce(rb2d, force, explosion_origin, radius);
                     break;
             }
