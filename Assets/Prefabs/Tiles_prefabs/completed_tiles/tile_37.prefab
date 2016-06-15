@@ -707,7 +707,7 @@ GameObject:
   - 114: {fileID: 11435394}
   m_Layer: 0
   m_Name: tile_37
-  m_TagString: beginner
+  m_TagString: hard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

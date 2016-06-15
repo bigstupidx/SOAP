@@ -1070,7 +1070,7 @@ GameObject:
   - 114: {fileID: 11481744}
   m_Layer: 0
   m_Name: challenge_room_05
-  m_TagString: beginner
+  m_TagString: challenge_room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
