@@ -46,7 +46,7 @@ public class SOAPStoreEvents : MonoBehaviour {
     // Change the currency balance text when the balance changed
     public void OnCurrencyBalanceChanged(VirtualCurrency vc, int balance, int amountAdded)
     {
-        GameObject temp_1 = GameObject.Find("store_container");
+        GameObject temp_1 = GameObject.Find("store_ui_gr");
         if (temp_1 != null) { store_manager_script = temp_1.GetComponent<SOAPStoreManager>(); }
 
         store_manager_script.setCoinText();

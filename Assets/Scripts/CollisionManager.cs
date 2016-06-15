@@ -17,7 +17,7 @@ public class CollisionManager : MonoBehaviour {
 	    GameObject temp_1 = GameObject.Find("UI");
         if (temp_1 != null) { ui_manager_script = temp_1.GetComponent<UIManager>(); }
 
-        GameObject temp_2 = GameObject.Find("store_container");
+        GameObject temp_2 = GameObject.Find("store_ui_gr");
         if (temp_2 != null) { store_manager_script = temp_2.GetComponent<SOAPStoreManager>(); }
 
 		game_cam_ref = Camera.main;
