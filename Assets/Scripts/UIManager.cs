@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour {
 	void Start () 
     {
         DontDestroyOnLoad(this.gameObject);
-        store_manager_script = store_menu.GetComponent<SOAPStoreManager>();
+        store_manager_script = store_menu.GetComponentInParent<SOAPStoreManager>();
 	}
 
 	// Update is called once per frame
