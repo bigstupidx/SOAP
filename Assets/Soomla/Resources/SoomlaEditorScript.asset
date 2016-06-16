@@ -26,9 +26,9 @@ MonoBehaviour:
     - name: Soomla.Core.SoomlaSecret
       value: IzE0it1qa49Dh4IUV16216yi1840Nz96
     - name: Soomla.Core.DebugMessages
-      value: True
+      value: False
     - name: Soomla.Core.DebugUnityMessages
-      value: True
+      value: False
     - name: Soomla.Profile.FBPermissions
       value: 
     - name: Soomla.Profile.FBAutoLogin

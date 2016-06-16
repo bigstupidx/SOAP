@@ -10,7 +10,8 @@ public class SOAPStoreManager : MonoBehaviour {
     public Button coin_buy_button;
     public Button money_buy_button;
     public GameObject already_bought_sign;
-    public Text coin_text;
+    public Text store_coin_text;
+    public Text game_over_coin_text;
     private string avatar_item_id;
 
 
@@ -30,9 +31,16 @@ public class SOAPStoreManager : MonoBehaviour {
 
 
     // Change the store currency text (called by SOAPStoreEvents)
-    public void setCoinText()
+    public void setStoreCoinText()
     {
-        coin_text.text = "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
+        store_coin_text.text = "" + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
+        Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
+    }
+
+    public void setGameOverCoinText()
+    {
+        game_over_coin_text.text = "" + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
+        Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
     }
     
 

@@ -49,7 +49,8 @@ public class SOAPStoreEvents : MonoBehaviour {
         GameObject temp_1 = GameObject.Find("store_ui_gr");
         if (temp_1 != null) { store_manager_script = temp_1.GetComponent<SOAPStoreManager>(); }
 
-        store_manager_script.setCoinText();
+        store_manager_script.setStoreCoinText();
+        store_manager_script.setGameOverCoinText();
     }
 
 

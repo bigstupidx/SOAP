@@ -12,12 +12,17 @@ public class gridsnap : MonoBehaviour {
     float t = 0;
 
     private string avatar_name;
-    public SOAPStoreManager store_manager_script;
+    private SOAPStoreManager store_manager_script;
+
+
 
     void Start() {
         grid = GetComponent<GridLayoutGroup>();
         rect = GetComponent<RectTransform>();
         scrollRect = GetComponentInParent<ScrollRect>();
+
+        GameObject temp_1 = GameObject.Find("store_ui_gr");
+        if (temp_1 != null) { store_manager_script = temp_1.GetComponent<SOAPStoreManager>(); }
 
         // auto adjust the width of the grid to have space for all the childs
         rect.sizeDelta = new Vector2((transform.childCount + 2f) * grid.cellSize.x + (transform.childCount - 1f) * grid.spacing.x, rect.sizeDelta.y);
