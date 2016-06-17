@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 using UnityEngine.UI;
 
 public class gridsnap : MonoBehaviour {
@@ -11,8 +12,12 @@ public class gridsnap : MonoBehaviour {
     bool done = false;
     float t = 0;
 
+    public Text avatar_name_txt;
+    public Text avatar_type_txt;
+
     private string avatar_name;
     private SOAPStoreManager store_manager_script;
+    private string previous_avatar_name = "";
 
 
 
@@ -48,16 +53,40 @@ public class gridsnap : MonoBehaviour {
         for (int i = 0; i < transform.childCount; i++) {
             Transform child = transform.GetChild(i);
             if (child.localPosition.x == tempPos.x) {
-                // do what you want with the child
+                
+                // Scale the middle avatar
                 child.localScale = Vector3.Lerp(child.localScale, new Vector3(1.4f, 1.4f, 1f), t);
+                
                 avatar_name = child.name;
-                store_manager_script.updatePrices(avatar_name);
-                store_manager_script.setAvatarID(avatar_name);
+
+                // Update the button prices and the avatar name and type texts
+                if (previous_avatar_name != avatar_name)
+                {
+                    store_manager_script.updatePrices(avatar_name);
+                    store_manager_script.setAvatarID(avatar_name);
+                    previous_avatar_name = avatar_name;
+
+                    string[] avatar_name_list = getAvatarNameAndType(avatar_name);
+                    avatar_name_txt.text = avatar_name_list[0];
+                    avatar_type_txt.text = avatar_name_list[1];
+                    //Debug.Log(">>> Send to update the prices...");
+                }
             }
             else {
                 child.localScale = Vector3.Lerp(child.localScale, new Vector3(1f, 1f, 1f), t);
             }
         }
+    }
+
+
+    // Get the name and type of the middle avatar
+    public string[] getAvatarNameAndType(string name)
+    {
+        string[] name_list = new string[2];
+        name_list[0] = name.Split(new string[] { "_" }, StringSplitOptions.None)[0].ToUpper();
+        name_list[1] = name.Split(new string[] { "_" }, StringSplitOptions.None)[1].ToUpper();
+        //Debug.Log(string.Format("Avatar name is: {0}\nAvatar type is: {1}", name_list[0], name_list[1]));
+        return name_list;
     }
 
     public void touchDown() {

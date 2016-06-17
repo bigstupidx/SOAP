@@ -30,7 +30,8 @@ public class SOAPStoreAssets : IStoreAssets {
     public VirtualGood[] GetGoods()
     {
         return new VirtualGood[] { NO_ADS_LTVG, SNAKE_AVATAR_C, SNAKE_AVATAR_M, HADOKEN_AVATAR_C, HADOKEN_AVATAR_M, 
-                                    YOSHI_AVATAR_C, YOSHI_AVATAR_M
+                                    YOSHI_AVATAR_C, YOSHI_AVATAR_M, NINJA_TAIL_C, NINJA_TAIL_M, SKULL_TAIL_C, SKULL_TAIL_M,
+                                    CAT_TAIL_M, CAT_TAIL_C,
                                 };
     }
 
@@ -65,6 +66,15 @@ public class SOAPStoreAssets : IStoreAssets {
 
     public const string YOSHI_AVATAR_ITEM_ID = "yoshi_avatar";
     public const string YOSHI_AVATAR_PRODUCT_ID = "soap_yoshi_avatar";
+
+    public const string NINJA_TAIL_ITEM_ID = "ninja_tail";
+    public const string NINJA_TAIL_PRODUCT_ID = "soap_ninja_tail";
+
+    public const string SKULL_TAIL_ITEM_ID = "skull_tail";
+    public const string SKULL_TAIL_PRODUCT_ID = "soap_skull_tail";
+
+    public const string CAT_TAIL_ITEM_ID = "cat_tail";
+    public const string CAT_TAIL_PRODUCT_ID = "soap_cat_tail";
 
     public const string NO_ADS_LIFETIME_PRODUCT_ID = "soap_no_ads";
 
@@ -125,6 +135,54 @@ public class SOAPStoreAssets : IStoreAssets {
         "Unlock yoshi Avatar",	    			 						// description
         YOSHI_AVATAR_PRODUCT_ID,										// product id
         new PurchaseWithMarket(YOSHI_AVATAR_PRODUCT_ID, 1.78)	        // the way this virtual good is purchased
+    );
+
+    // Purchase ninja with virtual currency
+    public static VirtualGood NINJA_TAIL_C = new LifetimeVG(
+        "Ninja", 													    // name
+        "Unlock Ninja Tail",				 							// description
+        NINJA_TAIL_ITEM_ID,										        // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase ninja with real money
+    public static VirtualGood NINJA_TAIL_M = new LifetimeVG(
+        "Ninja", 													    // name
+        "Unlock Ninja Tail",				 							// description
+        NINJA_TAIL_PRODUCT_ID,										    // product id
+        new PurchaseWithMarket(NINJA_TAIL_PRODUCT_ID, 0.50)	            // the way this virtual good is purchased
+    );
+
+    // Purchase ninja with virtual currency
+    public static VirtualGood SKULL_TAIL_C = new LifetimeVG(
+        "Skull", 													    // name
+        "Unlock Skull Tail",				 							// description
+        SKULL_TAIL_ITEM_ID,										        // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 2984)	    // the way this virtual good is purchased
+    );
+
+    // Purchase skull with real money
+    public static VirtualGood SKULL_TAIL_M = new LifetimeVG(
+        "Skull", 													    // name
+        "Unlock Skull Tail",				 							// description
+        SKULL_TAIL_PRODUCT_ID,										    // product id
+        new PurchaseWithMarket(SKULL_TAIL_PRODUCT_ID, 0.25)	            // the way this virtual good is purchased
+    );
+
+    // Purchase cat with virtual currency
+    public static VirtualGood CAT_TAIL_C = new LifetimeVG(
+        "Cat", 													    // name
+        "Unlock Cat Tail",				 							// description
+        CAT_TAIL_ITEM_ID,										        // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 3988)	    // the way this virtual good is purchased
+    );
+
+    // Purchase cat with real money
+    public static VirtualGood CAT_TAIL_M = new LifetimeVG(
+        "Cat", 													    // name
+        "Unlock Cat Tail",				 							// description
+        CAT_TAIL_PRODUCT_ID,										    // product id
+        new PurchaseWithMarket(CAT_TAIL_PRODUCT_ID, 0.85)	            // the way this virtual good is purchased
     );
 
     // Remove all ads from the game
