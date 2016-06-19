@@ -79,7 +79,7 @@ public class SOAPStoreManager : MonoBehaviour {
         coin_buy_button.GetComponentInChildren<Text>().text = price_list[0];
         money_buy_button.GetComponentInChildren<Text>().text = "$" + price_list[1];
 
-        Debug.Log(">>> Updating Prices...");
+        //Debug.Log(">>> Updating Prices...");
 
         bool can_afford = StoreInventory.CanAfford(item_id);
 

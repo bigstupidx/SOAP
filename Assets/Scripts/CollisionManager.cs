@@ -8,7 +8,7 @@ public class CollisionManager : MonoBehaviour {
     private SOAPStoreManager store_manager_script;  // Used to give player coins
     private Camera game_cam_ref;
 	private CameraController challenge_room_camera;
-    public SoundManager sound_manager_script;
+    private SoundManager sound_manager_script;
 
 
 	// Use this for initialization
@@ -19,6 +19,9 @@ public class CollisionManager : MonoBehaviour {
 
         GameObject temp_2 = GameObject.Find("store_ui_gr");
         if (temp_2 != null) { store_manager_script = temp_2.GetComponent<SOAPStoreManager>(); }
+
+        GameObject temp_3 = GameObject.Find("audio_controller");
+        if (temp_3 != null) { sound_manager_script = temp_3.GetComponent<SoundManager>(); }
 
 		game_cam_ref = Camera.main;
 

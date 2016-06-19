@@ -68,7 +68,7 @@ public class TouchInput : MonoBehaviour {
     }
 
 
-    // For testing in the editor
+     //For testing in the editor
     public void editorSideTouched()
     {
         if (Input.GetMouseButtonDown(0) && !BlockRaycast.IsPointerOverUIObject())
@@ -79,6 +79,7 @@ public class TouchInput : MonoBehaviour {
             tap_valid = Time.time > time_of_last_tap + minimum_tap_time || side_touched != pre_side_touched;
             avatar_controller_script.setTapValid(tap_valid);
 
+            //// Check if the player tapped too fast
             //tap_valid = Time.time > time_of_last_tap + minimum_tap_time;
             //avatar_controller_script.setTapValid(tap_valid);
             //mouse_position = Input.mousePosition;

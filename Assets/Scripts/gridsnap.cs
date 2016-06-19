@@ -30,7 +30,8 @@ public class gridsnap : MonoBehaviour {
         if (temp_1 != null) { store_manager_script = temp_1.GetComponent<SOAPStoreManager>(); }
 
         // auto adjust the width of the grid to have space for all the childs
-        rect.sizeDelta = new Vector2((transform.childCount + 2f) * grid.cellSize.x + (transform.childCount - 1f) * grid.spacing.x, rect.sizeDelta.y);
+        //rect.sizeDelta = new Vector2((transform.childCount + 2f) * grid.cellSize.x + (transform.childCount - 1f) * grid.spacing.x, rect.sizeDelta.y);
+        rect.sizeDelta = new Vector2((transform.childCount + 5f) * grid.cellSize.x + (transform.childCount - 0f) * grid.spacing.x, rect.sizeDelta.y);
     }
 
     public void Update() {

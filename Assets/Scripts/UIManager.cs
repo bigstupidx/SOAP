@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour {
     public void activate_game_over_menu()
     {
         game_over_menu.SetActive(true);
+        pause_button.SetActive(false);
         store_manager_script.setGameOverCoinText();
     }
 
@@ -60,26 +61,30 @@ public class UIManager : MonoBehaviour {
     // Pause the game
     public void doPause()
     {
-        //isPaused = !isPaused;
         Time.timeScale = 0;
+        pause_button.SetActive(false);
         pause_menu.SetActive(true);
     }
+
 
     // Unpause the game
     public void unPause()
     {
-        //isPaused = !isPaused;
         Time.timeScale = 1;
+        pause_button.SetActive(true);
         pause_menu.SetActive(false);
     }
 
+
+    // Restart the main level
     public void restartLvl()
     {
         SceneManager.LoadScene(2);
-        // RECODE: Find a better place to put this
         game_over_menu.SetActive(false);
-        unPause();
+        pause_button.SetActive(true);
+        //unPause();
     }
+
 
     // Return to main menu
     public void returnToMain()

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
 public class SoundManager : MonoBehaviour
@@ -10,6 +11,11 @@ public class SoundManager : MonoBehaviour
     //       there needs to be more than one audio source 
 
     public AudioClip[] sfx_clips;       // Array of sound effect audio clips
+    public GameObject start_mute_btn;
+    public GameObject start_unmute_btn;
+    public GameObject go_mute_btn;
+    public GameObject go_unmute_btn;
+
     private AudioSource sfx_source;     // The audio source that play the audio clips
 
     public const int COIN_SFX = 0;      // Index position of coin sfx in sfx_clips array
@@ -18,7 +24,7 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-        ////Check if there is already an instance of SoundManager
+        //Check if there is already an instance of SoundManager
         //if (instance == null)
         //    //if not, set it to this.
         //    instance = this;
@@ -28,14 +34,30 @@ public class SoundManager : MonoBehaviour
         //    Destroy(gameObject);
 
         ////Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         sfx_source = this.GetComponent<AudioSource>();
     }
 
 
+    // Play the SFX audio
     public void playSFX(int index)
     {
         sfx_source.PlayOneShot(sfx_clips[index]);
     }
+
+
+    // Turn on/off audio playback and display correct button
+    public void setMuteState()
+    {
+        sfx_source.enabled = !sfx_source.enabled;
+
+        bool btn_state = sfx_source.enabled;
+
+        start_mute_btn.SetActive(btn_state);
+        go_mute_btn.SetActive(btn_state);
+        start_unmute_btn.SetActive(!btn_state);
+        go_unmute_btn.SetActive(!btn_state);
+    }
+
 }
