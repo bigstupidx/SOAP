@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour {
     public GameObject pause_menu;
     public GameObject game_over_menu;
     public GameObject pause_button;
+    public AvatarTailSwap avatar_swap_script;
 
     private bool isPaused = false;
     private SOAPStoreManager store_manager_script;
@@ -55,6 +56,15 @@ public class UIManager : MonoBehaviour {
     {
         store_menu.SetActive(true);
         store_manager_script.setStoreCoinText();
+    }
+
+
+    public void deactivate_store_menu()
+    {
+        store_menu.SetActive(false);
+
+        // Sprites may have changed - refresh them
+        avatar_swap_script.refresh_sprites();
     }
 
 
