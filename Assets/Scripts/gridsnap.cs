@@ -18,6 +18,7 @@ public class gridsnap : MonoBehaviour {
     private string avatar_name;
     private SOAPStoreManager store_manager_script;
     private string previous_avatar_name = "";
+    private AvatarTailSwap avatar_swap_script; 
 
 
 
@@ -28,6 +29,9 @@ public class gridsnap : MonoBehaviour {
 
         GameObject temp_1 = GameObject.Find("store_ui_gr");
         if (temp_1 != null) { store_manager_script = temp_1.GetComponent<SOAPStoreManager>(); }
+
+        GameObject temp_2 = GameObject.Find("avatar_swap_script");
+        if (temp_2 != null) { avatar_swap_script = temp_2.GetComponent<AvatarTailSwap>(); }
 
         // auto adjust the width of the grid to have space for all the childs
         //rect.sizeDelta = new Vector2((transform.childCount + 2f) * grid.cellSize.x + (transform.childCount - 1f) * grid.spacing.x, rect.sizeDelta.y);
@@ -70,7 +74,16 @@ public class gridsnap : MonoBehaviour {
                     string[] avatar_name_list = getAvatarNameAndType(avatar_name);
                     avatar_name_txt.text = avatar_name_list[0];
                     avatar_type_txt.text = avatar_name_list[1];
-                    //Debug.Log(">>> Send to update the prices...");
+
+                    if (avatar_name.Contains("avatar"))
+                    {
+                        avatar_swap_script.setAvatar(avatar_name);
+                    }
+                    else
+                    {
+                        avatar_swap_script.setTail(avatar_name);
+                    }
+                    
                 }
             }
             else {

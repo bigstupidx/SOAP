@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1815570656}
         m_MethodName: buyAvatarWithMoney
         m_Mode: 1
         m_Arguments:
@@ -3133,6 +3133,7 @@ MonoBehaviour:
   pause_menu: {fileID: 1372151010}
   game_over_menu: {fileID: 1318965653}
   pause_button: {fileID: 1567523553}
+  avatar_swap_script: {fileID: 609399807}
 --- !u!1 &892785564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,9 +4099,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 173206154}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 866679960}
+        m_MethodName: deactivate_store_menu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4755,7 +4756,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1815570656}
         m_MethodName: buyAvatarWithCoin
         m_Mode: 1
         m_Arguments:
