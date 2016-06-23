@@ -62,9 +62,6 @@ public class UIManager : MonoBehaviour {
     public void deactivate_store_menu()
     {
         store_menu.SetActive(false);
-
-        // Sprites may have changed - refresh them
-        avatar_swap_script.refresh_sprites();
     }
 
 
@@ -83,6 +80,7 @@ public class UIManager : MonoBehaviour {
         Time.timeScale = 1;
         pause_button.SetActive(true);
         pause_menu.SetActive(false);
+        avatar_swap_script.refresh_sprites();
     }
 
 

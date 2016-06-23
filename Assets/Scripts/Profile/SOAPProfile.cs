@@ -24,7 +24,7 @@ public class SOAPProfile : MonoBehaviour {
     {
         if(!SoomlaProfile.IsLoggedIn(Provider.FACEBOOK))
         {
-            SoomlaProfile.Login(Provider.FACEBOOK);
+            SoomlaProfile.Login(Provider.FACEBOOK, "facebook");
         }
         else
         {
@@ -55,7 +55,7 @@ public class SOAPProfile : MonoBehaviour {
     {
         if (!SoomlaProfile.IsLoggedIn(Provider.TWITTER))
         {
-            SoomlaProfile.Login(Provider.TWITTER);
+            SoomlaProfile.Login(Provider.TWITTER, "twitter");
         }
         else
         {

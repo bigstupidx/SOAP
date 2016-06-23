@@ -12,6 +12,7 @@ public class SOAPStoreManager : MonoBehaviour {
     public GameObject already_bought_sign;
     public Text store_coin_text;
     public Text game_over_coin_text;
+    public AvatarTailSwap avatar_swap_script;
     private string avatar_item_id;
 
 
@@ -118,6 +119,9 @@ public class SOAPStoreManager : MonoBehaviour {
     public void buyAvatarWithCoin()
     {
         StoreInventory.BuyItem(avatar_item_id);
+        updatePrices(avatar_item_id);
+        // When an avatar is bought automatically select it
+        avatar_swap_script.setAvatar(avatar_item_id);
         Debug.Log(string.Format("Just bought a new avatar with coins: {0}", avatar_item_id));
     }
 
@@ -125,6 +129,9 @@ public class SOAPStoreManager : MonoBehaviour {
     public void buyAvatarWithMoney()
     {
         StoreInventory.BuyItem("soap_" + avatar_item_id);
+        updatePrices(avatar_item_id);
+        // When an avatar is bought automatically select it
+        avatar_swap_script.setAvatar(avatar_item_id);
         Debug.Log(string.Format("Just bought a new avatar with money: {0}", avatar_item_id));
     }
     

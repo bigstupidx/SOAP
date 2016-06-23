@@ -60,17 +60,14 @@ public class AvatarTailSwap : MonoBehaviour {
 
     public void refresh_sprites()
     {   
-        if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            GameObject temp_1 = GameObject.Find("avatar_obj");
-            if (temp_1 != null) { avatar_sprite = temp_1.GetComponent<SpriteRenderer>(); }
+        GameObject temp_1 = GameObject.Find("avatar_obj");
+        if (temp_1 != null) { avatar_sprite = temp_1.GetComponent<SpriteRenderer>(); }
 
-            tail_grp = GameObject.Find("tail_grp");
+        tail_grp = GameObject.Find("tail_grp");
 
-            setAvatarSprite();
-            getTailSprites(tail_grp);
-            setTailSprite();
-        }
+        setAvatarSprite();
+        getTailSprites(tail_grp);
+        setTailSprite();
     }
 
 
@@ -147,26 +144,39 @@ public class AvatarTailSwap : MonoBehaviour {
     }
 
 
-    //
-    public string getAvatar()
-    {
-        return PlayerPrefs.GetString("Avatar");
-    }
-
-
-    // Set the avatar player pref to the name of the selected (middle) avatar game object in the store scroll
+    // Set the avatar and tail player pref to the name of the selected (middle) avatar game object in the store scroll
     public void setAvatar(string avatar_name)
     {
-        PurchasableVirtualItem virtual_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(avatar_name);
-        PurchasableVirtualItem market_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId("soap_" + avatar_name);
 
-        int virtual_item_balance = virtual_item.GetBalance();
-        int market_item_balance = market_item.GetBalance();
+        int virtual_item_balance = 0;
+        int market_item_balance = 0;
+
+        // Only look for balances on avatars and tails that are purchasable
+        if (avatar_name != "default_avatar" && avatar_name != "default_tail")
+        {
+            PurchasableVirtualItem virtual_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(avatar_name);
+            PurchasableVirtualItem market_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId("soap_" + avatar_name);
+            virtual_item_balance = virtual_item.GetBalance();
+            market_item_balance = market_item.GetBalance();;
+        }
+        else
+        {
+            virtual_item_balance = 1;
+        }
 
         if (virtual_item_balance == 1 || market_item_balance == 1)
         {
-            PlayerPrefs.SetString("Avatar", avatar_name);
-            Debug.Log(string.Format("Avatar player pref set to: {0}", avatar_name));
+            if (avatar_name.Contains("avatar"))
+            {
+                PlayerPrefs.SetString("Avatar", avatar_name);
+                Debug.Log(string.Format("Avatar player pref set to: {0}", avatar_name));
+            }
+
+            else
+            {
+                PlayerPrefs.SetString("Tail", avatar_name);
+                Debug.Log(string.Format("Tail player pref set to: {0}", avatar_name));
+            }
         }
     }
 
@@ -177,19 +187,8 @@ public class AvatarTailSwap : MonoBehaviour {
     }
 
 
-    // Set the tail player pref to the name of the selected (middle) tail game object in the store scroll
-    public void setTail(string tail_name)
+    public string getAvatar()
     {
-        PurchasableVirtualItem virtual_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(tail_name);
-        PurchasableVirtualItem market_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId("soap_" + tail_name);
-
-        int virtual_item_balance = virtual_item.GetBalance();
-        int market_item_balance = market_item.GetBalance();
-
-        if (virtual_item_balance == 1 || market_item_balance == 1)
-        {
-            PlayerPrefs.SetString("Tail", tail_name);
-            Debug.Log(string.Format("Tail player pref set to: {0}", tail_name));
-        }
+        return PlayerPrefs.GetString("Avatar");
     }
 }
