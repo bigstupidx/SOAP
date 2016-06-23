@@ -100,7 +100,9 @@ public class RegularTiles : MonoBehaviour
 
 		if (obstacle_trigger.IsTouching(the_player.GetComponent<CircleCollider2D>()))
 		{
+			spawn_tiles_script.player_score = spawn_tiles_script.player_score + 1;
 			obstacle_trigger.gameObject.SetActive(false);
+			Debug.Log("Score: " + spawn_tiles_script.player_score.ToString());
 		}
 
 		if(obstacle_trigger_reset.IsTouching(the_player.GetComponent<CircleCollider2D>()))
