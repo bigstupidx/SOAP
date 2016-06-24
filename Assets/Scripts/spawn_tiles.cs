@@ -30,7 +30,7 @@ public class spawn_tiles : MonoBehaviour
 
 			if (i == 0)
 			{
-				if(tile_prefabs[starting_tiles].tag == "beginner")
+				if(tile_prefabs[starting_tiles].tag == "start_tile")
 				{
 					tile_list.Add(tile_prefabs[starting_tiles]);
 					tile_list[i].SetActive(true);
@@ -49,7 +49,7 @@ public class spawn_tiles : MonoBehaviour
 
 				else
 				{
-					if(tile_prefabs[starting_tiles].tag == "beginner")
+					if(tile_prefabs[starting_tiles].tag == "novice")
 					{
 						tile_list.Add(tile_prefabs[starting_tiles]);
 						tile_list[i].SetActive(true);

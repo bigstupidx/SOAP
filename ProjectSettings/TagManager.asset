@@ -30,6 +30,8 @@ TagManager:
   - intermediate
   - hard
   - force_explode
+  - start_tile
+  - novice
   layers:
   - Default
   - TransparentFX
