@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 68646e1856c11aa48ab58b2358ddf2d2
-timeCreated: 1466362391
+timeCreated: 1466732667
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -27,6 +27,8 @@ TextureImporter:
     21300040: GUI_Spirte_Sheet_49
     21300042: GUI_Spirte_Sheet_1
     21300044: GUI_Spirte_Sheet_2
+    21300046: GUI_Spirte_Sheet_3
+    21300048: GUI_Spirte_Sheet_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -1008,6 +1010,52 @@ TextureImporter:
         - {x: 28, y: -37.5}
         - {x: 31, y: -26.5}
         - {x: 38, y: -57.5}
+    - name: GUI_Spirte_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 656
+        width: 99
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.5, y: 80}
+        - {x: -14.5, y: 64}
+        - {x: -20.5, y: 50}
+        - {x: -44.5, y: 30}
+        - {x: -44.5, y: -9}
+        - {x: -42.5, y: -9}
+        - {x: -20.5, y: -79}
+        - {x: -18.5, y: -81}
+        - {x: 17.5, y: -81}
+        - {x: 45.5, y: -57}
+        - {x: 45.5, y: 80}
+    - name: GUI_Spirte_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 663
+        width: 171
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.5, y: 71.5}
+        - {x: 16.5, y: 70.5}
+        - {x: 8.5, y: 65.5}
+        - {x: -2.5, y: 55.5}
+        - {x: -7.5, y: 42.5}
+        - {x: -76.5, y: 71.5}
+        - {x: -77.5, y: 71.5}
+        - {x: -85.5, y: 53.5}
+        - {x: -85.5, y: -68.5}
+        - {x: 34.5, y: -68.5}
+        - {x: 50.5, y: -37.5}
+        - {x: 83.5, y: 26.5}
+        - {x: 83.5, y: 71.5}
     outline: []
   spritePackingTag: 
   userData: 

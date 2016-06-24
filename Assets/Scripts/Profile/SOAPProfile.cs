@@ -2,11 +2,16 @@
 using System.Collections;
 using Soomla.Profile;
 using Soomla;
+using UnityEngine.UI;
 
 public class SOAPProfile : MonoBehaviour {
 
     public bool logged_in_fb = false;
     public bool logged_in_twitter = false;
+    public Image[] twitter_button_img;
+    public Image[] facebook_button_img;
+    public Sprite facebook_posted_sprite;
+    public Sprite twitter_posted_sprite; 
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +33,7 @@ public class SOAPProfile : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Already logged in to Facebook!");
+            // If the user is already logged in and presses the button then post to facebook (auto-login scenario)
         }
     }
 
@@ -36,8 +41,6 @@ public class SOAPProfile : MonoBehaviour {
     // Post to Facebook wall
     public void postToWall()
     {
-        FBLogin();
-
         SoomlaProfile.UpdateStory(
             Provider.FACEBOOK,
             "Scored 1000 points in Snake and Tails!",  // Message
@@ -47,6 +50,8 @@ public class SOAPProfile : MonoBehaviour {
             "https://play.google.com/store/apps/details?id=com.RedTapeStudios.MatchMayhem_01&hl=en",           // Link
             "https://lh3.googleusercontent.com/VZA4sJmj4Gw1SHzJQJredvGtQeDbUzMdyGykSA1MJW35yWN1-06ve6YuED_sbV1u2a4=h900-rw"     // Image
             );
+
+        swap_to_twitter_posted_img();
     }
 
 
@@ -59,7 +64,8 @@ public class SOAPProfile : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Already logged in to Twitter!");
+            // If the user is already logged in and presses the button then post to twitter (auto-login scenario)
+            postToTwitter();
         }
     }
 
@@ -67,8 +73,6 @@ public class SOAPProfile : MonoBehaviour {
     // Post to Twitter
     public void postToTwitter()
     {
-        twitterLogin();
-
         SoomlaProfile.UpdateStory(
             Provider.TWITTER,
             "Scored 1000 points in Snake and Tails!",  // Message
@@ -78,5 +82,29 @@ public class SOAPProfile : MonoBehaviour {
             "https://play.google.com/store/apps/details?id=com.RedTapeStudios.MatchMayhem_01&hl=en",           // Link
             "https://lh3.googleusercontent.com/VZA4sJmj4Gw1SHzJQJredvGtQeDbUzMdyGykSA1MJW35yWN1-06ve6YuED_sbV1u2a4=h900-rw"     // Image
             );
+
+        swap_to_twitter_posted_img();
     }
+
+
+    // When user has successfully posted swap the image to the posted image
+    public void swap_to_fb_posted_img()
+    {
+        foreach (Image img in facebook_button_img)
+        {
+            img.sprite = facebook_posted_sprite;
+        }
+    }
+
+
+    // When user has successfully posted swap the image to the posted image
+    public void swap_to_twitter_posted_img()
+    {
+        foreach (Image img in twitter_button_img)
+        {
+            img.sprite = twitter_posted_sprite;
+        }
+    }
+
+
 }

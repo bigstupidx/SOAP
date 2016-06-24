@@ -29,14 +29,25 @@ public class SOAPProfileEvents : MonoBehaviour {
     // Handle this event with your game-specific behavior:
     public void onLoginFinished(UserProfile userProfileJson, bool autoLogin, string payload)
     {
-        // userProfileJson is the user's profile from the logged in provider
         // autoLogin will be "true" if the user was logged in using the AutoLogin functionality
         // payload is an identification string that you can give when you initiate the login operation and want to receive back upon its completion
-        GameObject temp_1 = GameObject.Find("options_container");
-        if (temp_1 != null) { soap_profile_script = temp_1.GetComponent<SOAPProfile>(); }
-        
 
+        if (!autoLogin)
+        {
+            GameObject temp_1 = GameObject.Find("start_ui_gr");
+            if (temp_1 != null) { soap_profile_script = temp_1.GetComponent<SOAPProfile>(); }
 
-        Debug.Log(userProfileJson);
+            string social_provider = payload;
+
+            if (social_provider == "facebook")
+            {
+                soap_profile_script.postToWall();
+            }
+            else if (social_provider == "twitter")
+            {
+                soap_profile_script.postToTwitter();
+            }
+            Debug.Log(userProfileJson);
+        }
     }
 }

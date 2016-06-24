@@ -151,3 +151,4 @@ public class SOAPStoreManager : MonoBehaviour {
 //Soomla secret: IzE0it1qa49Dh4IUV16216yi1840Nz96
 //Keystore pwd: t@R3p3D&uO
 //Twitter username: redtapestudios pwd: Apestudios11
+//Facebook username: redtapestudiosinc@gmail.com 7<DbP4yP
