@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Red Tape Studios
-  productName: SOAP
+  productName: Snake And Tails
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -158,8 +158,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Luke/Documents/GitHub/redtape.keystore
+  AndroidKeyaliasName: soap
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
