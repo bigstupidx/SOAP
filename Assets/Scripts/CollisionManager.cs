@@ -14,7 +14,7 @@ public class CollisionManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-	    GameObject temp_1 = GameObject.Find("UI");
+	    GameObject temp_1 = GameObject.Find("UI_canvas");
         if (temp_1 != null) { ui_manager_script = temp_1.GetComponent<UIManager>(); }
 
         GameObject temp_2 = GameObject.Find("store_ui_gr");
@@ -100,7 +100,7 @@ public class CollisionManager : MonoBehaviour {
     void OnBecameInvisible()
     {
         // TODO: Add animation or fx call here
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         ui_manager_script.activate_game_over_menu();
     }
 }
