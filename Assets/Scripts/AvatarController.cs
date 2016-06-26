@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class AvatarController : MonoBehaviour {
 
-    private float min_distance = 0.65f;         // The minimum distance between elements in the snake
+    private float min_distance = 0.70f;         // The minimum distance between elements in the snake
     private Vector3 previous_avatar_position;   // The avatars position before it travelled min_distance 
     private string avatar_direction;            // The direction the avatar is moving
     private Vector3 avatar_vector_direction;    // The avatar vector direction

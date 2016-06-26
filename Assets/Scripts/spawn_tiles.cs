@@ -16,7 +16,6 @@ public class spawn_tiles : MonoBehaviour
 	private ChallengeRoomLogic challenge_room_logic_script;
 	public bool IsFirst;
 	private int tile_counter = 0;
-	public int player_score = 0;
 
 	// Use this for initialization
 	void Start () 

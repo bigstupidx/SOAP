@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PointManager : MonoBehaviour {
 
-    private int current_score = 0;          // The players current score
+    private int current_score = -1;          // The players current score
     private UIManager ui_manager_script;    // Used for updating various scores (pause, game over, game screen)
     
     public Text game_screen_score;
@@ -81,7 +81,7 @@ public class PointManager : MonoBehaviour {
     // Reset the current score
     public void resetScore()
     {
-        current_score = 0;
+        current_score = -1;
     }
 
 }
