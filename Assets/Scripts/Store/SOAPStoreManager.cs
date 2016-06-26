@@ -12,6 +12,7 @@ public class SOAPStoreManager : MonoBehaviour {
     public GameObject already_bought_sign;
     public Text store_coin_text;
     public Text game_over_coin_text;
+    public Text pause_coin_text;
     public AvatarTailSwap avatar_swap_script;
     private string avatar_item_id;
 
@@ -20,7 +21,7 @@ public class SOAPStoreManager : MonoBehaviour {
 	void Start () 
     {
         // For testing coin purchases
-        //StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 50);
+        StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 50000);
         //StoreInventory.TakeItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 130000);
 	}
 
@@ -41,6 +42,12 @@ public class SOAPStoreManager : MonoBehaviour {
     public void setGameOverCoinText()
     {
         game_over_coin_text.text = "" + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
+        Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
+    }
+
+    public void setPauseCoinText()
+    {
+        pause_coin_text.text = "" + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
         Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
     }
     

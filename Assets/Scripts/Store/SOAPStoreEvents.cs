@@ -29,17 +29,27 @@ public class SOAPStoreEvents : MonoBehaviour {
 	}
 
 
-    // Change inventory balance on gamescreen when item purchased
+    // Update the prices when an item is bought with real money in the store
     public void onItemPurchased(PurchasableVirtualItem pvi, string payload)
     {
-        Debug.Log("Bought stuff with real money");
+        GameObject temp_1 = GameObject.Find("store_ui_gr");
+        if (temp_1 != null) { store_manager_script = temp_1.GetComponent<SOAPStoreManager>(); }
+
+        string avatar_id = pvi.ItemId;
+
+        store_manager_script.updatePrices(avatar_id);
     }
 
 
-    // Change inventory balance when item balance changed (by clicking power-up button from gamescreen)
+    // Update the prices when an item is bought with virtual currency in the store
     public void OnGoodBalanceChanged(VirtualGood vg, int balance, int amountAdded)
     {
-        // Code
+        GameObject temp_1 = GameObject.Find("store_ui_gr");
+        if (temp_1 != null) { store_manager_script = temp_1.GetComponent<SOAPStoreManager>(); }
+
+        string avatar_id = vg.ItemId;
+
+        store_manager_script.updatePrices(avatar_id);
     }
 
 
@@ -51,6 +61,7 @@ public class SOAPStoreEvents : MonoBehaviour {
 
         store_manager_script.setStoreCoinText();
         store_manager_script.setGameOverCoinText();
+        store_manager_script.setPauseCoinText();
     }
 
 
