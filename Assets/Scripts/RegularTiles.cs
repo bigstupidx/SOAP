@@ -9,7 +9,7 @@ public class RegularTiles : MonoBehaviour
 	private List<Vector3> falling_obj_position_list = new List<Vector3>();
 
 	private GameObject tile_spawner_ref;
-	private spawn_tiles spawn_tiles_script;
+    private PointManager point_manager_script;
 
 	public GameObject obstacle_trigger_ref;
 	private BoxCollider2D obstacle_trigger;
@@ -28,8 +28,9 @@ public class RegularTiles : MonoBehaviour
 			falling_obj_position_list.Add(item.transform.position);
 		}
 
-		tile_spawner_ref = GameObject.Find("Tile_Spawner");
-		spawn_tiles_script = tile_spawner_ref.GetComponent<spawn_tiles>();
+        // Get reference to point manager script for updating score
+        GameObject temp_1 = GameObject.Find("UI_canvas");
+        if (temp_1 != null) { point_manager_script = temp_1.GetComponent<PointManager>(); }
 
 		obstacle_trigger = obstacle_trigger_ref.gameObject.GetComponent<BoxCollider2D>();
 		obstacle_trigger_reset = obstacle_trigger_reset_ref.gameObject.GetComponent<BoxCollider2D>();
@@ -100,9 +101,9 @@ public class RegularTiles : MonoBehaviour
 
 		if (obstacle_trigger.IsTouching(the_player.GetComponent<CircleCollider2D>()))
 		{
-			spawn_tiles_script.player_score = spawn_tiles_script.player_score + 1;
+            // Update the score when user passes a tile
+            point_manager_script.update_score();
 			obstacle_trigger.gameObject.SetActive(false);
-			Debug.Log("Score: " + spawn_tiles_script.player_score.ToString());
 		}
 
 		if(obstacle_trigger_reset.IsTouching(the_player.GetComponent<CircleCollider2D>()))
