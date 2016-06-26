@@ -34,6 +34,7 @@ public class SOAPProfile : MonoBehaviour {
         else
         {
             // If the user is already logged in and presses the button then post to facebook (auto-login scenario)
+            postToWall();
         }
     }
 
@@ -51,7 +52,7 @@ public class SOAPProfile : MonoBehaviour {
             "https://lh3.googleusercontent.com/VZA4sJmj4Gw1SHzJQJredvGtQeDbUzMdyGykSA1MJW35yWN1-06ve6YuED_sbV1u2a4=h900-rw"     // Image
             );
 
-        swap_to_twitter_posted_img();
+        swap_to_fb_posted_img();
     }
 
 
