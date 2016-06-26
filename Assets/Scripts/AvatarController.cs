@@ -8,7 +8,7 @@ public class AvatarController : MonoBehaviour {
     private Vector3 previous_avatar_position;   // The avatars position before it travelled min_distance 
     private string avatar_direction;            // The direction the avatar is moving
     private Vector3 avatar_vector_direction;    // The avatar vector direction
-    public int avatar_speed;                   // The speed at which the avatar moves
+    public int avatar_speed;                    // The speed at which the avatar moves
     public Vector2 default_avatar_position;     // The avatars starting position
     public TailMovement tail_movement_script;
     Dictionary<string, string> cw_movement = new Dictionary<string, string>();  // Defines the next direction for clockwise turn
@@ -70,6 +70,24 @@ public class AvatarController : MonoBehaviour {
         float sin_angle = Mathf.Sin(angle);
         avatar_vector_direction.x = previous_vector_avatar_direction.x * cos_angle - previous_vector_avatar_direction.y * sin_angle;
         avatar_vector_direction.y = previous_vector_avatar_direction.x * sin_angle + previous_vector_avatar_direction.y * cos_angle;
+        
+        // Rotate the sprite
+        rotateSprite(previous_vector_avatar_direction, avatar_vector_direction);
+    }
+
+
+    // Rotate the sprite image when the avatar turns
+    public void rotateSprite(Vector3 previous_direction, Vector3 current_direction)
+    {
+        Vector3 cross_product = Vector3.Cross(previous_vector_avatar_direction, avatar_vector_direction);
+        if (cross_product.z > 0)
+        {
+            this.transform.Rotate(0, 0, 90);
+        }
+        else
+        {
+            this.transform.Rotate(0, 0, -90);
+        }
     }
 
 
