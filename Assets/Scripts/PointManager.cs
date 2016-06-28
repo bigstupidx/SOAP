@@ -42,6 +42,14 @@ public class PointManager : MonoBehaviour {
         }
     }
 
+
+    // Get current score
+    public int getCurrentScore()
+    {
+        return current_score;
+    }
+
+
     // Get the best score
     public int getScore()
     {
