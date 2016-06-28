@@ -116,6 +116,26 @@ public class spawn_tiles : MonoBehaviour
 			if(tile_counter <= 5) 
 			{
 
+				if(tile_counter % 5 == 0)
+				{
+					if(tile_prefabs[next_tile].tag == "challenge_room")
+					{
+						tile_list.Insert(0, tile_prefabs[next_tile]);
+						tile_list[0].SetActive(true);
+						tile_collider = tile_list[0].GetComponent<BoxCollider2D>();
+						tile_collider.enabled = true;
+						challenge_room_logic_script = tile_list[0].GetComponent<ChallengeRoomLogic>();
+						challenge_room_logic_script.cam_hold_ref.gameObject.SetActive(true);
+						i++;
+						tile_counter++;
+					}
+
+					else
+					{
+						continue;
+					}
+				}
+
 				if(tile_list.Contains(tile_prefabs[next_tile]))
 				{
 					//Debug.Log("The GameObject is: " + tile_prefabs[starting_tiles]);
@@ -140,6 +160,27 @@ public class spawn_tiles : MonoBehaviour
 
 			if(tile_counter > 5  && tile_counter <= 9)
 			{
+
+				if(tile_counter % 5 == 0)
+				{
+					if(tile_prefabs[next_tile].tag == "challenge_room")
+					{
+						tile_list.Insert(0, tile_prefabs[next_tile]);
+						tile_list[0].SetActive(true);
+						tile_collider = tile_list[0].GetComponent<BoxCollider2D>();
+						tile_collider.enabled = true;
+						challenge_room_logic_script = tile_list[0].GetComponent<ChallengeRoomLogic>();
+						challenge_room_logic_script.cam_hold_ref.gameObject.SetActive(true);
+						i++;
+						tile_counter++;
+					}
+
+					else
+					{
+						continue;
+					}
+				}
+
 				if(tile_list.Contains(tile_prefabs[next_tile]))
 				{
 					//Debug.Log("The GameObject is: " + tile_prefabs[starting_tiles]);
@@ -165,13 +206,7 @@ public class spawn_tiles : MonoBehaviour
 			if(tile_counter >= 10)
 			{
 
-				if(tile_list.Contains(tile_prefabs[next_tile]))
-				{
-					//Debug.Log("The GameObject is: " + tile_prefabs[starting_tiles]);
-					continue;
-				}
-
-				if(tile_counter % 10 == 0)
+				if(tile_counter % 5 == 0)
 				{
 					if(tile_prefabs[next_tile].tag == "challenge_room")
 					{
@@ -191,9 +226,14 @@ public class spawn_tiles : MonoBehaviour
 					}
 				}
 
+				if(tile_list.Contains(tile_prefabs[next_tile]))
+				{
+					//Debug.Log("The GameObject is: " + tile_prefabs[starting_tiles]);
+					continue;
+				}
+
 				if(tile_prefabs[next_tile].tag == "beginner" | tile_prefabs[next_tile].tag == "intermediate" | tile_prefabs[next_tile].tag == "hard")
 				{
-					tile_list.Insert(0, tile_prefabs[next_tile]);
 					tile_list.Insert(0, tile_prefabs[next_tile]);
 					tile_list[0].SetActive(true);
 					tile_collider = tile_list[0].GetComponent<BoxCollider2D>();
