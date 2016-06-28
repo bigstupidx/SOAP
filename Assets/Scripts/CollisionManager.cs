@@ -37,13 +37,13 @@ public class CollisionManager : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll)
     {	
         // Obstacle collision: the player "dies", avatar setActive is set to false.
-        if (coll.gameObject.tag == "obstacle")
+		if (coll.gameObject.tag == "obstacle" || coll.gameObject.tag == "tail")
         {
             // Disables the Collider2D component
             Debug.Log("This is the collider: " + coll.gameObject.name);
             // TODO: Add animation or fx call here
-            this.gameObject.SetActive(false);
-            ui_manager_script.activate_game_over_menu();
+            //this.gameObject.SetActive(false);
+            //ui_manager_script.activate_game_over_menu();
 
             sound_manager_script.playSFX(SoundManager.CRASH_SFX);
         }
