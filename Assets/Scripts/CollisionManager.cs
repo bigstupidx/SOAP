@@ -9,7 +9,8 @@ public class CollisionManager : MonoBehaviour {
     private Camera game_cam_ref;
 	private CameraController challenge_room_camera;
     private SoundManager sound_manager_script;
-
+    private GameObject player_death_particle_ref;
+	private ParticleSystem player_death_particle;
 
 	// Use this for initialization
 	void Start () 
@@ -26,6 +27,8 @@ public class CollisionManager : MonoBehaviour {
 		game_cam_ref = Camera.main;
 
 		challenge_room_camera = game_cam_ref.GetComponent<CameraController>();
+		player_death_particle_ref = GameObject.Find("player_death_particle");
+		player_death_particle = player_death_particle_ref.gameObject.GetComponent<ParticleSystem>();
 	}
 	
 	// Update is called once per frame
@@ -40,12 +43,8 @@ public class CollisionManager : MonoBehaviour {
 		if (coll.gameObject.tag == "obstacle" || coll.gameObject.tag == "tail")
         {
             // Disables the Collider2D component
-            Debug.Log("This is the collider: " + coll.gameObject.name);
             // TODO: Add animation or fx call here
-            //this.gameObject.SetActive(false);
-            //ui_manager_script.activate_game_over_menu();
-
-            sound_manager_script.playSFX(SoundManager.CRASH_SFX);
+			player_death();
         }
 
 		//if (coll.gameObject.tag == "cam_release_trigger")
@@ -101,6 +100,20 @@ public class CollisionManager : MonoBehaviour {
     {
         // TODO: Add animation or fx call here
         //Time.timeScale = 0;
-        ui_manager_script.activate_game_over_menu();
+		player_death();
+		//ui_manager_script.activate_game_over_menu();
     }
+
+    public void player_death()
+    {
+		this.gameObject.SetActive(false);
+		player_death_particle.gameObject.transform.position = this.gameObject.transform.position;
+		player_death_particle.Play();
+		Invoke("LoadGameOverDelayed", 1.5f);
+		sound_manager_script.playSFX(SoundManager.CRASH_SFX);
+    }
+	public void LoadGameOverDelayed()
+	{
+		ui_manager_script.activate_game_over_menu();
+	}
 }
