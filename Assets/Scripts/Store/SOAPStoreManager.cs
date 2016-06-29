@@ -36,19 +36,19 @@ public class SOAPStoreManager : MonoBehaviour {
     public void setStoreCoinText()
     {
         store_coin_text.text = "" + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
-        Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
+        //Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
     }
 
     public void setGameOverCoinText()
     {
         game_over_coin_text.text = "" + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
-        Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
+        //Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
     }
 
     public void setPauseCoinText()
     {
         pause_coin_text.text = "" + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID);
-        Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
+        //Debug.Log(string.Format("The coin balance is: {0}", "$ " + StoreInventory.GetItemBalance(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID)));
     }
     
 
