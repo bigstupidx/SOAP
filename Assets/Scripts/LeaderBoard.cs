@@ -3,6 +3,7 @@ using System.Collections;
 using GooglePlayGames;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 // Need to add email of users you want to test play game services features in 
@@ -15,6 +16,11 @@ public class LeaderBoard : MonoBehaviour {
     private string leaderboard_id = "CgkIpfv-ypQeEAIQAA";
     private PointManager point_manager_script;
 
+    public GameObject start_show_leader_btn;
+    public GameObject start_login_leader_btn;
+    public GameObject go_post_leader_btn;
+    public GameObject go_login_leader_btn;
+
 
     void Start ()
     {
@@ -25,12 +31,6 @@ public class LeaderBoard : MonoBehaviour {
         PlayGamesPlatform.Activate();
 
         point_manager_script = this.GetComponent<PointManager>();
-
-        // Check if the user is already logged in
-        //if (!PlayGamesPlatform.Instance.IsAuthenticated())
-        //{
-        //    LogIn();
-        //}
     }
 
 
@@ -41,7 +41,10 @@ public class LeaderBoard : MonoBehaviour {
         {
             if (success) 
             {
-                Debug.Log ("Login Sucess");
+                start_login_leader_btn.SetActive(false);
+                start_show_leader_btn.SetActive(true);
+                go_login_leader_btn.SetActive(false);
+                go_post_leader_btn.SetActive(true);  
             } 
             else 
             {
@@ -51,7 +54,7 @@ public class LeaderBoard : MonoBehaviour {
     }
 
 
-    // Shows All Available Leaderborad
+    // Shows All Available Leaderboard
     public void OnShowLeaderBoard ()
     {
         Social.ShowLeaderboardUI(); // Show all leaderboard
@@ -69,7 +72,7 @@ public class LeaderBoard : MonoBehaviour {
                 if (success)
                 {
                     Debug.Log("Update Score Success");
-
+                    Social.ShowLeaderboardUI();
                 }
                 else
                 {

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 68646e1856c11aa48ab58b2358ddf2d2
-timeCreated: 1466732667
+timeCreated: 1467163089
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -29,6 +29,7 @@ TextureImporter:
     21300044: GUI_Spirte_Sheet_2
     21300046: GUI_Spirte_Sheet_3
     21300048: GUI_Spirte_Sheet_4
+    21300050: GUI_Spirte_Sheet_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -1056,6 +1057,55 @@ TextureImporter:
         - {x: 50.5, y: -37.5}
         - {x: 83.5, y: 26.5}
         - {x: 83.5, y: 71.5}
+    - name: GUI_Spirte_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 1519
+        width: 350
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 141, y: -103}
+        - {x: 161, y: -68}
+        - {x: 170, y: -40}
+        - {x: 173, y: -21}
+        - {x: 173, y: 12}
+        - {x: 171, y: 35}
+        - {x: 167, y: 51}
+        - {x: 153, y: 84}
+        - {x: 146, y: 94}
+        - {x: 130, y: 116}
+        - {x: 110, y: 135}
+        - {x: 87, y: 151}
+        - {x: 55, y: 165}
+        - {x: 23, y: 172}
+        - {x: -25, y: 172}
+        - {x: -49, y: 167}
+        - {x: -70, y: 159}
+        - {x: -90, y: 148}
+        - {x: -102, y: 140}
+        - {x: -120, y: 125}
+        - {x: -138, y: 106}
+        - {x: -150, y: 87}
+        - {x: -164, y: 59}
+        - {x: -172, y: 27}
+        - {x: -172, y: -24}
+        - {x: -168, y: -47}
+        - {x: -159, y: -72}
+        - {x: -140, y: -104}
+        - {x: -116, y: -131}
+        - {x: -82, y: -154}
+        - {x: -66, y: -161}
+        - {x: -46, y: -167}
+        - {x: -38, y: -169}
+        - {x: -23, y: -173}
+        - {x: 22, y: -173}
+        - {x: 54, y: -166}
+        - {x: 91, y: -149}
+        - {x: 113, y: -133}
     outline: []
   spritePackingTag: 
   userData: 
