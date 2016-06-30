@@ -24,7 +24,24 @@
 
 public static class GPGSIds
 {
+        public const string achievement_this_gets_easier_right = "CgkIpfv-ypQeEAIQDQ"; // <GPGSID>
+        public const string achievement_just_getting_the_hang_of_it = "CgkIpfv-ypQeEAIQDA"; // <GPGSID>
+        public const string achievement_anaconda = "CgkIpfv-ypQeEAIQCg"; // <GPGSID>
+        public const string achievement_titanoboa = "CgkIpfv-ypQeEAIQCw"; // <GPGSID>
+        public const string achievement_orochimarus_disciple = "CgkIpfv-ypQeEAIQCA"; // <GPGSID>
+        public const string achievement_proficient = "CgkIpfv-ypQeEAIQBQ"; // <GPGSID>
+        public const string achievement_massive_facial_reconstruction = "CgkIpfv-ypQeEAIQEg"; // <GPGSID>
+        public const string achievement_so_much_death = "CgkIpfv-ypQeEAIQDw"; // <GPGSID>
+        public const string achievement_beginner = "CgkIpfv-ypQeEAIQAw"; // <GPGSID>
+        public const string achievement_expert = "CgkIpfv-ypQeEAIQBg"; // <GPGSID>
+        public const string achievement_must_have_them_all = "CgkIpfv-ypQeEAIQEQ"; // <GPGSID>
+        public const string achievement_python = "CgkIpfv-ypQeEAIQCQ"; // <GPGSID>
         public const string leaderboard_high_scores = "CgkIpfv-ypQeEAIQAA"; // <GPGSID>
+        public const string achievement_for_a_rainy_day = "CgkIpfv-ypQeEAIQEA"; // <GPGSID>
+        public const string achievement_master = "CgkIpfv-ypQeEAIQBw"; // <GPGSID>
+        public const string achievement_shedding_season = "CgkIpfv-ypQeEAIQEw"; // <GPGSID>
+        public const string achievement_intermediate = "CgkIpfv-ypQeEAIQBA"; // <GPGSID>
+        public const string achievement_masochist = "CgkIpfv-ypQeEAIQDg"; // <GPGSID>
 
 }
 

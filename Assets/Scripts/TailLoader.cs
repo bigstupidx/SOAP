@@ -31,6 +31,22 @@ public class TailLoader : MonoBehaviour
             // load the tail
             num_tails_collected++;
             total_tails_collected++;
+
+            string num_tails = total_tails_collected.ToString();
+
+            // Unlock achievement for collecting specific number of tails
+            switch (num_tails)
+            {
+                case "9":
+                    Achievements.pythonAchievement();
+                    break;
+                case "15":
+                    Achievements.anacondaAchievement();
+                    break;
+                case "21":
+                    Achievements.titanoboaAchievement();
+                    break;
+            }
         }
     }
 

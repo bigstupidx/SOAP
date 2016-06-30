@@ -19,10 +19,29 @@ public class CBAds : MonoBehaviour {
 	
 	}
 
-    // Show ads at the game over screen
+    // Show ads at the game over screen and unlock death achievements
     public void showGameOverAds()
     {
         go_count++;
+
+        string death_count = go_count.ToString();
+
+        // Unlock achievement for dying specific number of times
+        switch (death_count)
+        {
+            case "10":
+                Achievements.justGettingTheHangOfItAchievement();
+                break;
+            case "20":
+                Achievements.thisGetsEasierRightAchievement();
+                break;
+            case "30":
+                Achievements.masochistAchievement();
+                break;
+            case "50":
+                Achievements.soMuchDeathAchievement();
+                break;
+        }
 
         if (go_count % ad_frequency == 0)
         {

@@ -33,6 +33,32 @@ public class PointManager : MonoBehaviour {
     public void update_score()
     {
         current_score++;
+        string string_score = current_score.ToString();
+
+        // Unlock achievement for reaching specific scores
+        switch (string_score)
+        {
+            case "5":
+                Achievements.beginnerAchievement();
+                break;
+            case "10":
+                Achievements.intermediateAchievement();
+                break;
+            case "15":
+                Achievements.proficientAchievement();
+                break;
+            case "20":
+                Achievements.masterAchievement();
+                break;
+            case "30":
+                Achievements.expertAchievement();
+                break;
+            case "40":
+                Achievements.orochimarusDiscipleAchievement();
+                break;
+        }
+
+        // Update the game screen score text
         game_screen_score.text = current_score.ToString();
 
         int best_score = getScore();

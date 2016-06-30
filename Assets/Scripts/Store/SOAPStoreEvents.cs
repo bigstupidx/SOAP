@@ -38,6 +38,16 @@ public class SOAPStoreEvents : MonoBehaviour {
         string avatar_id = pvi.ItemId;
 
         store_manager_script.updatePrices(avatar_id);
+
+        // Unlock achievement for buying an avatar or tail with real money
+        if (avatar_id.Contains("avatar"))
+        {
+            Achievements.massiveFacialReconstructionAchievement();
+        }
+        else
+        {
+            Achievements.sheddingSeasonAchievement();
+        }
     }
 
 
@@ -50,6 +60,16 @@ public class SOAPStoreEvents : MonoBehaviour {
         string avatar_id = vg.ItemId;
 
         store_manager_script.updatePrices(avatar_id);
+
+        // Unlock achievement for buying an avatar or tail with virtual currency
+        if (avatar_id.Contains("avatar"))
+        {
+            Achievements.massiveFacialReconstructionAchievement();
+        }
+        else
+        {
+            Achievements.sheddingSeasonAchievement();
+        }
     }
 
 
@@ -62,6 +82,17 @@ public class SOAPStoreEvents : MonoBehaviour {
         store_manager_script.setStoreCoinText();
         store_manager_script.setGameOverCoinText();
         store_manager_script.setPauseCoinText();
+
+        // Unlock achievement for accumulating coins
+        if (balance >= 20000 && balance < 100000)
+        {
+            Achievements.forARainyDayAchievement();
+        }
+
+        if (balance > 100000)
+        {
+            Achievements.mustHaveThemAllAchievement();
+        }
     }
 
 
