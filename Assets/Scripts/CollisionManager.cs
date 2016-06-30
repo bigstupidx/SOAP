@@ -98,20 +98,22 @@ public class CollisionManager : MonoBehaviour {
     // When the avatar is out of the camera's view end the game
     void OnBecameInvisible()
     {
-        // TODO: Add animation or fx call here
         //Time.timeScale = 0;
 		player_death();
-		//ui_manager_script.activate_game_over_menu();
+        player_death_particle.gameObject.transform.position = this.gameObject.transform.position;
+        player_death_particle.Play();
+        Invoke("LoadGameOverDelayed", 1.5f);
+        sound_manager_script.playSFX(SoundManager.CRASH_SFX);
     }
 
+
+    // Turn the avatar game object off this will automatically trigger OnBecameInvisible()
     public void player_death()
     {
 		this.gameObject.SetActive(false);
-		player_death_particle.gameObject.transform.position = this.gameObject.transform.position;
-		player_death_particle.Play();
-		Invoke("LoadGameOverDelayed", 1.5f);
-		sound_manager_script.playSFX(SoundManager.CRASH_SFX);
     }
+
+
 	public void LoadGameOverDelayed()
 	{
 		ui_manager_script.activate_game_over_menu();
