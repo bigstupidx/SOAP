@@ -11,6 +11,8 @@ public class CollisionManager : MonoBehaviour {
     private SoundManager sound_manager_script;
     private GameObject player_death_particle_ref;
 	private ParticleSystem player_death_particle;
+	private Material player_death_mat;
+	private Texture player_death_texture;
 
 	// Use this for initialization
 	void Start () 
@@ -29,6 +31,7 @@ public class CollisionManager : MonoBehaviour {
 		challenge_room_camera = game_cam_ref.GetComponent<CameraController>();
 		player_death_particle_ref = GameObject.Find("player_death_particle");
 		player_death_particle = player_death_particle_ref.gameObject.GetComponent<ParticleSystem>();
+		player_death_mat = player_death_particle.GetComponent<ParticleSystemRenderer>().material;
 	}
 	
 	// Update is called once per frame
@@ -110,6 +113,8 @@ public class CollisionManager : MonoBehaviour {
     // Turn the avatar game object off this will automatically trigger OnBecameInvisible()
     public void player_death()
     {
+		player_death_texture = Resources.Load(PlayerPrefs.GetString("Avatar").ToString(), typeof(Texture2D)) as Texture;
+		player_death_mat.mainTexture = player_death_texture;
 		this.gameObject.SetActive(false);
     }
 
