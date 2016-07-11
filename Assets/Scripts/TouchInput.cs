@@ -13,6 +13,9 @@ public class TouchInput : MonoBehaviour {
     private bool side_touched;
     private bool pre_side_touched;
 
+    private Touch initial_touch = new Touch();
+    private float swipe_distance = 0;
+    private bool has_swiped = false;
 
 	// Use this for initialization
 	void Start () 
@@ -22,6 +25,7 @@ public class TouchInput : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+
 	void Update () 
     {
         //if (Input.touchCount == 1)
@@ -30,7 +34,8 @@ public class TouchInput : MonoBehaviour {
         //}
 
         //sideTouched();
-        editorSideTouched();
+        //editorSideTouched();
+		swipe_controls();
 	}
 
 
@@ -54,12 +59,12 @@ public class TouchInput : MonoBehaviour {
             //if (touch_position.x <= screen_width / 2)
             if (side_touched)
             {
-                avatar_controller_script.rotate_avatar(Mathf.PI/2);
+                //avatar_controller_script.rotate_avatar(Mathf.PI/2);
             }
 
             else
             {
-                avatar_controller_script.rotate_avatar(-Mathf.PI/2);
+                //avatar_controller_script.rotate_avatar(-Mathf.PI/2);
             }
 
             time_of_last_tap = Time.time;
@@ -87,18 +92,129 @@ public class TouchInput : MonoBehaviour {
             //if (mouse_position.x <= screen_width / 2)
             if (side_touched)
             {
-                avatar_controller_script.rotate_avatar(Mathf.PI/2);
+                //avatar_controller_script.rotate_avatar(Mathf.PI/2);
             }
 
             else
             {
-                avatar_controller_script.rotate_avatar(-Mathf.PI/2);
+                //avatar_controller_script.rotate_avatar(-Mathf.PI/2);
             }
 
             time_of_last_tap = Time.time;
             pre_side_touched = side_touched;
         }
     }
+
+	public void swipe_controls()
+	{
+		foreach(Touch touch in Input.touches)
+        {
+
+        	if (touch.phase == TouchPhase.Began)
+        	{
+				initial_touch = touch;
+			}
+
+			else if (touch.phase == TouchPhase.Moved && !has_swiped)
+			{
+				float x_delta = initial_touch.position.x - touch.position.x;
+				float y_delta = initial_touch.position.y - touch.position.y;
+				bool swiped_sidways = Mathf.Abs(x_delta) > Mathf.Abs(y_delta);
+				swipe_distance = Mathf.Sqrt((x_delta * x_delta) + (y_delta * y_delta));
+
+				if (swipe_distance > 10f)
+				{
+					// Swipe left
+					if (swiped_sidways && x_delta > 0)
+					{
+						if (avatar_controller_script.previous_vector_avatar_direction == Vector3.up)
+						{
+							avatar_controller_script.rotate_avatar(Mathf.PI/2);
+						}
+
+						else if (avatar_controller_script.previous_vector_avatar_direction == Vector3.down)
+						{
+							avatar_controller_script.rotate_avatar(-Mathf.PI/2);
+						}
+
+						else
+						{
+
+						}
+					}
+
+					// Swipe Right
+					else if (swiped_sidways && x_delta <= 0)
+					{
+
+						if (avatar_controller_script.previous_vector_avatar_direction == Vector3.up)
+						{
+							avatar_controller_script.rotate_avatar(-Mathf.PI/2);
+						}
+
+						else if (avatar_controller_script.previous_vector_avatar_direction == Vector3.down)
+						{
+							avatar_controller_script.rotate_avatar(Mathf.PI/2);
+						}
+
+						else
+						{
+
+						}
+					}
+
+					// Swipe Down
+					else if (!swiped_sidways && y_delta > 0)
+					{
+
+						if (avatar_controller_script.previous_vector_avatar_direction == Vector3.left)
+						{
+							avatar_controller_script.rotate_avatar(Mathf.PI/2);
+						}
+
+						else if (avatar_controller_script.previous_vector_avatar_direction == Vector3.right)
+						{
+							avatar_controller_script.rotate_avatar(-Mathf.PI/2);
+						}
+
+						else
+						{
+
+						}
+					}
+
+					// Swipe Up
+					else if (!swiped_sidways && y_delta <= 0)
+					{
+
+						if (avatar_controller_script.previous_vector_avatar_direction == Vector3.left)
+						{
+							avatar_controller_script.rotate_avatar(-Mathf.PI/2);
+						}
+
+						else if (avatar_controller_script.previous_vector_avatar_direction == Vector3.right)
+						{
+							avatar_controller_script.rotate_avatar(Mathf.PI/2);
+						}
+
+						else
+						{
+
+						}
+					}
+
+					has_swiped = true;
+				}
+			}
+
+			else if (touch.phase == TouchPhase.Ended)
+			{
+				initial_touch = new Touch();
+				has_swiped = false;
+				Debug.Log("Previous direction: " + avatar_controller_script.previous_vector_avatar_direction.ToString());
+			}
+        }
+	}
 
 }
 

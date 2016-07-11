@@ -15,7 +15,7 @@ public class AvatarController : MonoBehaviour {
     Dictionary<string, string> ccw_movement = new Dictionary<string, string>(); // Defines the next direction for counter-clockwise turn
     public float temp_boost = 10f;              // The boost to give avatar when a double tap occurs so avatar doesn't collide with its tail
     private bool tap_valid = true;              // False if the player double taps. Signals when to apply the boost
-    private Vector3 previous_vector_avatar_direction;   // The avatars previous vector direction
+    public Vector3 previous_vector_avatar_direction;   // The avatars previous vector direction
 
     private Rigidbody2D rigid_body;     // Used to give avatar velocity
 
