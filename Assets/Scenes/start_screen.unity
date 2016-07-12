@@ -4095,7 +4095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfx_clips:
-  - {fileID: 8300000, guid: 51bc80cb35f27ca4abe4c08f0c7b61bb, type: 3}
+  - {fileID: 8300000, guid: c2560f26db29fa44eaa83006e640cfc8, type: 3}
   - {fileID: 8300000, guid: c62dbb96bd2bdf244827a7b21ff8f284, type: 3}
   - {fileID: 8300000, guid: 943064b42b8b332459d4e9628f6943d6, type: 3}
   start_mute_btn: {fileID: 746150238}
