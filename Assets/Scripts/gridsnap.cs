@@ -70,11 +70,14 @@ public class gridsnap : MonoBehaviour {
                     previous_avatar_name = avatar_name;
 
                     // Only updates prices if the avatar and tail are purchasable
-                    if (avatar_name != "default_avatar" && avatar_name != "default_tail")
-                    {
-                        store_manager_script.updatePrices(avatar_name);
-                        store_manager_script.setAvatarID(avatar_name);
-                    }
+                    store_manager_script.updatePrices(avatar_name);
+                    store_manager_script.setAvatarID(avatar_name);
+
+                    //if (avatar_name != "default_avatar" && avatar_name != "default_tail")
+                    //{
+                    //    store_manager_script.updatePrices(avatar_name);
+                    //    store_manager_script.setAvatarID(avatar_name);
+                    //}
 
                     string[] avatar_name_list = getAvatarNameAndType(avatar_name);
                     avatar_name_txt.text = avatar_name_list[0];

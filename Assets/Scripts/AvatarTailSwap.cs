@@ -126,6 +126,7 @@ public class AvatarTailSwap : MonoBehaviour {
         avatar_name_to_sprite_name.Add("skull_avatar", avatar_sprite_list[6]);
         avatar_name_to_sprite_name.Add("ghost_avatar", avatar_sprite_list[7]);
         avatar_name_to_sprite_name.Add("default_avatar", avatar_sprite_list[8]);
+        avatar_name_to_sprite_name.Add("cyborg_avatar", avatar_sprite_list[9]);
     }
 
 
@@ -141,29 +142,41 @@ public class AvatarTailSwap : MonoBehaviour {
         tail_name_to_sprite_name.Add("skull_tail", tail_sprite_list[6]);
         tail_name_to_sprite_name.Add("ghost_tail", tail_sprite_list[7]);
         tail_name_to_sprite_name.Add("default_tail", tail_sprite_list[8]);
+        tail_name_to_sprite_name.Add("cyborg_tail", tail_sprite_list[9]);
     }
 
 
     // Set the avatar and tail player pref to the name of the selected (middle) avatar game object in the store scroll
     public void setAvatar(string avatar_name)
     {
-
         int virtual_item_balance = 0;
         int market_item_balance = 0;
 
-        // Only look for balances on avatars and tails that are purchasable
-        if (avatar_name != "default_avatar" && avatar_name != "default_tail")
-        {
-            PurchasableVirtualItem virtual_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(avatar_name);
-            PurchasableVirtualItem market_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId("soap_" + avatar_name);
-            virtual_item_balance = virtual_item.GetBalance();
-            market_item_balance = market_item.GetBalance();;
-        }
-        else
+        // Default avatar and tail balance is always 1
+        if (avatar_name == "default_avatar" || avatar_name == "default_tail")
         {
             virtual_item_balance = 1;
         }
 
+        // Check balance of reward avatar
+        else if (RewardedAvatars.avatar_balance_index_map.ContainsKey(avatar_name))
+        {
+            if (RewardedAvatars.isAvatarUnlocked(avatar_name))
+            {
+                virtual_item_balance = 1;
+            }
+        }
+        
+        // Look for balances on avatars and tails that are purchasable
+        else
+        {
+            PurchasableVirtualItem virtual_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId(avatar_name);
+            PurchasableVirtualItem market_item = (PurchasableVirtualItem)StoreInfo.GetItemByItemId("soap_" + avatar_name);
+            virtual_item_balance = virtual_item.GetBalance();
+            market_item_balance = market_item.GetBalance();
+        }
+
+        // Set the player pref if the item has been earned/purchased
         if (virtual_item_balance == 1 || market_item_balance == 1)
         {
             if (avatar_name.Contains("avatar"))

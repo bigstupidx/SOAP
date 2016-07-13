@@ -9,7 +9,8 @@ public class SOAPStoreManager : MonoBehaviour {
     // TODO: MAKE SURE TO RESET ITEM BALANCES TO ZERO BEFORE PUBLISH
     public Button coin_buy_button;
     public Button money_buy_button;
-    public GameObject already_bought_sign;
+    public GameObject avatar_purchase_info;
+    public GameObject reward_description_go;
     public Text store_coin_text;
     public Text game_over_coin_text;
     public Text pause_coin_text;
@@ -83,30 +84,62 @@ public class SOAPStoreManager : MonoBehaviour {
     // Update the store button prices
     public void updatePrices(string item_id)
     {
-        string[] price_list = getPrices(item_id);
-        coin_buy_button.GetComponentInChildren<Text>().text = price_list[0];
-        money_buy_button.GetComponentInChildren<Text>().text = "$" + price_list[1];
-
-        //Debug.Log(">>> Updating Prices...");
-
-        bool can_afford = StoreInventory.CanAfford(item_id);
-
-        // If user cannot afford disable the coin buy button
-        if (can_afford) { coin_buy_button.enabled = true; }
-        else { coin_buy_button.enabled = false; }
-
-        // If user already bought don't show the buy buttons
-        if (StoreInventory.GetItemBalance(item_id) == 1 || StoreInventory.GetItemBalance("soap_" + item_id) == 1)
+        // Default avatars and tails
+        if (item_id == "default_avatar" || item_id == "default_tail")
         {
             coin_buy_button.gameObject.SetActive(false);
             money_buy_button.gameObject.SetActive(false);
-            already_bought_sign.SetActive(true);
+            avatar_purchase_info.SetActive(true);
+            reward_description_go.SetActive(false);
         }
+
+        // Check balance of reward avatar
+        else if (RewardedAvatars.avatar_balance_index_map.ContainsKey(item_id))
+        {
+            coin_buy_button.gameObject.SetActive(false);
+            money_buy_button.gameObject.SetActive(false);
+
+            if (RewardedAvatars.isAvatarUnlocked(item_id))
+            {
+                avatar_purchase_info.SetActive(true);
+                reward_description_go.SetActive(false);
+            }
+            else
+            {
+                avatar_purchase_info.SetActive(false);
+                reward_description_go.SetActive(true);
+                reward_description_go.GetComponent<Text>().text = RewardedAvatars.avatar_earn_text_map[item_id];
+            }
+        }
+
+        // For all other avatars update the prices
         else
         {
-            coin_buy_button.gameObject.SetActive(true);
-            money_buy_button.gameObject.SetActive(true);
-            already_bought_sign.SetActive(false);
+            string[] price_list = getPrices(item_id);
+            coin_buy_button.GetComponentInChildren<Text>().text = price_list[0];
+            money_buy_button.GetComponentInChildren<Text>().text = "$" + price_list[1];
+
+            bool can_afford = StoreInventory.CanAfford(item_id);
+
+            // If user cannot afford disable the coin buy button
+            if (can_afford) { coin_buy_button.enabled = true; }
+            else { coin_buy_button.enabled = false; }
+
+            // If user already bought don't show the buy buttons
+            if (StoreInventory.GetItemBalance(item_id) == 1 || StoreInventory.GetItemBalance("soap_" + item_id) == 1)
+            {
+                coin_buy_button.gameObject.SetActive(false);
+                money_buy_button.gameObject.SetActive(false);
+                reward_description_go.SetActive(false);
+                avatar_purchase_info.SetActive(true);
+            }
+            else
+            {
+                coin_buy_button.gameObject.SetActive(true);
+                money_buy_button.gameObject.SetActive(true);
+                reward_description_go.SetActive(false);
+                avatar_purchase_info.SetActive(false);
+            }
         }
     }
 
