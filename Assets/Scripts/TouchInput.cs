@@ -35,7 +35,7 @@ public class TouchInput : MonoBehaviour {
 
         //sideTouched();
         //editorSideTouched();
-		swipe_controls();
+        swipe_controls();
 	}
 
 
@@ -59,12 +59,12 @@ public class TouchInput : MonoBehaviour {
             //if (touch_position.x <= screen_width / 2)
             if (side_touched)
             {
-                //avatar_controller_script.rotate_avatar(Mathf.PI/2);
+                avatar_controller_script.rotate_avatar(Mathf.PI / 2);
             }
 
             else
             {
-                //avatar_controller_script.rotate_avatar(-Mathf.PI/2);
+                avatar_controller_script.rotate_avatar(-Mathf.PI / 2);
             }
 
             time_of_last_tap = Time.time;
@@ -78,7 +78,6 @@ public class TouchInput : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0) && !BlockRaycast.IsPointerOverUIObject())
         {
-
             mouse_position = Input.mousePosition;
             side_touched = mouse_position.x <= screen_width/2;
             tap_valid = Time.time > time_of_last_tap + minimum_tap_time || side_touched != pre_side_touched;
@@ -92,12 +91,12 @@ public class TouchInput : MonoBehaviour {
             //if (mouse_position.x <= screen_width / 2)
             if (side_touched)
             {
-                //avatar_controller_script.rotate_avatar(Mathf.PI/2);
+                avatar_controller_script.rotate_avatar(Mathf.PI / 2);
             }
 
             else
             {
-                //avatar_controller_script.rotate_avatar(-Mathf.PI/2);
+                avatar_controller_script.rotate_avatar(-Mathf.PI / 2);
             }
 
             time_of_last_tap = Time.time;
