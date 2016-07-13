@@ -49,6 +49,8 @@ public class PointManager : MonoBehaviour {
                 break;
             case "20":
                 Achievements.masterAchievement();
+                RewardedAvatars.incrementAvatarBalance(RewardedAvatars.cyborg_avatar_rwd);
+                RewardedAvatars.incrementAvatarBalance(RewardedAvatars.cyborg_tail_rwd);
                 break;
             case "30":
                 Achievements.expertAchievement();
