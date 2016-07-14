@@ -4,28 +4,46 @@ using System.Collections.Generic;
 
 public class RewardedAvatars : MonoBehaviour {
 
+    public const string alien_avatar_rwd = "alien_avatar";
+    public const string alien_tail_rwd = "alien_tail";
     public const string cyborg_avatar_rwd = "cyborg_avatar";
     public const string cyborg_tail_rwd = "cyborg_tail";
-    public const string crab_avatar_rwd = "crab_avatar";
-    public const string crab_tail_rwd = "crab_tail";
+    public const string ghost_avatar_rwd = "ghost_avatar";
+    public const string ghost_tail_rwd = "ghost_tail";
+    public const string rocketman_tail_rwd = "rocketman_avatar";
+    public const string rocketman_rwd = "rocketman_tail";
+    public const string star_rwd = "star_avatar";
+    public const string star_tail_rwd = "star_tail";
 
 
     // Dictionary of reward avatar and tails with their position in the player prefs "Reward" key string
     public static readonly Dictionary<string, int> avatar_balance_index_map = new Dictionary<string, int>
     {   
-        {"cyborg_avatar", 0},
-        {"cyborg_tail", 1},
-        {"crab_avatar", 2},
-        {"crab_tail", 3},
+        {"alien_avatar", 0},
+        {"alien_tail", 1},
+        {"cyborg_avatar", 2},
+        {"cyborg_tail", 4},
+        {"ghost_avatar", 5},
+        {"ghost_tail", 6},
+        {"rocketman_avatar", 7},
+        {"rocketman_tail", 8},
+        {"star_avatar", 9},
+        {"star_tail", 10},
     };
 
     // Dictionary that explains how to earn each avatar
     public static readonly Dictionary<string, string> avatar_earn_text_map = new Dictionary<string, string>
     {   
+        {"alien_avatar", "Pass the first challenge room to unlock."},
+        {"alien_tail", "Pass the first challenge room to unlock."},
         {"cyborg_avatar", "Get a score of 20 to unlock."},
         {"cyborg_tail", "Get a score of 20 to unlock."},
-        {"crab_avatar", "Post to Facebook to unlock."},
-        {"crab_tail", "Post to Facebook to unlock."},
+        {"ghost_avatar", "Post to Facebook to unlock."},
+        {"ghost_tail", "Post to Facebook to unlock."},
+        {"rocketman_avatar", "Remove ads to unlock."},
+        {"rocketman_tail", "Remove ads to unlock."},
+        {"star_avatar", "Post to Twitter to unlock."},
+        {"star_tail", "Post to Twitter to unlock."},
     };
 
 
@@ -36,20 +54,10 @@ public class RewardedAvatars : MonoBehaviour {
 
         if (!reward_key_exists)
         {
-            PlayerPrefs.SetString("Reward", "0_0_0_0");
+            PlayerPrefs.SetString("Reward", "0_0_0_0_0_0_0_0_0_0");
         }
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    public void setAvatarUnlockStatus(string name)
-    {
-
-    }
-
 
     // Checks the balance player prefs key to see if the avatar is unlocked
     public static bool isAvatarUnlocked(string name)
@@ -72,12 +80,6 @@ public class RewardedAvatars : MonoBehaviour {
         avatar_balance[balance_position] = "1";
 
         string new_reward_key = string.Join("_", avatar_balance);
-
-        //foreach (string balance in avatar_balance)
-        //{
-        //    new_reward_key = new_reward_key + balance + "_";
-        //    Debug.Log(new_reward_key);
-        //}
 
         setRewardKey(new_reward_key);
     }
