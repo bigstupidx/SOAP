@@ -35,7 +35,8 @@ public class gridsnap : MonoBehaviour {
 
         // auto adjust the width of the grid to have space for all the childs
         //rect.sizeDelta = new Vector2((transform.childCount + 2f) * grid.cellSize.x + (transform.childCount - 1f) * grid.spacing.x, rect.sizeDelta.y);
-        rect.sizeDelta = new Vector2((transform.childCount + 5f) * grid.cellSize.x + (transform.childCount - 0f) * grid.spacing.x, rect.sizeDelta.y);
+        //rect.sizeDelta = new Vector2((transform.childCount + 5f) * grid.cellSize.x + (transform.childCount - 0f) * grid.spacing.x, rect.sizeDelta.y);
+        rect.sizeDelta = new Vector2((transform.childCount-7) * grid.cellSize.x, rect.sizeDelta.y);
     }
 
     public void Update() {
@@ -54,9 +55,13 @@ public class gridsnap : MonoBehaviour {
             }
         }
 
-        Vector2 tempPos = new Vector2(Mathf.Round(rect.localPosition.x / (grid.cellSize.x + grid.spacing.x)) * (grid.cellSize.x + grid.spacing.x) * -1f, 0);
-        for (int i = 0; i < transform.childCount; i++) {
+        //Vector2 tempPos = new Vector2(Mathf.Round(rect.localPosition.x / (grid.cellSize.x + grid.spacing.x)) * (grid.cellSize.x + grid.spacing.x) * -1f, 0);
+        Vector2 tempPos = new Vector2(Mathf.Round(rect.localPosition.x / (grid.cellSize.x + 0.5f*grid.spacing.x)) * (grid.cellSize.x + 0.5f*grid.spacing.x) * -1f, 0);
+        
+        for (int i = 0; i < transform.childCount; i++) 
+        {
             Transform child = transform.GetChild(i);
+
             if (child.localPosition.x == tempPos.x) {
                 
                 // Scale the middle avatar
@@ -73,12 +78,7 @@ public class gridsnap : MonoBehaviour {
                     store_manager_script.updatePrices(avatar_name);
                     store_manager_script.setAvatarID(avatar_name);
 
-                    //if (avatar_name != "default_avatar" && avatar_name != "default_tail")
-                    //{
-                    //    store_manager_script.updatePrices(avatar_name);
-                    //    store_manager_script.setAvatarID(avatar_name);
-                    //}
-
+                    // Swap the avatars
                     string[] avatar_name_list = getAvatarNameAndType(avatar_name);
                     avatar_name_txt.text = avatar_name_list[0];
                     avatar_type_txt.text = avatar_name_list[1];
