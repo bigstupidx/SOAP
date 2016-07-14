@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 9e87550cc9a184246a2a5b250c7d19e9
+timeCreated: 1468456325
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Avatar_Sprite_Sheet__0
+    21300002: Avatar_Sprite_Sheet__1
+    21300004: Avatar_Sprite_Sheet__2
+    21300006: Avatar_Sprite_Sheet__3
+    21300008: Avatar_Sprite_Sheet__4
+    21300010: Avatar_Sprite_Sheet__5
+    21300012: Avatar_Sprite_Sheet__6
+    21300014: Avatar_Sprite_Sheet__7
+    21300016: Avatar_Sprite_Sheet__8
+    21300018: Avatar_Sprite_Sheet__9
+    21300020: Avatar_Sprite_Sheet__10
+    21300022: Avatar_Sprite_Sheet__11
+    21300024: Avatar_Sprite_Sheet__12
+    21300026: Avatar_Sprite_Sheet__13
+    21300028: Avatar_Sprite_Sheet__14
+    21300030: Avatar_Sprite_Sheet__15
+    21300032: Avatar_Sprite_Sheet__16
+    21300034: Avatar_Sprite_Sheet__17
+    21300036: Avatar_Sprite_Sheet__18
+    21300038: Avatar_Sprite_Sheet__19
+    21300040: Avatar_Sprite_Sheet__20
+    21300042: Avatar_Sprite_Sheet__21
+    21300044: Avatar_Sprite_Sheet__22
+    21300046: Avatar_Sprite_Sheet__23
+    21300048: Avatar_Sprite_Sheet__24
+    21300050: Avatar_Sprite_Sheet__25
+    21300052: Avatar_Sprite_Sheet__26
+    21300054: Avatar_Sprite_Sheet__27
+    21300056: Avatar_Sprite_Sheet__28
+    21300058: Avatar_Sprite_Sheet__29
+    21300060: Avatar_Sprite_Sheet__30
+    21300062: Avatar_Sprite_Sheet__31
+    21300064: Avatar_Sprite_Sheet__32
+    21300066: Avatar_Sprite_Sheet__33
+    21300068: Avatar_Sprite_Sheet__34
+    21300070: Avatar_Sprite_Sheet__35
+    21300072: Avatar_Sprite_Sheet__36
+    21300074: Avatar_Sprite_Sheet__37
+    21300076: Avatar_Sprite_Sheet__38
+    21300078: Avatar_Sprite_Sheet__39
+    21300080: Avatar_Sprite_Sheet__40
+    21300082: Avatar_Sprite_Sheet__41
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Avatar_Sprite_Sheet__0
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 811
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: -31}
+        - {x: -32, y: -41}
+        - {x: 27, y: -41}
+        - {x: 41, y: -35}
+        - {x: 41, y: 34}
+        - {x: 36, y: 41}
+        - {x: -35, y: 41}
+        - {x: -41, y: 24}
+    - name: Avatar_Sprite_Sheet__1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 817
+        width: 78
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 35}
+        - {x: -39, y: 17}
+        - {x: -39, y: -25}
+        - {x: -31, y: -35}
+        - {x: 21, y: -35}
+        - {x: 39, y: -30}
+        - {x: 39, y: 34}
+        - {x: 37, y: 35}
+    - name: Avatar_Sprite_Sheet__2
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 823
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 29}
+        - {x: -32, y: -29}
+        - {x: 32, y: -29}
+        - {x: 32, y: 29}
+    - name: Avatar_Sprite_Sheet__3
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 817
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 35}
+        - {x: -28.5, y: 34}
+        - {x: -28.5, y: -35}
+        - {x: 28.5, y: -35}
+        - {x: 28.5, y: 31}
+        - {x: 23.5, y: 35}
+    - name: Avatar_Sprite_Sheet__4
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 816
+        width: 76
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 36}
+        - {x: -38, y: -36}
+        - {x: 24, y: -36}
+        - {x: 38, y: -11}
+        - {x: 38, y: 23}
+        - {x: 25, y: 36}
+    - name: Avatar_Sprite_Sheet__5
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 812
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 40}
+        - {x: -40, y: 30}
+        - {x: -40, y: -21}
+        - {x: -35, y: -40}
+        - {x: 15, y: -40}
+        - {x: 40, y: -23}
+        - {x: 40, y: 22}
+        - {x: 32, y: 40}
+    - name: Avatar_Sprite_Sheet__6
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 811
+        width: 81
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: -32}
+        - {x: -37.5, y: -41}
+        - {x: 40.5, y: -41}
+        - {x: 40.5, y: 41}
+        - {x: -20.5, y: 41}
+        - {x: -40.5, y: 25}
+    - name: Avatar_Sprite_Sheet__7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 702
+        width: 82
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 40.5}
+        - {x: -41, y: 11.5}
+        - {x: -41, y: -9.5}
+        - {x: -4, y: -40.5}
+        - {x: 13, y: -40.5}
+        - {x: 41, y: -5.5}
+        - {x: 41, y: 12.5}
+        - {x: 15, y: 40.5}
+    - name: Avatar_Sprite_Sheet__8
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 706
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 36}
+        - {x: -29, y: 36}
+        - {x: -35, y: 29}
+        - {x: -36, y: 26}
+        - {x: -36, y: 6}
+        - {x: -29, y: 2}
+        - {x: -22, y: 3}
+        - {x: 3, y: -32}
+        - {x: 8, y: -36}
+        - {x: 24, y: -36}
+        - {x: 36, y: -26}
+        - {x: 36, y: 3}
+        - {x: -1, y: 35}
+    - name: Avatar_Sprite_Sheet__9
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 702
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 40.5}
+        - {x: -40.5, y: 38.5}
+        - {x: -40.5, y: -23.5}
+        - {x: -28.5, y: -39.5}
+        - {x: -22.5, y: -40.5}
+        - {x: 19.5, y: -40.5}
+        - {x: 40.5, y: -26.5}
+        - {x: 40.5, y: 34.5}
+        - {x: 37.5, y: 40.5}
+    - name: Avatar_Sprite_Sheet__10
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 706
+        width: 50
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 36.5}
+        - {x: -25, y: 26.5}
+        - {x: -25, y: -36.5}
+        - {x: 25, y: -36.5}
+        - {x: 25, y: 28.5}
+        - {x: 18, y: 36.5}
+    - name: Avatar_Sprite_Sheet__11
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 702
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 40.5}
+        - {x: -40.5, y: 33.5}
+        - {x: -40.5, y: -33.5}
+        - {x: -33.5, y: -40.5}
+        - {x: 27.5, y: -40.5}
+        - {x: 40.5, y: -35.5}
+        - {x: 40.5, y: 37.5}
+        - {x: 32.5, y: 40.5}
+    - name: Avatar_Sprite_Sheet__12
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 702
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 40.5}
+        - {x: -39, y: 29.5}
+        - {x: -40, y: 23.5}
+        - {x: -40, y: -19.5}
+        - {x: -26, y: -40.5}
+        - {x: 24, y: -40.5}
+        - {x: 40, y: -24.5}
+        - {x: 40, y: 32.5}
+        - {x: 27, y: 40.5}
+      - - {x: -11, y: 19.5}
+        - {x: -19, y: 9.5}
+        - {x: -19, y: -7.5}
+        - {x: -11, y: -19.5}
+        - {x: 10, y: -19.5}
+        - {x: 19, y: -9.5}
+        - {x: 19, y: 13.5}
+        - {x: 5, y: 19.5}
+    - name: Avatar_Sprite_Sheet__13
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 702
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 40.5}
+        - {x: -40.5, y: 19.5}
+        - {x: -40.5, y: -26.5}
+        - {x: -36.5, y: -40.5}
+        - {x: 34.5, y: -40.5}
+        - {x: 40.5, y: -28.5}
+        - {x: 40.5, y: 35.5}
+        - {x: 24.5, y: 40.5}
+    - name: Avatar_Sprite_Sheet__14
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 549
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 41}
+        - {x: -35, y: 41}
+        - {x: -41, y: 32}
+        - {x: -41, y: -35}
+        - {x: -24, y: -41}
+        - {x: 35, y: -41}
+        - {x: 41, y: -31}
+        - {x: 41, y: 32}
+    - name: Avatar_Sprite_Sheet__15
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 550
+        width: 94
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 40.5}
+        - {x: -47, y: 18.5}
+        - {x: -47, y: -38.5}
+        - {x: -39, y: -40.5}
+        - {x: 45, y: -40.5}
+        - {x: 47, y: -39.5}
+        - {x: 47, y: 17.5}
+        - {x: 34, y: 40.5}
+    - name: Avatar_Sprite_Sheet__16
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 554
+        width: 69
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 36}
+        - {x: -34.5, y: 34}
+        - {x: -34.5, y: -28}
+        - {x: -29.5, y: -36}
+        - {x: 24.5, y: -36}
+        - {x: 34.5, y: -33}
+        - {x: 34.5, y: 35}
+        - {x: 31.5, y: 36}
+    - name: Avatar_Sprite_Sheet__17
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 549
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 41}
+        - {x: -35, y: 40}
+        - {x: -41, y: 27}
+        - {x: -41, y: -17}
+        - {x: -38, y: -32}
+        - {x: -20, y: -41}
+        - {x: 27, y: -41}
+        - {x: 41, y: -29}
+        - {x: 41, y: 23}
+        - {x: 33, y: 41}
+    - name: Avatar_Sprite_Sheet__18
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 549
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 41}
+        - {x: -41, y: 32}
+        - {x: -41, y: -35}
+        - {x: -31, y: -41}
+        - {x: 21, y: -41}
+        - {x: 41, y: -34}
+        - {x: 41, y: 22}
+        - {x: 25, y: 41}
+    - name: Avatar_Sprite_Sheet__19
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 552
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 38}
+        - {x: -16, y: 38}
+        - {x: -42, y: 28}
+        - {x: -44, y: 21}
+        - {x: -44, y: -15}
+        - {x: -18, y: -38}
+        - {x: 20, y: -38}
+        - {x: 27, y: -37}
+        - {x: 44, y: -19}
+        - {x: 44, y: 13}
+        - {x: 40, y: 28}
+    - name: Avatar_Sprite_Sheet__20
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 522
+        width: 141
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.5, y: 68.5}
+        - {x: -70.5, y: 51.5}
+        - {x: -70.5, y: -54.5}
+        - {x: -54.5, y: -68.5}
+        - {x: 55.5, y: -68.5}
+        - {x: 70.5, y: -54.5}
+        - {x: 70.5, y: 65.5}
+        - {x: 56.5, y: 68.5}
+    - name: Avatar_Sprite_Sheet__21
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 440
+        width: 82
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 40.5}
+        - {x: -41, y: 24.5}
+        - {x: -41, y: -23.5}
+        - {x: -26, y: -40.5}
+        - {x: 23, y: -40.5}
+        - {x: 31, y: -37.5}
+        - {x: 41, y: -28.5}
+        - {x: 41, y: 23.5}
+        - {x: 34, y: 40.5}
+    - name: Avatar_Sprite_Sheet__22
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 440
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 40.5}
+        - {x: -40.5, y: -40.5}
+        - {x: 40.5, y: -40.5}
+        - {x: 40.5, y: 33.5}
+        - {x: 35.5, y: 40.5}
+    - name: Avatar_Sprite_Sheet__23
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 440
+        width: 82
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 40.5}
+        - {x: -41, y: 38.5}
+        - {x: -41, y: -40.5}
+        - {x: 38, y: -40.5}
+        - {x: 41, y: -35.5}
+        - {x: 41, y: 40.5}
+    - name: Avatar_Sprite_Sheet__24
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 440
+        width: 80
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 40.5}
+        - {x: -40, y: 21.5}
+        - {x: -40, y: -33.5}
+        - {x: -35, y: -40.5}
+        - {x: 33, y: -40.5}
+        - {x: 40, y: -31.5}
+        - {x: 40, y: 24.5}
+        - {x: 35, y: 40.5}
+    - name: Avatar_Sprite_Sheet__25
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 440
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 40.5}
+        - {x: -40.5, y: 38.5}
+        - {x: -40.5, y: -26.5}
+        - {x: -22.5, y: -40.5}
+        - {x: 27.5, y: -40.5}
+        - {x: 40.5, y: -29.5}
+        - {x: 40.5, y: 40.5}
+    - name: Avatar_Sprite_Sheet__26
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 439
+        width: 56
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 40.5}
+        - {x: -27, y: 40.5}
+        - {x: -28, y: 28.5}
+        - {x: -28, y: -39.5}
+        - {x: -24, y: -40.5}
+        - {x: 22, y: -40.5}
+        - {x: 28, y: -33.5}
+        - {x: 28, y: 34.5}
+    - name: Avatar_Sprite_Sheet__27
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 444
+        width: 77
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 36.5}
+        - {x: -38.5, y: 18.5}
+        - {x: -38.5, y: -7.5}
+        - {x: -29.5, y: -36.5}
+        - {x: 31.5, y: -36.5}
+        - {x: 38.5, y: -1.5}
+        - {x: 38.5, y: 14.5}
+        - {x: 4.5, y: 36.5}
+    - name: Avatar_Sprite_Sheet__28
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 306
+        width: 73
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 41.5}
+        - {x: -29.5, y: 33.5}
+        - {x: -36.5, y: 22.5}
+        - {x: -36.5, y: -30.5}
+        - {x: -34.5, y: -41.5}
+        - {x: 35.5, y: -41.5}
+        - {x: 36.5, y: -35.5}
+        - {x: 36.5, y: 32.5}
+        - {x: 27.5, y: 41.5}
+    - name: Avatar_Sprite_Sheet__29
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 309
+        width: 106
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51, y: 38.5}
+        - {x: -42, y: 38.5}
+        - {x: -53, y: 36.5}
+        - {x: -53, y: -24.5}
+        - {x: -52, y: -29.5}
+        - {x: -26, y: -38.5}
+        - {x: 38, y: -38.5}
+        - {x: 47, y: -30.5}
+        - {x: 53, y: -15.5}
+        - {x: 53, y: 35.5}
+    - name: Avatar_Sprite_Sheet__30
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 307
+        width: 88
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 41}
+        - {x: -44, y: 39}
+        - {x: -44, y: -27}
+        - {x: -30, y: -41}
+        - {x: 24, y: -41}
+        - {x: 44, y: -15}
+        - {x: 44, y: 23}
+        - {x: 22, y: 41}
+    - name: Avatar_Sprite_Sheet__31
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 307
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 41}
+        - {x: -41, y: 31}
+        - {x: -41, y: -37}
+        - {x: -25, y: -41}
+        - {x: 27, y: -41}
+        - {x: 41, y: -24}
+        - {x: 41, y: 36}
+        - {x: 24, y: 41}
+    - name: Avatar_Sprite_Sheet__32
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 307
+        width: 87
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 45}
+        - {x: -43.5, y: 34}
+        - {x: -43.5, y: -36}
+        - {x: -36.5, y: -45}
+        - {x: 29.5, y: -45}
+        - {x: 43.5, y: -42}
+        - {x: 43.5, y: 43}
+        - {x: 34.5, y: 45}
+    - name: Avatar_Sprite_Sheet__33
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 307
+        width: 84
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 41}
+        - {x: -14, y: 41}
+        - {x: -23, y: 37}
+        - {x: -32, y: 31}
+        - {x: -42, y: 15}
+        - {x: -42, y: -17}
+        - {x: -21, y: -41}
+        - {x: 19, y: -41}
+        - {x: 23, y: -40}
+        - {x: 42, y: -17}
+        - {x: 42, y: 15}
+        - {x: 40, y: 28}
+    - name: Avatar_Sprite_Sheet__34
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 307
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 41}
+        - {x: -41, y: 32}
+        - {x: -41, y: -29}
+        - {x: -37, y: -41}
+        - {x: 25, y: -41}
+        - {x: 41, y: -25}
+        - {x: 41, y: 23}
+        - {x: 27, y: 41}
+    - name: Avatar_Sprite_Sheet__35
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 209
+        width: 76
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: 29.5}
+        - {x: -10, y: 29.5}
+        - {x: -38, y: -13.5}
+        - {x: -38, y: -28.5}
+        - {x: -36, y: -29.5}
+        - {x: 8, y: -29.5}
+        - {x: 38, y: -23.5}
+        - {x: 38, y: 18.5}
+    - name: Avatar_Sprite_Sheet__36
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 198
+        width: 82
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 40.5}
+        - {x: -39, y: 36.5}
+        - {x: -41, y: 26.5}
+        - {x: -41, y: -36.5}
+        - {x: -39, y: -40.5}
+        - {x: 36, y: -40.5}
+        - {x: 41, y: -25.5}
+        - {x: 41, y: 35.5}
+        - {x: 25, y: 40.5}
+    - name: Avatar_Sprite_Sheet__37
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 198
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 40.5}
+        - {x: -40.5, y: 34.5}
+        - {x: -40.5, y: -33.5}
+        - {x: -34.5, y: -38.5}
+        - {x: -25.5, y: -40.5}
+        - {x: 28.5, y: -40.5}
+        - {x: 40.5, y: -30.5}
+        - {x: 40.5, y: 38.5}
+        - {x: 35.5, y: 40.5}
+    - name: Avatar_Sprite_Sheet__38
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 206
+        width: 78
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: 32.5}
+        - {x: -39, y: -27.5}
+        - {x: -32, y: -32.5}
+        - {x: 37, y: -32.5}
+        - {x: 39, y: -22.5}
+        - {x: 39, y: 32.5}
+    - name: Avatar_Sprite_Sheet__39
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 198
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.5, y: 40.5}
+        - {x: -39.5, y: 27.5}
+        - {x: -40.5, y: 20.5}
+        - {x: -40.5, y: -20.5}
+        - {x: -34.5, y: -27.5}
+        - {x: -24.5, y: -37.5}
+        - {x: -16.5, y: -40.5}
+        - {x: 32.5, y: -40.5}
+        - {x: 40.5, y: -26.5}
+        - {x: 40.5, y: 30.5}
+        - {x: 26.5, y: 40.5}
+    - name: Avatar_Sprite_Sheet__40
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 198
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.5, y: 40.5}
+        - {x: -40.5, y: 40.5}
+        - {x: -40.5, y: -38.5}
+        - {x: -31.5, y: -40.5}
+        - {x: 22.5, y: -40.5}
+        - {x: 24.5, y: -38.5}
+        - {x: 40.5, y: -18.5}
+        - {x: 40.5, y: 21.5}
+    - name: Avatar_Sprite_Sheet__41
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 198
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 40.5}
+        - {x: -40.5, y: 23.5}
+        - {x: -40.5, y: -27.5}
+        - {x: -25.5, y: -40.5}
+        - {x: 24.5, y: -40.5}
+        - {x: 40.5, y: -24.5}
+        - {x: 40.5, y: 33.5}
+        - {x: 27.5, y: 40.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
