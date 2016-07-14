@@ -29,12 +29,23 @@ public class SOAPStoreAssets : IStoreAssets {
     /// <returns>All virtual goods in your game.</returns>
     public VirtualGood[] GetGoods()
     {
-        return new VirtualGood[] {  NO_ADS_LTVG, NINJA_AVATAR_C, NINJA_AVATAR_M, SKULL_AVATAR_C, SKULL_AVATAR_M, 
-                                    CAT_AVATAR_C, CAT_AVATAR_M,ALIEN_AVATAR_C, ALIEN_AVATAR_M, RANGER_AVATAR_C, RANGER_AVATAR_M,
-                                    MUMMY_AVATAR_C, MUMMY_AVATAR_M, MONSTER_AVATAR_C, MONSTER_AVATAR_M, GHOST_AVATAR_C, GHOST_AVATAR_M,
-                                    NINJA_TAIL_C, NINJA_TAIL_M, SKULL_TAIL_C, SKULL_TAIL_M, CAT_TAIL_M, CAT_TAIL_C, ALIEN_TAIL_C,
-                                    ALIEN_TAIL_M, RANGER_TAIL_C, RANGER_TAIL_M, MUMMY_TAIL_C, MUMMY_TAIL_M, MONSTER_TAIL_C,
-                                    MONSTER_TAIL_M, GHOST_TAIL_C, GHOST_TAIL_M,
+        return new VirtualGood[] {  NO_ADS_LTVG, 
+                                    CAT_AVATAR_C, CAT_AVATAR_M, CAT_TAIL_M, CAT_TAIL_C,
+                                    BABY_AVATAR_C, BABY_AVATAR_M, BABY_TAIL_C, BABY_TAIL_M,
+                                    IRONMAN_AVATAR_C, IRONMAN_AVATAR_M, IRONMAN_TAIL_C, IRONMAN_TAIL_M,                                   
+                                    MONSTER_AVATAR_C, MONSTER_AVATAR_M, MONSTER_TAIL_C, MONSTER_TAIL_M,
+                                    MUMMY_AVATAR_C, MUMMY_AVATAR_M, MUMMY_TAIL_C, MUMMY_TAIL_M, 
+                                    NIGHTMAN_AVATAR_C, NIGHTMAN_AVATAR_M, NIGHTMAN_TAIL_C, NIGHTMAN_TAIL_M,
+                                    NIGHTMARE_AVATAR_C, NIGHTMARE_AVATAR_M, NIGHTMARE_TAIL_C, NIGHTMARE_TAIL_M,
+                                    NINJA_AVATAR_C, NINJA_AVATAR_M, NINJA_TAIL_C, NINJA_TAIL_M,
+                                    OHYEAH_AVATAR_C, OHYEAH_AVATAR_M, OHYEAH_TAIL_C, OHYEAH_TAIL_M,
+                                    PIRATE_AVATAR_C, PIRATE_AVATAR_M, PIRATE_TAIL_C, PIRATE_TAIL_M,
+                                    RANGER_AVATAR_C, RANGER_AVATAR_M, RANGER_TAIL_C, RANGER_TAIL_M,
+                                    SKULL_AVATAR_C, SKULL_AVATAR_M, SKULL_TAIL_C, SKULL_TAIL_M, 
+                                    SUPERBMAN_AVATAR_C, SUPERBMAN_AVATAR_M, SUPERBMAN_TAIL_C, SUPERBMAN_TAIL_M,
+                                    TINKER_AVATAR_C, TINKER_AVATAR_M, TINKER_TAIL_C, TINKER_TAIL_M,
+                                    WEBHEAD_AVATAR_C, WEBHEAD_AVATAR_M, WEBHEAD_TAIL_C, WEBHEAD_TAIL_M,
+                                    VAMPIRE_AVATAR_C, VAMPIRE_AVATAR_M, VAMPIRE_TAIL_C, VAMPIRE_TAIL_M,
                                 };
     }
 
@@ -60,56 +71,89 @@ public class SOAPStoreAssets : IStoreAssets {
     /** Static Final Members **/
 
     public const string SOAP_CURRENCY_ITEM_ID = "soap_coins";
+    public const string NO_ADS_LIFETIME_PRODUCT_ID = "soap_no_ads";
 
-    public const string NINJA_AVATAR_ITEM_ID = "ninja_avatar";
-    public const string NINJA_AVATAR_PRODUCT_ID = "soap_ninja_avatar";
-
-    public const string SKULL_AVATAR_ITEM_ID = "skull_avatar";
-    public const string SKULL_AVATAR_PRODUCT_ID = "soap_skull_avatar";
+    public const string BABY_AVATAR_ITEM_ID = "baby_avatar";
+    public const string BABY_AVATAR_PRODUCT_ID = "soap_baby_avatar";
+    public const string BABY_TAIL_ITEM_ID = "baby_tail";
+    public const string BABY_TAIL_PRODUCT_ID = "soap_baby_tail";
 
     public const string CAT_AVATAR_ITEM_ID = "cat_avatar";
     public const string CAT_AVATAR_PRODUCT_ID = "soap_cat_avatar";
-
-    public const string ALIEN_AVATAR_ITEM_ID = "alien_avatar";
-    public const string ALIEN_AVATAR_PRODUCT_ID = "soap_alien_avatar";
-
-    public const string MUMMY_AVATAR_ITEM_ID = "mummy_avatar";
-    public const string MUMMY_AVATAR_PRODUCT_ID = "soap_mummy_avatar";
-
-    public const string MONSTER_AVATAR_ITEM_ID = "monster_avatar";
-    public const string MONSTER_AVATAR_PRODUCT_ID = "soap_monster_avatar";
-
-    public const string RANGER_AVATAR_ITEM_ID = "ranger_avatar";
-    public const string RANGER_AVATAR_PRODUCT_ID = "soap_ranger_avatar";
-
-    public const string GHOST_AVATAR_ITEM_ID = "ghost_avatar";
-    public const string GHOST_AVATAR_PRODUCT_ID = "soap_ghost_avatar";
-
-    public const string NINJA_TAIL_ITEM_ID = "ninja_tail";
-    public const string NINJA_TAIL_PRODUCT_ID = "soap_ninja_tail";
-
-    public const string SKULL_TAIL_ITEM_ID = "skull_tail";
-    public const string SKULL_TAIL_PRODUCT_ID = "soap_skull_tail";
-
     public const string CAT_TAIL_ITEM_ID = "cat_tail";
     public const string CAT_TAIL_PRODUCT_ID = "soap_cat_tail";
 
-    public const string ALIEN_TAIL_ITEM_ID = "alien_tail";
-    public const string ALIEN_TAIL_PRODUCT_ID = "soap_alien_tail";
+    public const string IRONMAN_AVATAR_ITEM_ID = "ironman_avatar";
+    public const string IRONMAN_AVATAR_PRODUCT_ID = "soap_ironman_avatar";
+    public const string IRONMAN_TAIL_ITEM_ID = "ironman_tail";
+    public const string IRONMAN_TAIL_PRODUCT_ID = "soap_ironman_tail";
 
-    public const string RANGER_TAIL_ITEM_ID = "ranger_tail";
-    public const string RANGER_TAIL_PRODUCT_ID = "soap_ranger_tail";
-
-    public const string MUMMY_TAIL_ITEM_ID = "mummy_tail";
-    public const string MUMMY_TAIL_PRODUCT_ID = "soap_mummy_tail";
-
+    public const string MONSTER_AVATAR_ITEM_ID = "monster_avatar";
+    public const string MONSTER_AVATAR_PRODUCT_ID = "soap_monster_avatar";
     public const string MONSTER_TAIL_ITEM_ID = "monster_tail";
     public const string MONSTER_TAIL_PRODUCT_ID = "soap_monster_tail";
 
-    public const string GHOST_TAIL_ITEM_ID = "ghost_tail";
-    public const string GHOST_TAIL_PRODUCT_ID = "soap_ghost_tail";
+    public const string MUMMY_AVATAR_ITEM_ID = "mummy_avatar";
+    public const string MUMMY_AVATAR_PRODUCT_ID = "soap_mummy_avatar";
+    public const string MUMMY_TAIL_ITEM_ID = "mummy_tail";
+    public const string MUMMY_TAIL_PRODUCT_ID = "soap_mummy_tail";
 
-    public const string NO_ADS_LIFETIME_PRODUCT_ID = "soap_no_ads";
+    public const string NINJA_AVATAR_ITEM_ID = "ninja_avatar";
+    public const string NINJA_AVATAR_PRODUCT_ID = "soap_ninja_avatar";
+    public const string NINJA_TAIL_ITEM_ID = "ninja_tail";
+    public const string NINJA_TAIL_PRODUCT_ID = "soap_ninja_tail";
+
+    public const string NIGHTMAN_AVATAR_ITEM_ID = "nightman_avatar";
+    public const string NIGHTMAN_AVATAR_PRODUCT_ID = "soap_nightman_avatar";
+    public const string NIGHTMAN_TAIL_ITEM_ID = "nightman_tail";
+    public const string NIGHTMAN_TAIL_PRODUCT_ID = "soap_nightman_tail";
+
+    public const string NIGHTMARE_AVATAR_ITEM_ID = "nightmare_avatar";
+    public const string NIGHTMARE_AVATAR_PRODUCT_ID = "soap_nightmare_avatar";
+    public const string NIGHTMARE_TAIL_ITEM_ID = "nightmare_tail";
+    public const string NIGHTMARE_TAIL_PRODUCT_ID = "soap_nightmare_tail";
+
+    public const string OHYEAH_AVATAR_ITEM_ID = "oh yea_avatar";
+    public const string OHYEAH_AVATAR_PRODUCT_ID = "soap_oh yea_avatar";
+    public const string OHYEAH_TAIL_ITEM_ID = "oh yea_tail";
+    public const string OHYEAH_TAIL_PRODUCT_ID = "soap_oh yea_tail";
+
+    public const string PIRATE_AVATAR_ITEM_ID = "pirate_avatar";
+    public const string PIRATE_AVATAR_PRODUCT_ID = "soap_pirate_avatar";
+    public const string PIRATE_TAIL_ITEM_ID = "pirate_tail";
+    public const string PIRATE_TAIL_PRODUCT_ID = "soap_pirate_tail";
+
+    public const string RANGER_AVATAR_ITEM_ID = "ranger_avatar";
+    public const string RANGER_AVATAR_PRODUCT_ID = "soap_ranger_avatar";
+    public const string RANGER_TAIL_ITEM_ID = "ranger_tail";
+    public const string RANGER_TAIL_PRODUCT_ID = "soap_ranger_tail";
+
+    public const string SKULL_AVATAR_ITEM_ID = "skull_avatar";
+    public const string SKULL_AVATAR_PRODUCT_ID = "soap_skull_avatar";
+    public const string SKULL_TAIL_ITEM_ID = "skull_tail";
+    public const string SKULL_TAIL_PRODUCT_ID = "soap_skull_tail";
+
+    public const string SUPERBMAN_AVATAR_ITEM_ID = "superbman_avatar";
+    public const string SUPERBMAN_AVATAR_PRODUCT_ID = "soap_superbman_avatar";
+    public const string SUPERBMAN_TAIL_ITEM_ID = "superbman_tail";
+    public const string SUPERBMAN_TAIL_PRODUCT_ID = "soap_superbman_tail";
+
+    public const string TINKER_AVATAR_ITEM_ID = "tinker_avatar";
+    public const string TINKER_AVATAR_PRODUCT_ID = "soap_tinker_avatar";
+    public const string TINKER_TAIL_ITEM_ID = "tinker_tail";
+    public const string TINKER_TAIL_PRODUCT_ID = "soap_tinker_tail";
+
+    public const string WEBHEAD_AVATAR_ITEM_ID = "webhead_avatar";
+    public const string WEBHEAD_AVATAR_PRODUCT_ID = "soap_webhead_avatar";
+    public const string WEBHEAD_TAIL_ITEM_ID = "webhead_tail";
+    public const string WEBHEAD_TAIL_PRODUCT_ID = "soap_webhead_tail";
+
+    public const string VAMPIRE_AVATAR_ITEM_ID = "vampire_avatar";
+    public const string VAMPIRE_AVATAR_PRODUCT_ID = "soap_vampire_avatar";
+    public const string VAMPIRE_TAIL_ITEM_ID = "vampire_tail";
+    public const string VAMPIRE_TAIL_PRODUCT_ID = "soap_vampire_tail";
+
+
 
     /** Virtual Currencies **/
 
@@ -170,85 +214,222 @@ public class SOAPStoreAssets : IStoreAssets {
         new PurchaseWithMarket(CAT_AVATAR_PRODUCT_ID, 1.78)	            // the way this virtual good is purchased
     );
 
-    // Purchase alien with virtual currency
-    public static VirtualGood ALIEN_AVATAR_C = new LifetimeVG(
-        "Alien", 											     // name
-        "Unlock Alien Avatar",				 				     // description
-        ALIEN_AVATAR_ITEM_ID,								     // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000) // the way this virtual good is purchased
-    );
-    
-    // Purchase alien with real money
-    public static VirtualGood ALIEN_AVATAR_M = new LifetimeVG(
-        "Alien", 													// name
-        "Unlock Alien Avatar",				 						// description
-        ALIEN_AVATAR_PRODUCT_ID,									// product id
-    new PurchaseWithMarket(ALIEN_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
-    );
-
     // Purchase mummy with virtual currency
     public static VirtualGood MUMMY_AVATAR_C = new LifetimeVG(
-        "Mummy", 											     // name
-        "Unlock Mummy Avatar",				 				     // description
-        MUMMY_AVATAR_ITEM_ID,								     // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000) // the way this virtual good is purchased
+        "Mummy", 											            // name
+        "Unlock Mummy Avatar",				 				            // description
+        MUMMY_AVATAR_ITEM_ID,								            // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)        // the way this virtual good is purchased
     );
     
     // Purchase mummy with real money
     public static VirtualGood MUMMY_AVATAR_M = new LifetimeVG(
-        "Mummy", 													// name
-        "Unlock Mummy Avatar",				 						// description
-        MUMMY_AVATAR_PRODUCT_ID,									// product id
-        new PurchaseWithMarket(MUMMY_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+        "Mummy", 													    // name
+        "Unlock Mummy Avatar",				 						    // description
+        MUMMY_AVATAR_PRODUCT_ID,									    // product id
+        new PurchaseWithMarket(MUMMY_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
     );
 
     // Purchase monster with virtual currency
     public static VirtualGood MONSTER_AVATAR_C = new LifetimeVG(
-        "Monster", 											     // name
-        "Unlock Monster Avatar",				 				     // description
-        MONSTER_AVATAR_ITEM_ID,								     // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000) // the way this virtual good is purchased
+        "Monster", 											            // name
+        "Unlock Monster Avatar",				 				         // description
+        MONSTER_AVATAR_ITEM_ID,								            // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)        // the way this virtual good is purchased
     );
     
     // Purchase monster with real money
         public static VirtualGood MONSTER_AVATAR_M = new LifetimeVG(
-        "Monster", 													// name
-        "Unlock Monster Avatar",				 						// description
-        MONSTER_AVATAR_PRODUCT_ID,									// product id
-        new PurchaseWithMarket(MONSTER_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+        "Monster", 													    // name
+        "Unlock Monster Avatar",				 					    // description
+        MONSTER_AVATAR_PRODUCT_ID,									    // product id
+        new PurchaseWithMarket(MONSTER_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
     );
 
     // Purchase ranger with virtual currency
     public static VirtualGood RANGER_AVATAR_C = new LifetimeVG(
-        "Ranger", 											     // name
-        "Unlock Ranger Avatar",				 				     // description
-        RANGER_AVATAR_ITEM_ID,								     // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000) // the way this virtual good is purchased
+        "Ranger", 											            // name
+        "Unlock Ranger Avatar",				 				            // description
+        RANGER_AVATAR_ITEM_ID,								            // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)        // the way this virtual good is purchased
     );
 
     // Purchase ranger with real money
     public static VirtualGood RANGER_AVATAR_M = new LifetimeVG(
-        "Ranger", 													// name
-        "Unlock Ranger Avatar",				 						// description
-        RANGER_AVATAR_PRODUCT_ID,									// product id
-        new PurchaseWithMarket(RANGER_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+        "Ranger", 													    // name
+        "Unlock Ranger Avatar",				 						    // description
+        RANGER_AVATAR_PRODUCT_ID,									    // product id
+        new PurchaseWithMarket(RANGER_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
     );
 
-    // Purchase ghost with virtual currency
-    public static VirtualGood GHOST_AVATAR_C = new LifetimeVG(
-        "Ghost", 											     // name
-        "Unlock Ghost Avatar",				 				     // description
-        GHOST_AVATAR_ITEM_ID,								     // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000) // the way this virtual good is purchased
+    // Purchase baby with virtual currency
+    public static VirtualGood BABY_AVATAR_C = new LifetimeVG(
+        "Baby", 													    // name
+        "Unlock Baby Avatar",				 							// description
+        BABY_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
     );
 
-    // Purchase ghost with real money
-    public static VirtualGood GHOST_AVATAR_M = new LifetimeVG(
-        "Ghost", 													// name
-        "Unlock Ghost Avatar",				 						// description
-        GHOST_AVATAR_PRODUCT_ID,									// product id
-        new PurchaseWithMarket(GHOST_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+    // Purchase baby with real money
+    public static VirtualGood BABY_AVATAR_M = new LifetimeVG(
+        "Baby", 													    // name
+        "Unlock Baby Avatar",				 							// description
+        BABY_AVATAR_PRODUCT_ID,										    // product id
+        new PurchaseWithMarket(BABY_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
     );
+
+
+    // Purchase ironman with virtual currency
+    public static VirtualGood IRONMAN_AVATAR_C = new LifetimeVG(
+        "Ironman", 													    // name
+        "Unlock Ironman Avatar",				 						// description
+        IRONMAN_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase ironman with real money
+    public static VirtualGood IRONMAN_AVATAR_M = new LifetimeVG(
+        "Ironman", 													    // name
+        "Unlock Ironman Avatar",				 						// description
+        IRONMAN_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(IRONMAN_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase ohyeah with virtual currency
+    public static VirtualGood OHYEAH_AVATAR_C = new LifetimeVG(
+        "Ohyeah", 													    // name
+        "Unlock Ohyeah Avatar",				 							// description
+        OHYEAH_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase ohyeah with real money
+    public static VirtualGood OHYEAH_AVATAR_M = new LifetimeVG(
+        "Ohyeah", 													    // name
+        "Unlock Ohyeah Avatar",				 							// description
+        OHYEAH_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(OHYEAH_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase nightman with virtual currency
+    public static VirtualGood NIGHTMAN_AVATAR_C = new LifetimeVG(
+        "Nightman", 													// name
+        "Unlock Nightman Avatar",				 						// description
+        NIGHTMAN_AVATAR_ITEM_ID,										// item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase nightman with real money
+    public static VirtualGood NIGHTMAN_AVATAR_M = new LifetimeVG(
+        "Nightman", 													// name
+        "Unlock Nightman Avatar",				 						// description
+        NIGHTMAN_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(NIGHTMAN_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+    );
+
+
+    // Purchase nightmare with virtual currency
+    public static VirtualGood NIGHTMARE_AVATAR_C = new LifetimeVG(
+        "Nightmare", 													// name
+        "Unlock Nightmare Avatar",				 						// description
+        NIGHTMARE_AVATAR_ITEM_ID,										// item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase nightmare with real money
+    public static VirtualGood NIGHTMARE_AVATAR_M = new LifetimeVG(
+        "Nightmare", 													// name
+        "Unlock Nightmare Avatar",				 						// description
+        NIGHTMARE_AVATAR_PRODUCT_ID,									// product id
+        new PurchaseWithMarket(NIGHTMARE_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+    );
+
+
+    // Purchase pirate with virtual currency
+    public static VirtualGood PIRATE_AVATAR_C = new LifetimeVG(
+        "Pirate", 													    // name
+        "Unlock Pirate Avatar",				 							// description
+        PIRATE_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase pirate with real money
+    public static VirtualGood PIRATE_AVATAR_M = new LifetimeVG(
+        "Pirate", 													    // name
+        "Unlock Pirate Avatar",				 							// description
+        PIRATE_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(PIRATE_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+    );
+
+    // Purchase superbman with virtual currency
+    public static VirtualGood SUPERBMAN_AVATAR_C = new LifetimeVG(
+        "Superbman", 													// name
+        "Unlock Superbman Avatar",				 						// description
+        SUPERBMAN_AVATAR_ITEM_ID,										// item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase superbman with real money
+    public static VirtualGood SUPERBMAN_AVATAR_M = new LifetimeVG(
+        "Superbman", 													// name
+        "Unlock Superbman Avatar",				 						// description
+        SUPERBMAN_AVATAR_PRODUCT_ID,									// product id
+        new PurchaseWithMarket(SUPERBMAN_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+    );
+
+
+    // Purchase tinker with virtual currency
+    public static VirtualGood TINKER_AVATAR_C = new LifetimeVG(
+        "Tinker", 													    // name
+        "Unlock Tinker Avatar",				 							// description
+        TINKER_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase tinker with real money
+    public static VirtualGood TINKER_AVATAR_M = new LifetimeVG(
+        "Tinker", 													    // name
+        "Unlock Tinker Avatar",				 							// description
+        TINKER_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(TINKER_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase webhead with virtual currency
+    public static VirtualGood WEBHEAD_AVATAR_C = new LifetimeVG(
+        "Webhead", 													    // name
+        "Unlock Webhead Avatar",				 						// description
+        WEBHEAD_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase webhead with real money
+    public static VirtualGood WEBHEAD_AVATAR_M = new LifetimeVG(
+        "Webhead", 													    // name
+        "Unlock Webhead Avatar",				 						// description
+        WEBHEAD_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(WEBHEAD_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase vampire with virtual currency
+    public static VirtualGood VAMPIRE_AVATAR_C = new LifetimeVG(
+        "Vampire", 													    // name
+        "Unlock Vampire Avatar",				 						// description
+        VAMPIRE_AVATAR_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+    );
+
+    // Purchase vampire with real money
+    public static VirtualGood VAMPIRE_AVATAR_M = new LifetimeVG(
+        "Vampire", 													    // name
+        "Unlock Vampire Avatar",				 						// description
+        VAMPIRE_AVATAR_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(VAMPIRE_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+    );
+
 
 
 
@@ -304,23 +485,6 @@ public class SOAPStoreAssets : IStoreAssets {
         new PurchaseWithMarket(CAT_TAIL_PRODUCT_ID, 0.85)	            // the way this virtual good is purchased
     );
 
-    // Purchase alien with virtual currency
-    public static VirtualGood ALIEN_TAIL_C = new LifetimeVG(
-        "Alien", 													    // name
-        "Unlock Alien Tail",				 							// description
-        ALIEN_TAIL_ITEM_ID,										        // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
-    );
-
-    // Purchase alien with real money
-    public static VirtualGood ALIEN_TAIL_M = new LifetimeVG(
-        "Alien", 													    // name
-        "Unlock Alien Tail",				 							// description
-        ALIEN_TAIL_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(ALIEN_TAIL_PRODUCT_ID, 0.50)	            // the way this virtual good is purchased
-    );
-
-
     // Purchase ranger with virtual currency
     public static VirtualGood RANGER_TAIL_C = new LifetimeVG(
         "Ranger", 													    // name
@@ -370,22 +534,174 @@ public class SOAPStoreAssets : IStoreAssets {
         new PurchaseWithMarket(MONSTER_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
     );
 
-
-    // Purchase ghost with virtual currency
-    public static VirtualGood GHOST_TAIL_C = new LifetimeVG(
-        "Ghost", 													    // name
-        "Unlock Ghost Tail",				 							// description
-        GHOST_TAIL_ITEM_ID,										        // item id
+    // Purchase baby with virtual currency
+    public static VirtualGood BABY_TAIL_C = new LifetimeVG(
+        "Baby", 													    // name
+        "Unlock Baby Tail",				 							    // description
+        BABY_TAIL_ITEM_ID,										        // item id
         new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
     );
 
-    // Purchase ghost with real money
-    public static VirtualGood GHOST_TAIL_M = new LifetimeVG(
-        "Ghost", 													    // name
-        "Unlock Ghost Tail",				 							// description
-        GHOST_TAIL_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(GHOST_TAIL_PRODUCT_ID, 0.50)	            // the way this virtual good is purchased
+    // Purchase baby with real money
+    public static VirtualGood BABY_TAIL_M = new LifetimeVG(
+        "Baby", 													    // name
+        "Unlock Baby Tail",				 							    // description
+        BABY_TAIL_PRODUCT_ID,										    // product id
+        new PurchaseWithMarket(BABY_TAIL_PRODUCT_ID, 0.50)	            // the way this virtual good is purchased
     );
+
+
+    // Purchase ironman with virtual currency
+    public static VirtualGood IRONMAN_TAIL_C = new LifetimeVG(
+        "Ironman", 													    // name
+        "Unlock Ironman Tail",				 							// description
+        IRONMAN_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase ironman with real money
+    public static VirtualGood IRONMAN_TAIL_M = new LifetimeVG(
+        "Ironman", 													    // name
+        "Unlock Ironman Tail",				 							// description
+        IRONMAN_TAIL_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(IRONMAN_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase ohyeah with virtual currency
+    public static VirtualGood OHYEAH_TAIL_C = new LifetimeVG(
+        "Ohyeah", 													    // name
+        "Unlock Ohyeah Tail",				 							// description
+        OHYEAH_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase ohyeah with real money
+    public static VirtualGood OHYEAH_TAIL_M = new LifetimeVG(
+        "Ohyeah", 													    // name
+        "Unlock Ohyeah Tail",				 							// description
+        OHYEAH_TAIL_PRODUCT_ID,										    // product id
+        new PurchaseWithMarket(OHYEAH_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase nightman with virtual currency
+    public static VirtualGood NIGHTMAN_TAIL_C = new LifetimeVG(
+        "Nightman", 													// name
+        "Unlock Nightman Tail",				 							// description
+        NIGHTMAN_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase nightman with real money
+    public static VirtualGood NIGHTMAN_TAIL_M = new LifetimeVG(
+        "Nightman", 													// name
+        "Unlock Nightman Tail",				 							// description
+        NIGHTMAN_TAIL_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(NIGHTMAN_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase nightmare with virtual currency
+    public static VirtualGood NIGHTMARE_TAIL_C = new LifetimeVG(
+        "Nightmare", 													// name
+        "Unlock Nightmare Tail",				 						// description
+        NIGHTMARE_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase nightmare with real money
+    public static VirtualGood NIGHTMARE_TAIL_M = new LifetimeVG(
+        "Nightmare", 													// name
+        "Unlock Nightmare Tail",				 						// description
+        NIGHTMARE_TAIL_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(NIGHTMARE_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase pirate with virtual currency
+    public static VirtualGood PIRATE_TAIL_C = new LifetimeVG(
+        "Pirate", 													    // name
+        "Unlock Pirate Tail",				 							// description
+        PIRATE_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase pirate with real money
+    public static VirtualGood PIRATE_TAIL_M = new LifetimeVG(
+        "Pirate", 													    // name
+        "Unlock Pirate Tail",				 							// description
+        PIRATE_TAIL_PRODUCT_ID,										    // product id
+        new PurchaseWithMarket(PIRATE_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
+    // Purchase superbman with virtual currency
+    public static VirtualGood SUPERBMAN_TAIL_C = new LifetimeVG(
+        "Superbman", 													// name
+        "Unlock Superbman Tail",				 						// description
+        SUPERBMAN_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase superbman with real money
+    public static VirtualGood SUPERBMAN_TAIL_M = new LifetimeVG(
+        "Superbman", 													// name
+        "Unlock Superbman Tail",				 						// description
+        SUPERBMAN_TAIL_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(SUPERBMAN_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase tinker with virtual currency
+    public static VirtualGood TINKER_TAIL_C = new LifetimeVG(
+        "Tinker", 													    // name
+        "Unlock Tinker Tail",				 							// description
+        TINKER_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase tinker with real money
+    public static VirtualGood TINKER_TAIL_M = new LifetimeVG(
+        "Tinker", 													    // name
+        "Unlock Tinker Tail",				 							// description
+        TINKER_TAIL_PRODUCT_ID,										    // product id
+        new PurchaseWithMarket(TINKER_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase webhead with virtual currency
+    public static VirtualGood WEBHEAD_TAIL_C = new LifetimeVG(
+        "Webhead", 													    // name
+        "Unlock Webhead Tail",				 							// description
+        WEBHEAD_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase webhead with real money
+    public static VirtualGood WEBHEAD_TAIL_M = new LifetimeVG(
+        "Webhead", 													    // name
+        "Unlock Webhead Tail",				 							// description
+        WEBHEAD_TAIL_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(WEBHEAD_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
+
+    // Purchase vampire with virtual currency
+    public static VirtualGood VAMPIRE_TAIL_C = new LifetimeVG(
+        "Vampire", 													    // name
+        "Unlock Vampire Tail",				 							// description
+        VAMPIRE_TAIL_ITEM_ID,										    // item id
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+    );
+
+    // Purchase vampire with real money
+    public static VirtualGood VAMPIRE_TAIL_M = new LifetimeVG(
+        "Vampire", 													    // name
+        "Unlock Vampire Tail",				 							// description
+        VAMPIRE_TAIL_PRODUCT_ID,										// product id
+        new PurchaseWithMarket(VAMPIRE_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+    );
+
 
 
     // --
