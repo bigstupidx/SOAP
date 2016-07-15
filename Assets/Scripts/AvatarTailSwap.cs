@@ -117,32 +117,58 @@ public class AvatarTailSwap : MonoBehaviour {
     // Maps the gameobject name to its sprite for avatars
     public void initialize_avatar_map()
     {
-        avatar_name_to_sprite_name.Add("cat_avatar", avatar_sprite_list[0]);
-        avatar_name_to_sprite_name.Add("alien_avatar", avatar_sprite_list[1]);
-        avatar_name_to_sprite_name.Add("ninja_avatar", avatar_sprite_list[2]);
-        avatar_name_to_sprite_name.Add("mummy_avatar", avatar_sprite_list[3]);
-        avatar_name_to_sprite_name.Add("monster_avatar", avatar_sprite_list[4]);
-        avatar_name_to_sprite_name.Add("ranger_avatar", avatar_sprite_list[5]);
-        avatar_name_to_sprite_name.Add("skull_avatar", avatar_sprite_list[6]);
-        avatar_name_to_sprite_name.Add("ghost_avatar", avatar_sprite_list[7]);
-        avatar_name_to_sprite_name.Add("default_avatar", avatar_sprite_list[8]);
-        avatar_name_to_sprite_name.Add("cyborg_avatar", avatar_sprite_list[9]);
+        avatar_name_to_sprite_name.Add("baby_avatar", avatar_sprite_list[0]);
+        avatar_name_to_sprite_name.Add("cat_avatar", avatar_sprite_list[1]);
+        avatar_name_to_sprite_name.Add("ironman_avatar", avatar_sprite_list[2]);
+        avatar_name_to_sprite_name.Add("monster_avatar", avatar_sprite_list[3]);
+        avatar_name_to_sprite_name.Add("mummy_avatar", avatar_sprite_list[4]);
+        avatar_name_to_sprite_name.Add("ninja_avatar", avatar_sprite_list[5]);
+        avatar_name_to_sprite_name.Add("nightman_avatar", avatar_sprite_list[6]);
+        avatar_name_to_sprite_name.Add("nightmare_avatar", avatar_sprite_list[7]);
+        avatar_name_to_sprite_name.Add("oh yea_avatar", avatar_sprite_list[8]);
+        avatar_name_to_sprite_name.Add("pirate_avatar", avatar_sprite_list[9]);
+        avatar_name_to_sprite_name.Add("ranger_avatar", avatar_sprite_list[10]);
+        avatar_name_to_sprite_name.Add("skull_avatar", avatar_sprite_list[11]);
+        avatar_name_to_sprite_name.Add("superbman_avatar", avatar_sprite_list[12]);
+        avatar_name_to_sprite_name.Add("tinker_avatar", avatar_sprite_list[13]);
+        avatar_name_to_sprite_name.Add("webhead_avatar", avatar_sprite_list[14]);
+        avatar_name_to_sprite_name.Add("vampire_avatar", avatar_sprite_list[15]);
+        avatar_name_to_sprite_name.Add("default_avatar", avatar_sprite_list[16]);
+        avatar_name_to_sprite_name.Add("orange_avatar", avatar_sprite_list[17]);
+        avatar_name_to_sprite_name.Add("alien_avatar", avatar_sprite_list[18]);
+        avatar_name_to_sprite_name.Add("cyborg_avatar", avatar_sprite_list[19]);
+        avatar_name_to_sprite_name.Add("ghost_avatar", avatar_sprite_list[20]);
+        avatar_name_to_sprite_name.Add("rocketman_avatar", avatar_sprite_list[21]);
+        avatar_name_to_sprite_name.Add("star_avatar", avatar_sprite_list[22]);
     }
 
 
     // Maps the gameobject name to its sprite for tails
     public void initialize_tail_map()
     {
-        tail_name_to_sprite_name.Add("cat_tail", tail_sprite_list[0]);
-        tail_name_to_sprite_name.Add("alien_tail", tail_sprite_list[1]);
-        tail_name_to_sprite_name.Add("ninja_tail", tail_sprite_list[2]);
-        tail_name_to_sprite_name.Add("mummy_tail", tail_sprite_list[3]);
-        tail_name_to_sprite_name.Add("monster_tail", tail_sprite_list[4]);
-        tail_name_to_sprite_name.Add("ranger_tail", tail_sprite_list[5]);
-        tail_name_to_sprite_name.Add("skull_tail", tail_sprite_list[6]);
-        tail_name_to_sprite_name.Add("ghost_tail", tail_sprite_list[7]);
-        tail_name_to_sprite_name.Add("default_tail", tail_sprite_list[8]);
-        tail_name_to_sprite_name.Add("cyborg_tail", tail_sprite_list[9]);
+        tail_name_to_sprite_name.Add("baby_tail", tail_sprite_list[0]);
+        tail_name_to_sprite_name.Add("cat_tail", tail_sprite_list[1]);
+        tail_name_to_sprite_name.Add("ironman_tail", tail_sprite_list[2]);
+        tail_name_to_sprite_name.Add("monster_tail", tail_sprite_list[3]);
+        tail_name_to_sprite_name.Add("mummy_tail", tail_sprite_list[4]);
+        tail_name_to_sprite_name.Add("ninja_tail", tail_sprite_list[5]);
+        tail_name_to_sprite_name.Add("nightman_tail", tail_sprite_list[6]);
+        tail_name_to_sprite_name.Add("nightmare_tail", tail_sprite_list[7]);
+        tail_name_to_sprite_name.Add("oh yea_tail", tail_sprite_list[8]);
+        tail_name_to_sprite_name.Add("pirate_tail", tail_sprite_list[9]);
+        tail_name_to_sprite_name.Add("ranger_tail", tail_sprite_list[10]);
+        tail_name_to_sprite_name.Add("skull_tail", tail_sprite_list[11]);
+        tail_name_to_sprite_name.Add("superbman_tail", tail_sprite_list[12]);
+        tail_name_to_sprite_name.Add("tinker_tail", tail_sprite_list[13]);
+        tail_name_to_sprite_name.Add("webhead_tail", tail_sprite_list[14]);
+        tail_name_to_sprite_name.Add("vampire_tail", tail_sprite_list[15]);
+        tail_name_to_sprite_name.Add("default_tail", tail_sprite_list[16]);
+        tail_name_to_sprite_name.Add("orange_tail", tail_sprite_list[17]);
+        tail_name_to_sprite_name.Add("alien_tail", tail_sprite_list[18]);
+        tail_name_to_sprite_name.Add("cyborg_tail", tail_sprite_list[19]);
+        tail_name_to_sprite_name.Add("ghost_tail", tail_sprite_list[20]);
+        tail_name_to_sprite_name.Add("rocketman_tail", tail_sprite_list[21]);
+        tail_name_to_sprite_name.Add("star_tail", tail_sprite_list[22]);
     }
 
 
@@ -153,7 +179,7 @@ public class AvatarTailSwap : MonoBehaviour {
         int market_item_balance = 0;
 
         // Default avatar and tail balance is always 1
-        if (avatar_name == "default_avatar" || avatar_name == "default_tail")
+        if (avatar_name == "default_avatar" || avatar_name == "default_tail" || avatar_name == "orange_avatar" || avatar_name == "orange_tail")
         {
             virtual_item_balance = 1;
         }
