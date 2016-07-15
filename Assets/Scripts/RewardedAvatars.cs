@@ -10,9 +10,9 @@ public class RewardedAvatars : MonoBehaviour {
     public const string cyborg_tail_rwd = "cyborg_tail";
     public const string ghost_avatar_rwd = "ghost_avatar";
     public const string ghost_tail_rwd = "ghost_tail";
-    public const string rocketman_tail_rwd = "rocketman_avatar";
-    public const string rocketman_rwd = "rocketman_tail";
-    public const string star_rwd = "star_avatar";
+    public const string rocketman_avatar_rwd = "rocketman_avatar";
+    public const string rocketman_tail_rwd = "rocketman_tail";
+    public const string star_avatar_rwd = "star_avatar";
     public const string star_tail_rwd = "star_tail";
 
 
@@ -22,13 +22,13 @@ public class RewardedAvatars : MonoBehaviour {
         {"alien_avatar", 0},
         {"alien_tail", 1},
         {"cyborg_avatar", 2},
-        {"cyborg_tail", 4},
-        {"ghost_avatar", 5},
-        {"ghost_tail", 6},
-        {"rocketman_avatar", 7},
-        {"rocketman_tail", 8},
-        {"star_avatar", 9},
-        {"star_tail", 10},
+        {"cyborg_tail", 3},
+        {"ghost_avatar", 4},
+        {"ghost_tail", 5},
+        {"rocketman_avatar", 6},
+        {"rocketman_tail", 7},
+        {"star_avatar", 8},
+        {"star_tail", 9},
     };
 
     // Dictionary that explains how to earn each avatar
@@ -98,3 +98,5 @@ public class RewardedAvatars : MonoBehaviour {
         return PlayerPrefs.GetString("Reward");
     }
 }
+
+
