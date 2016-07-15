@@ -41,6 +41,10 @@ public class PointManager : MonoBehaviour {
             case "5":
                 Achievements.beginnerAchievement();
                 break;
+            case "8":
+                RewardedAvatars.incrementAvatarBalance(RewardedAvatars.alien_avatar_rwd);
+                RewardedAvatars.incrementAvatarBalance(RewardedAvatars.alien_tail_rwd);
+                break;
             case "10":
                 Achievements.intermediateAchievement();
                 break;
