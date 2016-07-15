@@ -21,6 +21,7 @@ public class SOAPProfileEvents : MonoBehaviour {
     {
         // These event catchers need to be on a gameobject that is never turned off, 
         ProfileEvents.OnLoginFinished += onLoginFinished;
+        ProfileEvents.OnSocialActionFinished += onSocialActionFinished;
         //ProfileEvents.OnUserProfileUpdated += OnUserProfileUpdated;
         DontDestroyOnLoad(this.gameObject);
 	}
@@ -50,4 +51,30 @@ public class SOAPProfileEvents : MonoBehaviour {
             Debug.Log(userProfileJson);
         }
     }
+
+
+    // Give reward avatars when successfully posting to facebook or twitter
+    public void onSocialActionFinished(Provider provider, SocialActionType action, string payload)
+    {
+        // provider is the social provider
+        // action is the social action (like, post status, etc..) that finished
+        // payload is an identification string that you can give when you initiate the social action operation and want to receive back upon its completion
+
+        string social_provider = payload;
+
+        Debug.Log(provider);
+
+        if (social_provider == "facebook")
+        {
+            RewardedAvatars.incrementAvatarBalance(RewardedAvatars.ghost_avatar_rwd);
+            RewardedAvatars.incrementAvatarBalance(RewardedAvatars.ghost_tail_rwd);
+        }
+        else if (social_provider == "twitter")
+        {
+            RewardedAvatars.incrementAvatarBalance(RewardedAvatars.star_avatar_rwd);
+            RewardedAvatars.incrementAvatarBalance(RewardedAvatars.star_tail_rwd);
+        }
+    }
 }
+
+
