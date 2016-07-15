@@ -85,7 +85,7 @@ public class SOAPStoreManager : MonoBehaviour {
     public void updatePrices(string item_id)
     {
         // Default avatars and tails
-        if (item_id == "default_avatar" || item_id == "default_tail")
+        if (item_id == "default_avatar" || item_id == "default_tail" || item_id == "orange_avatar" || item_id == "orange_tail")
         {
             coin_buy_button.gameObject.SetActive(false);
             money_buy_button.gameObject.SetActive(false);
