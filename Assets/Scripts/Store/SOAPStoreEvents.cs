@@ -37,16 +37,23 @@ public class SOAPStoreEvents : MonoBehaviour {
 
         string avatar_id = pvi.ItemId;
 
-        store_manager_script.updatePrices(avatar_id);
-
         // Unlock achievement for buying an avatar or tail with real money
         if (avatar_id.Contains("avatar"))
         {
+            store_manager_script.updatePrices(avatar_id);
             Achievements.massiveFacialReconstructionAchievement();
         }
-        else
+        else if (avatar_id.Contains("tail"))
         {
+            store_manager_script.updatePrices(avatar_id);
             Achievements.sheddingSeasonAchievement();
+        }
+        
+        // Give rocketman avatar and tail for removing ads
+        if (avatar_id == "soap_no_ads")
+        {
+            RewardedAvatars.incrementAvatarBalance(RewardedAvatars.rocketman_avatar_rwd);
+            RewardedAvatars.incrementAvatarBalance(RewardedAvatars.rocketman_tail_rwd);
         }
     }
 
@@ -59,15 +66,15 @@ public class SOAPStoreEvents : MonoBehaviour {
 
         string avatar_id = vg.ItemId;
 
-        store_manager_script.updatePrices(avatar_id);
-
         // Unlock achievement for buying an avatar or tail with virtual currency
         if (avatar_id.Contains("avatar"))
         {
+            store_manager_script.updatePrices(avatar_id);
             Achievements.massiveFacialReconstructionAchievement();
         }
-        else
+        else if (avatar_id.Contains("tail"))
         {
+            store_manager_script.updatePrices(avatar_id);
             Achievements.sheddingSeasonAchievement();
         }
     }
