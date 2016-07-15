@@ -49,7 +49,8 @@ public class SOAPProfile : MonoBehaviour {
             "RTS FTW!",                                // Caption
             "rts_snake_tails",                         // Desc
             "https://play.google.com/store/apps/details?id=com.RedTapeStudios.MatchMayhem_01&hl=en",           // Link
-            "https://lh3.googleusercontent.com/VZA4sJmj4Gw1SHzJQJredvGtQeDbUzMdyGykSA1MJW35yWN1-06ve6YuED_sbV1u2a4=h900-rw"     // Image
+            "https://lh3.googleusercontent.com/VZA4sJmj4Gw1SHzJQJredvGtQeDbUzMdyGykSA1MJW35yWN1-06ve6YuED_sbV1u2a4=h900-rw",     // Image
+            "facebook"
             );
 
         swap_to_fb_posted_img();
@@ -81,7 +82,8 @@ public class SOAPProfile : MonoBehaviour {
             "RTS FTW!",                                // Caption
             "rts_snake_tails",                         // Desc
             "https://play.google.com/store/apps/details?id=com.RedTapeStudios.MatchMayhem_01&hl=en",           // Link
-            "https://lh3.googleusercontent.com/VZA4sJmj4Gw1SHzJQJredvGtQeDbUzMdyGykSA1MJW35yWN1-06ve6YuED_sbV1u2a4=h900-rw"     // Image
+            "https://lh3.googleusercontent.com/VZA4sJmj4Gw1SHzJQJredvGtQeDbUzMdyGykSA1MJW35yWN1-06ve6YuED_sbV1u2a4=h900-rw",     // Image
+            "twitter"
             );
 
         swap_to_twitter_posted_img();
