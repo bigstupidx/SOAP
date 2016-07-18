@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Soomla.Store;
 
+
+//
+// IMPORTANT: Increment "GetVersion" each time a change in made to this file!
+//
+
 public class SOAPStoreAssets : IStoreAssets {
 
     /// You need to bump the version after ANY change in <c>IStoreAssets</c> for the local
@@ -11,7 +16,7 @@ public class SOAPStoreAssets : IStoreAssets {
     /// <returns>the version of your specific <c>IStoreAssets</c>.</returns>
     public int GetVersion()
     {
-        return 1;
+        return 2;
     }
 
     /// <summary>
@@ -171,7 +176,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ninja", 													    // name
         "Unlock Ninja Avatar",				 							// description
         NINJA_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 2500)	    // the way this virtual good is purchased
     );
 
     // Purchase ninja with real money
@@ -179,7 +184,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ninja", 													    // name
         "Unlock Ninja Avatar",				 							// description
         NINJA_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(NINJA_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(NINJA_AVATAR_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
     );
 
     // Purchase skull with virtual currency
@@ -187,7 +192,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Skull", 												    	// name
         "Unlock Skull Avatar",				 						    // description
         SKULL_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 10000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 3000)	    // the way this virtual good is purchased
     );
 
     // Purchase skull with real money
@@ -195,7 +200,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Skull", 													    // name
         "Unlock Skull Avatar",				 						    // description
         SKULL_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(SKULL_AVATAR_PRODUCT_ID, 2.49)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(SKULL_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
     );
 
     // Purchase cat with virtual currency
@@ -203,7 +208,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Cat", 												    	    // name
         "Unlock Cat Avatar",				 						    // description
         CAT_AVATAR_ITEM_ID,										        // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 8500)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 3500)	    // the way this virtual good is purchased
     );
 
     // Purchase cat with real money
@@ -211,7 +216,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Cat", 													        // name
         "Unlock Cat Avatar",	    			 						// description
         CAT_AVATAR_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(CAT_AVATAR_PRODUCT_ID, 1.78)	            // the way this virtual good is purchased
+        new PurchaseWithMarket(CAT_AVATAR_PRODUCT_ID, 1.50)	            // the way this virtual good is purchased
     );
 
     // Purchase mummy with virtual currency
@@ -219,7 +224,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Mummy", 											            // name
         "Unlock Mummy Avatar",				 				            // description
         MUMMY_AVATAR_ITEM_ID,								            // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)        // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 4000)        // the way this virtual good is purchased
     );
     
     // Purchase mummy with real money
@@ -227,7 +232,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Mummy", 													    // name
         "Unlock Mummy Avatar",				 						    // description
         MUMMY_AVATAR_PRODUCT_ID,									    // product id
-        new PurchaseWithMarket(MUMMY_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(MUMMY_AVATAR_PRODUCT_ID, 1.99)	        // the way this virtual good is purchased
     );
 
     // Purchase monster with virtual currency
@@ -235,7 +240,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Monster", 											            // name
         "Unlock Monster Avatar",				 				         // description
         MONSTER_AVATAR_ITEM_ID,								            // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)        // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 4500)        // the way this virtual good is purchased
     );
     
     // Purchase monster with real money
@@ -243,7 +248,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Monster", 													    // name
         "Unlock Monster Avatar",				 					    // description
         MONSTER_AVATAR_PRODUCT_ID,									    // product id
-        new PurchaseWithMarket(MONSTER_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(MONSTER_AVATAR_PRODUCT_ID, 2.50)	        // the way this virtual good is purchased
     );
 
     // Purchase ranger with virtual currency
@@ -259,7 +264,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ranger", 													    // name
         "Unlock Ranger Avatar",				 						    // description
         RANGER_AVATAR_PRODUCT_ID,									    // product id
-        new PurchaseWithMarket(RANGER_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(RANGER_AVATAR_PRODUCT_ID, 2.99)	        // the way this virtual good is purchased
     );
 
     // Purchase baby with virtual currency
@@ -267,7 +272,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Baby", 													    // name
         "Unlock Baby Avatar",				 							// description
         BABY_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5500)	    // the way this virtual good is purchased
     );
 
     // Purchase baby with real money
@@ -275,7 +280,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Baby", 													    // name
         "Unlock Baby Avatar",				 							// description
         BABY_AVATAR_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(BABY_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(BABY_AVATAR_PRODUCT_ID, 3.50)	        // the way this virtual good is purchased
     );
 
 
@@ -284,7 +289,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ironman", 													    // name
         "Unlock Ironman Avatar",				 						// description
         IRONMAN_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 6000)	    // the way this virtual good is purchased
     );
 
     // Purchase ironman with real money
@@ -292,7 +297,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ironman", 													    // name
         "Unlock Ironman Avatar",				 						// description
         IRONMAN_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(IRONMAN_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(IRONMAN_AVATAR_PRODUCT_ID, 3.99)	        // the way this virtual good is purchased
     );
 
 
@@ -301,7 +306,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ohyeah", 													    // name
         "Unlock Ohyeah Avatar",				 							// description
         OHYEAH_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 6500)	    // the way this virtual good is purchased
     );
 
     // Purchase ohyeah with real money
@@ -309,7 +314,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ohyeah", 													    // name
         "Unlock Ohyeah Avatar",				 							// description
         OHYEAH_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(OHYEAH_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(OHYEAH_AVATAR_PRODUCT_ID, 4.50)	        // the way this virtual good is purchased
     );
 
 
@@ -318,7 +323,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Nightman", 													// name
         "Unlock Nightman Avatar",				 						// description
         NIGHTMAN_AVATAR_ITEM_ID,										// item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 7000)	    // the way this virtual good is purchased
     );
 
     // Purchase nightman with real money
@@ -326,7 +331,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Nightman", 													// name
         "Unlock Nightman Avatar",				 						// description
         NIGHTMAN_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(NIGHTMAN_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+        new PurchaseWithMarket(NIGHTMAN_AVATAR_PRODUCT_ID, 4.99)	    // the way this virtual good is purchased
     );
 
 
@@ -335,7 +340,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Nightmare", 													// name
         "Unlock Nightmare Avatar",				 						// description
         NIGHTMARE_AVATAR_ITEM_ID,										// item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 7500)	    // the way this virtual good is purchased
     );
 
     // Purchase nightmare with real money
@@ -343,7 +348,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Nightmare", 													// name
         "Unlock Nightmare Avatar",				 						// description
         NIGHTMARE_AVATAR_PRODUCT_ID,									// product id
-        new PurchaseWithMarket(NIGHTMARE_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+        new PurchaseWithMarket(NIGHTMARE_AVATAR_PRODUCT_ID, 5.50)	    // the way this virtual good is purchased
     );
 
 
@@ -352,7 +357,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Pirate", 													    // name
         "Unlock Pirate Avatar",				 							// description
         PIRATE_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 8000)	    // the way this virtual good is purchased
     );
 
     // Purchase pirate with real money
@@ -360,7 +365,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Pirate", 													    // name
         "Unlock Pirate Avatar",				 							// description
         PIRATE_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(PIRATE_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(PIRATE_AVATAR_PRODUCT_ID, 5.99)	        // the way this virtual good is purchased
     );
 
     // Purchase superbman with virtual currency
@@ -368,7 +373,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Superbman", 													// name
         "Unlock Superbman Avatar",				 						// description
         SUPERBMAN_AVATAR_ITEM_ID,										// item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 8500)	    // the way this virtual good is purchased
     );
 
     // Purchase superbman with real money
@@ -376,7 +381,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Superbman", 													// name
         "Unlock Superbman Avatar",				 						// description
         SUPERBMAN_AVATAR_PRODUCT_ID,									// product id
-        new PurchaseWithMarket(SUPERBMAN_AVATAR_PRODUCT_ID, 0.99)	    // the way this virtual good is purchased
+        new PurchaseWithMarket(SUPERBMAN_AVATAR_PRODUCT_ID, 6.50)	    // the way this virtual good is purchased
     );
 
 
@@ -385,7 +390,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Tinker", 													    // name
         "Unlock Tinker Avatar",				 							// description
         TINKER_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 9000)	    // the way this virtual good is purchased
     );
 
     // Purchase tinker with real money
@@ -393,7 +398,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Tinker", 													    // name
         "Unlock Tinker Avatar",				 							// description
         TINKER_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(TINKER_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(TINKER_AVATAR_PRODUCT_ID, 6.99)	        // the way this virtual good is purchased
     );
 
 
@@ -402,7 +407,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Webhead", 													    // name
         "Unlock Webhead Avatar",				 						// description
         WEBHEAD_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 9500)	    // the way this virtual good is purchased
     );
 
     // Purchase webhead with real money
@@ -410,7 +415,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Webhead", 													    // name
         "Unlock Webhead Avatar",				 						// description
         WEBHEAD_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(WEBHEAD_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(WEBHEAD_AVATAR_PRODUCT_ID, 7.50)	        // the way this virtual good is purchased
     );
 
 
@@ -419,7 +424,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Vampire", 													    // name
         "Unlock Vampire Avatar",				 						// description
         VAMPIRE_AVATAR_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5000)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 10000)	    // the way this virtual good is purchased
     );
 
     // Purchase vampire with real money
@@ -427,7 +432,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Vampire", 													    // name
         "Unlock Vampire Avatar",				 						// description
         VAMPIRE_AVATAR_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(VAMPIRE_AVATAR_PRODUCT_ID, 0.99)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(VAMPIRE_AVATAR_PRODUCT_ID, 7.99)	        // the way this virtual good is purchased
     );
 
 
@@ -506,7 +511,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Mummy", 													    // name
         "Unlock Mummy Tail",				 							// description
         MUMMY_TAIL_ITEM_ID,										        // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 3000)	    // the way this virtual good is purchased
     );
 
     // Purchase mummy with real money
@@ -514,7 +519,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Mummy", 													    // name
         "Unlock Mummy Tail",				 							// description
         MUMMY_TAIL_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(MUMMY_TAIL_PRODUCT_ID, 0.50)	            // the way this virtual good is purchased
+        new PurchaseWithMarket(MUMMY_TAIL_PRODUCT_ID, 1.50)	            // the way this virtual good is purchased
     );
 
 
@@ -523,7 +528,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Monster", 													    // name
         "Unlock Monster Tail",				 							// description
         MONSTER_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 3500)	    // the way this virtual good is purchased
     );
 
     // Purchase monster with real money
@@ -531,7 +536,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Monster", 													    // name
         "Unlock Monster Tail",				 							// description
         MONSTER_TAIL_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(MONSTER_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(MONSTER_TAIL_PRODUCT_ID, 1.99)	        // the way this virtual good is purchased
     );
 
     // Purchase baby with virtual currency
@@ -539,7 +544,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Baby", 													    // name
         "Unlock Baby Tail",				 							    // description
         BABY_TAIL_ITEM_ID,										        // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 4000)	    // the way this virtual good is purchased
     );
 
     // Purchase baby with real money
@@ -547,7 +552,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Baby", 													    // name
         "Unlock Baby Tail",				 							    // description
         BABY_TAIL_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(BABY_TAIL_PRODUCT_ID, 0.50)	            // the way this virtual good is purchased
+        new PurchaseWithMarket(BABY_TAIL_PRODUCT_ID, 2.50)	            // the way this virtual good is purchased
     );
 
 
@@ -556,7 +561,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ironman", 													    // name
         "Unlock Ironman Tail",				 							// description
         IRONMAN_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 2222)	    // the way this virtual good is purchased
     );
 
     // Purchase ironman with real money
@@ -564,7 +569,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ironman", 													    // name
         "Unlock Ironman Tail",				 							// description
         IRONMAN_TAIL_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(IRONMAN_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(IRONMAN_TAIL_PRODUCT_ID, 3.50)	        // the way this virtual good is purchased
     );
 
 
@@ -573,7 +578,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ohyeah", 													    // name
         "Unlock Ohyeah Tail",				 							// description
         OHYEAH_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 3333)	    // the way this virtual good is purchased
     );
 
     // Purchase ohyeah with real money
@@ -581,7 +586,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Ohyeah", 													    // name
         "Unlock Ohyeah Tail",				 							// description
         OHYEAH_TAIL_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(OHYEAH_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(OHYEAH_TAIL_PRODUCT_ID, 4.50)	        // the way this virtual good is purchased
     );
 
 
@@ -590,7 +595,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Nightman", 													// name
         "Unlock Nightman Tail",				 							// description
         NIGHTMAN_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 4444)	    // the way this virtual good is purchased
     );
 
     // Purchase nightman with real money
@@ -598,7 +603,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Nightman", 													// name
         "Unlock Nightman Tail",				 							// description
         NIGHTMAN_TAIL_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(NIGHTMAN_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(NIGHTMAN_TAIL_PRODUCT_ID, 5.50)	        // the way this virtual good is purchased
     );
 
 
@@ -607,7 +612,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Nightmare", 													// name
         "Unlock Nightmare Tail",				 						// description
         NIGHTMARE_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 5555)	    // the way this virtual good is purchased
     );
 
     // Purchase nightmare with real money
@@ -615,7 +620,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Nightmare", 													// name
         "Unlock Nightmare Tail",				 						// description
         NIGHTMARE_TAIL_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(NIGHTMARE_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(NIGHTMARE_TAIL_PRODUCT_ID, 6.50)	        // the way this virtual good is purchased
     );
 
 
@@ -624,7 +629,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Pirate", 													    // name
         "Unlock Pirate Tail",				 							// description
         PIRATE_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 6666)	    // the way this virtual good is purchased
     );
 
     // Purchase pirate with real money
@@ -632,7 +637,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Pirate", 													    // name
         "Unlock Pirate Tail",				 							// description
         PIRATE_TAIL_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(PIRATE_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(PIRATE_TAIL_PRODUCT_ID, 7.50)	        // the way this virtual good is purchased
     );
 
     // Purchase superbman with virtual currency
@@ -640,7 +645,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Superbman", 													// name
         "Unlock Superbman Tail",				 						// description
         SUPERBMAN_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 7777)	    // the way this virtual good is purchased
     );
 
     // Purchase superbman with real money
@@ -648,7 +653,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Superbman", 													// name
         "Unlock Superbman Tail",				 						// description
         SUPERBMAN_TAIL_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(SUPERBMAN_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(SUPERBMAN_TAIL_PRODUCT_ID, 8.50)	        // the way this virtual good is purchased
     );
 
 
@@ -657,7 +662,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Tinker", 													    // name
         "Unlock Tinker Tail",				 							// description
         TINKER_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 8888)	    // the way this virtual good is purchased
     );
 
     // Purchase tinker with real money
@@ -665,7 +670,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Tinker", 													    // name
         "Unlock Tinker Tail",				 							// description
         TINKER_TAIL_PRODUCT_ID,										    // product id
-        new PurchaseWithMarket(TINKER_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(TINKER_TAIL_PRODUCT_ID, 9.50)	        // the way this virtual good is purchased
     );
 
 
@@ -674,7 +679,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Webhead", 													    // name
         "Unlock Webhead Tail",				 							// description
         WEBHEAD_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 9999)	    // the way this virtual good is purchased
     );
 
     // Purchase webhead with real money
@@ -682,7 +687,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Webhead", 													    // name
         "Unlock Webhead Tail",				 							// description
         WEBHEAD_TAIL_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(WEBHEAD_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(WEBHEAD_TAIL_PRODUCT_ID, 10.50)	        // the way this virtual good is purchased
     );
 
 
@@ -691,7 +696,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Vampire", 													    // name
         "Unlock Vampire Tail",				 							// description
         VAMPIRE_TAIL_ITEM_ID,										    // item id
-        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1345)	    // the way this virtual good is purchased
+        new PurchaseWithVirtualItem(SOAP_CURRENCY_ITEM_ID, 1010)	    // the way this virtual good is purchased
     );
 
     // Purchase vampire with real money
@@ -699,7 +704,7 @@ public class SOAPStoreAssets : IStoreAssets {
         "Vampire", 													    // name
         "Unlock Vampire Tail",				 							// description
         VAMPIRE_TAIL_PRODUCT_ID,										// product id
-        new PurchaseWithMarket(VAMPIRE_TAIL_PRODUCT_ID, 0.50)	        // the way this virtual good is purchased
+        new PurchaseWithMarket(VAMPIRE_TAIL_PRODUCT_ID, 11.50)	        // the way this virtual good is purchased
     );
 
 
