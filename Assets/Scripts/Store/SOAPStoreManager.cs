@@ -192,3 +192,4 @@ public class SOAPStoreManager : MonoBehaviour {
 //Keystore pwd: t@R3p3D&uO
 //Twitter username: redtapestudios pwd: Apestudios11
 //Facebook username: redtapestudiosinc@gmail.com 7<DbP4yP
+//Logcat: C:\program files (x86)\Android\android-sdk\platform-tools: adb logcat > logfile.txt
