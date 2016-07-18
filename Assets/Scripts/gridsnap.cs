@@ -73,15 +73,16 @@ public class gridsnap : MonoBehaviour {
                 {
                     previous_avatar_name = avatar_name;
 
+                    // Set the avatar name and type in the store
+                    string[] avatar_name_list = getAvatarNameAndType(avatar_name);
+                    avatar_name_txt.text = avatar_name_list[0];
+                    avatar_type_txt.text = avatar_name_list[1];
+
                     // Only updates prices if the avatar and tail are purchasable
                     store_manager_script.updatePrices(avatar_name);
                     store_manager_script.setAvatarID(avatar_name);
 
                     // Swap the avatars
-                    string[] avatar_name_list = getAvatarNameAndType(avatar_name);
-                    avatar_name_txt.text = avatar_name_list[0];
-                    avatar_type_txt.text = avatar_name_list[1];
-
                     avatar_swap_script.setAvatar(avatar_name);
                 }
             }
