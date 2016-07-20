@@ -17,15 +17,22 @@ public class TouchInput : MonoBehaviour {
     private float swipe_distance = 0;
     private bool has_swiped = false;
 
+    public static string control_type;
+    public const string swipe_control = "swipe";
+    public const string classic_control = "classic";
+
 	// Use this for initialization
 	void Start () 
     {
         // Get screen width
         screen_width = Screen.width;
+
+        // Get the control type stored in the player prefs (set in UI Manager)
+        control_type = getControlType();
 	}
 	
-	// Update is called once per frame
 
+	// Update is called once per frame
 	void Update () 
     {
         //if (Input.touchCount == 1)
@@ -33,10 +40,26 @@ public class TouchInput : MonoBehaviour {
         //    sideTouched();
         //}
 
+        if (control_type == TouchInput.swipe_control)
+        {
+            swipe_controls();
+        }
+
+        else if (control_type == TouchInput.classic_control)
+        {
+            editorSideTouched();
+        }
+
         //sideTouched();
         //editorSideTouched();
-        swipe_controls();
 	}
+
+    
+    // Get the control type
+    public string getControlType()
+    {
+        return PlayerPrefs.GetString("ControlType");
+    }
 
 
     // Determine whether user clicked on right or left side of the screen
