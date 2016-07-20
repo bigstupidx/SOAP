@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviour {
 
 
 
-
 	// Get reference to store manager and don't destroy the UI gameobject
 	void Start () 
     {
@@ -30,6 +29,14 @@ public class UIManager : MonoBehaviour {
         store_manager_script = store_menu.GetComponentInParent<SOAPStoreManager>();
         cbads_script = game_over_menu.GetComponentInParent<CBAds>();
         point_manager_script = this.GetComponent<PointManager>();
+
+        // Create control type key if it doesn't exist
+        bool control_type_exists = PlayerPrefs.HasKey("ControlType");
+
+        if (!control_type_exists)
+        {
+            PlayerPrefs.SetString("ControlType", "swipe");
+        }
 	}
 
 	// Update is called once per frame
@@ -113,6 +120,14 @@ public class UIManager : MonoBehaviour {
         game_screen_score_text.SetActive(true);
         point_manager_script.resetScore();
         //unPause();
+    }
+
+
+    // Set the control type
+    public void setControlType(string control_type)
+    {
+        PlayerPrefs.SetString("ControlType", control_type);
+        TouchInput.control_type = control_type;
     }
 }
 
