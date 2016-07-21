@@ -14,11 +14,15 @@ public class UIManager : MonoBehaviour {
     public GameObject pause_button;
     public GameObject game_screen_score_text;
     public AvatarTailSwap avatar_swap_script;
+    public Tutorial tutorial_script;
+    public Toggle classic_toggle;
+    public Toggle swipe_toogle;
 
     private bool isPaused = false;
     private SOAPStoreManager store_manager_script;
     private PointManager point_manager_script;
     private CBAds cbads_script;
+    private bool activate_tutorial = false;
 
 
 
@@ -36,6 +40,23 @@ public class UIManager : MonoBehaviour {
         if (!control_type_exists)
         {
             PlayerPrefs.SetString("ControlType", "swipe");
+        }
+
+        // Toogle the control type in the pause screen
+        string control_type = PlayerPrefs.GetString("ControlType");
+
+        Debug.Log(control_type);
+
+        if (control_type == TouchInput.swipe_control)
+        {
+            swipe_toogle.isOn = true;
+            classic_toggle.isOn = false;
+        }
+
+        else if (control_type == TouchInput.classic_control)
+        {
+            classic_toggle.isOn = true;
+            swipe_toogle.isOn = false;
         }
 	}
 
@@ -108,6 +129,24 @@ public class UIManager : MonoBehaviour {
         game_screen_score_text.SetActive(true);
         pause_menu.SetActive(false);
         avatar_swap_script.refresh_sprites();
+
+        if (activate_tutorial)
+        {
+            string control_type = PlayerPrefs.GetString("ControlType");
+
+            // Wait for unpause then activate the tutorial
+            if (control_type == TouchInput.swipe_control)
+            {
+                tutorial_script.activateSwipeTutorial();
+            }
+
+            else if (control_type == TouchInput.classic_control)
+            {
+                tutorial_script.activateClassicTutorial();
+            }
+        }
+
+        activate_tutorial = false;
     }
 
 
@@ -128,6 +167,9 @@ public class UIManager : MonoBehaviour {
     {
         PlayerPrefs.SetString("ControlType", control_type);
         TouchInput.control_type = control_type;
+
+        // Activate the tutorial for the controls
+        activate_tutorial = true;
     }
 }
 
