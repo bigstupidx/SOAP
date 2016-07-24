@@ -24,7 +24,8 @@ public class UIManager : MonoBehaviour {
     private CBAds cbads_script;
     private bool activate_tutorial = false;
 
-
+	private Button pause_play_btn;
+	private Button go_play_btn;
 
 	// Get reference to store manager and don't destroy the UI gameobject
 	void Start () 
@@ -63,7 +64,10 @@ public class UIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-
+		if(Input.GetKey(KeyCode.X))
+        {
+        	doPause();
+        }
 	}
 
 
@@ -89,6 +93,9 @@ public class UIManager : MonoBehaviour {
         // Update the score texts
         point_manager_script.updateBestScoreText();
         point_manager_script.updateCurrentScoreText();
+
+		go_play_btn = GameObject.Find("go_play_btn").GetComponent<Button>();
+		go_play_btn.Select();
     }
 
 
@@ -96,6 +103,7 @@ public class UIManager : MonoBehaviour {
     public void activate_store_menu()
     {
         store_menu.SetActive(true);
+		store_manager_script.set_back_button_focus();
         store_manager_script.setStoreCoinText();
     }
 
@@ -118,6 +126,8 @@ public class UIManager : MonoBehaviour {
         // Update the score texts
         point_manager_script.updateBestScoreText();
         point_manager_script.updateCurrentScoreText();
+		pause_play_btn = GameObject.Find("pause_play_btn").GetComponent<Button>();
+		pause_play_btn.Select();
     }
 
 

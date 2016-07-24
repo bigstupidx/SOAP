@@ -16,7 +16,7 @@ public class SOAPStoreManager : MonoBehaviour {
     public Text pause_coin_text;
     public AvatarTailSwap avatar_swap_script;
     private string avatar_item_id;
-
+	public Button store_back_btn;
 
 	// Use this for initialization
 	void Start () 
@@ -187,6 +187,11 @@ public class SOAPStoreManager : MonoBehaviour {
         Debug.Log("Restoring previous purchases!");
         SoomlaStore.RestoreTransactions();
     }
+
+	public void set_back_button_focus()
+	{
+		store_back_btn.Select();
+	}
 }
 //Soomla secret: IzE0it1qa49Dh4IUV16216yi1840Nz96
 //Keystore pwd: t@R3p3D&uO
