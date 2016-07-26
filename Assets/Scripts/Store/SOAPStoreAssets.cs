@@ -118,10 +118,10 @@ public class SOAPStoreAssets : IStoreAssets {
     public const string NIGHTMARE_TAIL_ITEM_ID = "nightmare_tail";
     public const string NIGHTMARE_TAIL_PRODUCT_ID = "soap_nightmare_tail";
 
-    public const string OHYEAH_AVATAR_ITEM_ID = "oh yea_avatar";
-    public const string OHYEAH_AVATAR_PRODUCT_ID = "soap_oh yea_avatar";
-    public const string OHYEAH_TAIL_ITEM_ID = "oh yea_tail";
-    public const string OHYEAH_TAIL_PRODUCT_ID = "soap_oh yea_tail";
+    public const string OHYEAH_AVATAR_ITEM_ID = "ohyeah_avatar";
+    public const string OHYEAH_AVATAR_PRODUCT_ID = "soap_ohyeah_avatar";
+    public const string OHYEAH_TAIL_ITEM_ID = "ohyeah_tail";
+    public const string OHYEAH_TAIL_PRODUCT_ID = "soap_ohyeah_tail";
 
     public const string PIRATE_AVATAR_ITEM_ID = "pirate_avatar";
     public const string PIRATE_AVATAR_PRODUCT_ID = "soap_pirate_avatar";
