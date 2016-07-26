@@ -2276,7 +2276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipe_tutorial_go: {fileID: 834942815}
   classic_tutorial_go: {fileID: 1688879207}
-  check_for_tap: 0
+  tutorial_active: 0
 --- !u!1 &583862995
 GameObject:
   m_ObjectHideFlags: 0
@@ -10262,7 +10262,7 @@ GameObject:
   - 222: {fileID: 2059317112}
   - 114: {fileID: 2059317111}
   m_Layer: 5
-  m_Name: oh yea_avatar
+  m_Name: ohyeah_avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
