@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour {
     public GameObject game_over_menu;
     public GameObject pause_button;
     public GameObject game_screen_score_text;
+    public GameObject game_screen_grow_counter_text;
     public AvatarTailSwap avatar_swap_script;
     public Tutorial tutorial_script;
     public Toggle classic_toggle;
@@ -74,6 +75,7 @@ public class UIManager : MonoBehaviour {
         SceneManager.LoadScene(2);
         pause_button.SetActive(true);
         game_screen_score_text.SetActive(true);
+        game_screen_grow_counter_text.SetActive(true);
     }
 
 
@@ -158,6 +160,7 @@ public class UIManager : MonoBehaviour {
         pause_button.SetActive(true);
         game_screen_score_text.SetActive(true);
         point_manager_script.resetScore();
+        game_screen_grow_counter_text.SetActive(true);
         //unPause();
     }
 
