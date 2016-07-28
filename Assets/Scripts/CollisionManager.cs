@@ -89,7 +89,7 @@ public class CollisionManager : MonoBehaviour {
 
 		if (other.gameObject.tag == "cam_hold_trigger")
         {
-			other.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_grow_objects();
+            other.transform.parent.parent.GetComponent<ChallengeRoomLogic>().showFirstTail();
 			other.transform.parent.parent.GetComponent<ChallengeRoomLogic>().show_challenge_doors();
 			other.gameObject.SetActive(false);
 			challenge_room_camera.hold_camera();
