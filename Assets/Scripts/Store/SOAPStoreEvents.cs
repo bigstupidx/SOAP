@@ -37,6 +37,13 @@ public class SOAPStoreEvents : MonoBehaviour {
 
         string avatar_id = pvi.ItemId;
 
+        // To prevent erroring out when an item is bought with real money 
+        // (store manager will attempt to look up "soap_soap_" without this check and fail)
+        if (avatar_id.Contains("soap_"))
+        {
+            avatar_id = avatar_id.Replace("soap_", "");
+        }
+
         // Unlock achievement for buying an avatar or tail with real money
         if (avatar_id.Contains("avatar"))
         {
@@ -65,6 +72,13 @@ public class SOAPStoreEvents : MonoBehaviour {
         if (temp_1 != null) { store_manager_script = temp_1.GetComponent<SOAPStoreManager>(); }
 
         string avatar_id = vg.ItemId;
+
+        // To prevent erroring out when an item is bought with real money 
+        // (store manager will attempt to look up "soap_soap_" without this check and fail)
+        if (avatar_id.Contains("soap_"))
+        {
+            avatar_id = avatar_id.Replace("soap_", "");
+        }
 
         // Unlock achievement for buying an avatar or tail with virtual currency
         if (avatar_id.Contains("avatar"))
