@@ -17,6 +17,7 @@ public class ChallengeRoomLogic : MonoBehaviour
 	private CameraController challenge_room_camera;
     private bool show_grow_counter = false;
     private Text grow_counter_text;
+    private TailMovement tail_movement_script;
 
 	// Use this for initialization
 	void Start () 
@@ -32,9 +33,15 @@ public class ChallengeRoomLogic : MonoBehaviour
             if (temp_1 != null) { grow_counter_text = temp_1.GetComponent<Text>(); }
             grow_counter_text.text = string.Format("{0}/{1}", grow_counter, grow_obj_list.Length);
         }
+
+        // If first tile is not start tile then start with tails
         else
         {
             grow_counter_text.gameObject.SetActive(false);
+
+            GameObject temp_2 = GameObject.Find("tail_movement_script");
+            if (temp_2 != null) { tail_movement_script = temp_2.GetComponent<TailMovement>(); }
+            tail_movement_script.startWithTails();
         }
 	}
 
