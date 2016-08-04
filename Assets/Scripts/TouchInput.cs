@@ -20,6 +20,7 @@ public class TouchInput : MonoBehaviour {
     public static string control_type;
     public const string swipe_control = "swipe";
     public const string classic_control = "classic";
+    public const string arrow_control = "arrow";
 
 	// Use this for initialization
 	void Start () 
@@ -48,6 +49,11 @@ public class TouchInput : MonoBehaviour {
         else if (control_type == TouchInput.classic_control)
         {
             editorSideTouched();
+        }
+
+        else if (control_type == TouchInput.arrow_control)
+        {
+            // Do nothing input handled by button presses
         }
 
         //sideTouched();
@@ -127,6 +133,15 @@ public class TouchInput : MonoBehaviour {
         }
     }
 
+
+    // Logic for arrow control mechanism
+    public void arrowControls(string direction)
+    {
+        avatar_controller_script.simpleRotateAvatar(direction);
+    }
+
+
+    // Logic for swipe control mechanism
 	public void swipe_controls()
 	{
 		foreach(Touch touch in Input.touches)

@@ -72,6 +72,54 @@ public class AvatarController : MonoBehaviour {
     }
 
 
+    // Can be used for the arrow control or the swipe control
+    public void simpleRotateAvatar(string direction)
+    {
+        switch (direction)
+        {
+            case "right":
+                if (previous_vector_avatar_direction == Vector3.left || avatar_vector_direction == Vector3.right)
+                {
+                    break;
+                }
+                avatar_vector_direction = Vector2.right;
+                // Rotate the sprite
+                rotateSprite(previous_vector_avatar_direction, avatar_vector_direction);
+                break;
+
+            case "left":
+                if (previous_vector_avatar_direction == Vector3.right || avatar_vector_direction == Vector3.left)
+                {
+                    break;
+                }
+                avatar_vector_direction = Vector2.left;
+                // Rotate the sprite
+                rotateSprite(previous_vector_avatar_direction, avatar_vector_direction);
+                break;
+
+            case "up":
+                if (previous_vector_avatar_direction == Vector3.down || avatar_vector_direction == Vector3.up)
+                {
+                    break;
+                }
+                avatar_vector_direction = Vector2.up;
+                // Rotate the sprite
+                rotateSprite(previous_vector_avatar_direction, avatar_vector_direction);
+                break;
+
+            case "down":
+                if (previous_vector_avatar_direction == Vector3.up || avatar_vector_direction == Vector3.down)
+                {
+                    break;
+                }
+                avatar_vector_direction = Vector2.down;
+                // Rotate the sprite
+                rotateSprite(previous_vector_avatar_direction, avatar_vector_direction);
+                break;
+        }
+    }
+
+
     // Rotate the sprite image when the avatar turns
     public void rotateSprite(Vector3 previous_direction, Vector3 current_direction)
     {
