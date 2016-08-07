@@ -29,12 +29,26 @@ public class spawn_tiles : MonoBehaviour
 
 			if (i == 0)
 			{
-				if(tile_prefabs[starting_tiles].tag == "start_tile")
+				if(PlayerPrefs.GetInt("BestScore") >= 1)
 				{
+					if(tile_prefabs[starting_tiles].tag == "novice")
+					{
 					tile_list.Add(tile_prefabs[starting_tiles]);
 					tile_list[i].SetActive(true);
 					i++;
 					tile_counter++;
+					}
+				}
+
+				else
+				{
+					if(tile_prefabs[starting_tiles].tag == "start_tile")
+					{
+						tile_list.Add(tile_prefabs[starting_tiles]);
+						tile_list[i].SetActive(true);
+						i++;
+						tile_counter++;
+					}
 				}
 
 			}
