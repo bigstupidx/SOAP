@@ -13,16 +13,20 @@ public class UIManager : MonoBehaviour {
     public GameObject game_over_menu;
     public GameObject pause_button;
     public GameObject game_screen_score_text;
+    public GameObject game_screen_grow_counter_text;
     public AvatarTailSwap avatar_swap_script;
     public Tutorial tutorial_script;
     public Toggle classic_toggle;
     public Toggle swipe_toogle;
+    public Toggle arrow_toogle;
 
     private bool isPaused = false;
     private SOAPStoreManager store_manager_script;
     private PointManager point_manager_script;
     private CBAds cbads_script;
     private bool activate_tutorial = false;
+    private GameObject arrow_container;
+    private int arrow_load_count = 0;
 
 	private Button pause_play_btn;
 	private Button go_play_btn;
@@ -40,23 +44,30 @@ public class UIManager : MonoBehaviour {
 
         if (!control_type_exists)
         {
-            PlayerPrefs.SetString("ControlType", "swipe");
+            PlayerPrefs.SetString("ControlType", TouchInput.swipe_control);
         }
 
         // Toogle the control type in the pause screen
         string control_type = PlayerPrefs.GetString("ControlType");
 
-        Debug.Log(control_type);
-
         if (control_type == TouchInput.swipe_control)
         {
             swipe_toogle.isOn = true;
             classic_toggle.isOn = false;
+            arrow_toogle.isOn = false;
         }
 
         else if (control_type == TouchInput.classic_control)
         {
             classic_toggle.isOn = true;
+            swipe_toogle.isOn = false;
+            arrow_toogle.isOn = false;
+        }
+
+        else if (control_type == TouchInput.arrow_control)
+        {
+            arrow_toogle.isOn = true;
+            classic_toggle.isOn = false;
             swipe_toogle.isOn = false;
         }
 	}
@@ -78,6 +89,25 @@ public class UIManager : MonoBehaviour {
         SceneManager.LoadScene(2);
         pause_button.SetActive(true);
         game_screen_score_text.SetActive(true);
+        game_screen_grow_counter_text.SetActive(true);
+    }
+
+
+    // Display arrow control if it was the last loaded control
+    void OnLevelWasLoaded(int level)
+    {
+        if (level == 2 )
+        {
+            string control_type = PlayerPrefs.GetString("ControlType");
+            arrow_container = GameObject.Find("control_canvas/arrow_ui_gr");
+
+            // Get arrow container game object - used to show arrows when arrow control selected
+            if (control_type == TouchInput.arrow_control && arrow_load_count < 1)
+            {
+                toggleArrowUI(true);
+                arrow_load_count++;
+            }
+        }
     }
 
 
@@ -148,17 +178,33 @@ public class UIManager : MonoBehaviour {
             if (control_type == TouchInput.swipe_control)
             {
                 tutorial_script.activateSwipeTutorial();
+                toggleArrowUI(false);
             }
 
             else if (control_type == TouchInput.classic_control)
             {
                 tutorial_script.activateClassicTutorial();
+                toggleArrowUI(false);
+            }
+
+            else if (control_type == TouchInput.arrow_control)
+            {
+                toggleArrowUI(true);
             }
         }
 
         activate_tutorial = false;
     }
 
+
+    // Activate or deactivate the arrow controls for the arrow control mechanism
+    public void toggleArrowUI(bool state)
+    {
+        foreach (Transform arrow in arrow_container.transform)
+        {
+            arrow.gameObject.SetActive(state);
+        }
+    }
 
     // Restart the main level
     public void restartLvl()
@@ -168,6 +214,7 @@ public class UIManager : MonoBehaviour {
         pause_button.SetActive(true);
         game_screen_score_text.SetActive(true);
         point_manager_script.resetScore();
+        game_screen_grow_counter_text.SetActive(true);
         //unPause();
     }
 

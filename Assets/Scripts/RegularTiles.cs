@@ -95,7 +95,7 @@ public class RegularTiles : MonoBehaviour
 		{
 			if(obstacle_trigger_reset.IsTouching(the_player.GetComponent<CircleCollider2D>()))
 			{
-				RestCoinGroup();
+				resetCoinGroup();
 			}
 		}
 
@@ -112,11 +112,13 @@ public class RegularTiles : MonoBehaviour
 		}
 	}
 
-	public void RestCoinGroup()
+
+    // Turn the collected coins back on
+	public void resetCoinGroup()
 	{
-		for (int i = 0; i < coin_group.transform.childCount; i++)
-		{
-			coin_group.transform.GetChild(i).gameObject.SetActive(true);
-		}
+        foreach (Transform child in coin_group.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
 	}
 }
