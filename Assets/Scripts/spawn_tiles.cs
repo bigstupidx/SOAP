@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class spawn_tiles : MonoBehaviour 
 {
@@ -16,6 +17,7 @@ public class spawn_tiles : MonoBehaviour
 	private ChallengeRoomLogic challenge_room_logic_script;
 	public bool IsFirst;
 	private int tile_counter = 0;
+    private TailMovement tail_movement_script;
 
 	// Use this for initialization
 	void Start () 
@@ -108,6 +110,17 @@ public class spawn_tiles : MonoBehaviour
 		tile_list.Reverse();
 		tile_collider = tile_list[3].GetComponent<BoxCollider2D>();
 		tile_collider.enabled = false;
+
+        string first_tile = tile_list[3].gameObject.tag;
+
+        // If first tile is not a start tile then start with tails
+        if (first_tile != "start_tile")
+        {
+            UIManager.setGrowCounterState(false);
+            GameObject temp_2 = GameObject.Find("tail_movement_script");
+            if (temp_2 != null) { tail_movement_script = temp_2.GetComponent<TailMovement>(); }
+            tail_movement_script.startWithTails();
+        }
 	}
 	
 	// Update is called once per frame

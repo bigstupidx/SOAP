@@ -29,19 +29,9 @@ public class ChallengeRoomLogic : MonoBehaviour
         if (this.gameObject.tag == "start_tile")
         {
             show_grow_counter = true;
-            GameObject temp_1 = GameObject.Find("game_screen_grow_counter_txt");
-            if (temp_1 != null) { grow_counter_text = temp_1.GetComponent<Text>(); }
+            grow_counter_text = UIManager.game_screen_grow_counter_text.GetComponent<Text>();
+            UIManager.setGrowCounterState(true);
             grow_counter_text.text = string.Format("{0}/{1}", grow_counter, grow_obj_list.Length);
-        }
-
-        // If first tile is not start tile then start with tails
-        else
-        {
-            grow_counter_text.gameObject.SetActive(false);
-
-            GameObject temp_2 = GameObject.Find("tail_movement_script");
-            if (temp_2 != null) { tail_movement_script = temp_2.GetComponent<TailMovement>(); }
-            tail_movement_script.startWithTails();
         }
 	}
 

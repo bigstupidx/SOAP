@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour {
     public GameObject game_over_menu;
     public GameObject pause_button;
     public GameObject game_screen_score_text;
-    public GameObject game_screen_grow_counter_text;
+    public static GameObject game_screen_grow_counter_text;
     public AvatarTailSwap avatar_swap_script;
     public Tutorial tutorial_script;
     public Toggle classic_toggle;
@@ -38,6 +38,9 @@ public class UIManager : MonoBehaviour {
         store_manager_script = store_menu.GetComponentInParent<SOAPStoreManager>();
         cbads_script = game_over_menu.GetComponentInParent<CBAds>();
         point_manager_script = this.GetComponent<PointManager>();
+
+        game_screen_grow_counter_text = GameObject.Find("game_screen_grow_counter_txt");
+        setGrowCounterState(false);
 
         // Create control type key if it doesn't exist
         bool control_type_exists = PlayerPrefs.HasKey("ControlType");
@@ -89,7 +92,7 @@ public class UIManager : MonoBehaviour {
         SceneManager.LoadScene(2);
         pause_button.SetActive(true);
         game_screen_score_text.SetActive(true);
-        game_screen_grow_counter_text.SetActive(true);
+        //game_screen_grow_counter_text.SetActive(true);
     }
 
 
@@ -215,7 +218,7 @@ public class UIManager : MonoBehaviour {
         pause_button.SetActive(true);
         game_screen_score_text.SetActive(true);
         point_manager_script.resetScore();
-        game_screen_grow_counter_text.SetActive(true);
+        //game_screen_grow_counter_text.SetActive(true);
         //unPause();
     }
 
@@ -228,6 +231,12 @@ public class UIManager : MonoBehaviour {
 
         // Activate the tutorial for the controls
         activate_tutorial = true;
+    }
+
+    // Activate the grow counter text
+    public static void setGrowCounterState(bool state)
+    {
+        game_screen_grow_counter_text.SetActive(state);
     }
 }
 
