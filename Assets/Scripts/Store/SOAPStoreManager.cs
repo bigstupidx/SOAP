@@ -22,7 +22,7 @@ public class SOAPStoreManager : MonoBehaviour {
 	void Start () 
     {
         // For testing coin purchases
-        StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 50000);
+        //StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 50000);
         //StoreInventory.TakeItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 130000);
 	}
 
@@ -188,10 +188,11 @@ public class SOAPStoreManager : MonoBehaviour {
         SoomlaStore.RestoreTransactions();
     }
 
-	public void set_back_button_focus()
-	{
-		store_back_btn.Select();
-	}
+    // TODO: Only activate this for TVOS
+    //public void set_back_button_focus()
+    //{
+    //    store_back_btn.Select();
+    //}
 }
 //Soomla secret: IzE0it1qa49Dh4IUV16216yi1840Nz96
 //Keystore pwd: t@R3p3D&uO
