@@ -22,7 +22,7 @@ public class SOAPStoreManager : MonoBehaviour {
 	void Start () 
     {
         // For testing coin purchases
-        StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 50000);
+        //StoreInventory.GiveItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 50000);
         //StoreInventory.TakeItem(SOAPStoreAssets.SOAP_CURRENCY_ITEM_ID, 130000);
 	}
 
