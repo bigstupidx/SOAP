@@ -188,10 +188,11 @@ public class SOAPStoreManager : MonoBehaviour {
         SoomlaStore.RestoreTransactions();
     }
 
-	public void set_back_button_focus()
-	{
-		store_back_btn.Select();
-	}
+    // TODO: Only activate this for TVOS
+    //public void set_back_button_focus()
+    //{
+    //    store_back_btn.Select();
+    //}
 }
 //Soomla secret: IzE0it1qa49Dh4IUV16216yi1840Nz96
 //Keystore pwd: t@R3p3D&uO

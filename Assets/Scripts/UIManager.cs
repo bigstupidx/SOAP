@@ -133,7 +133,8 @@ public class UIManager : MonoBehaviour {
     public void activate_store_menu()
     {
         store_menu.SetActive(true);
-		store_manager_script.set_back_button_focus();
+        // TODO: Only activate this for TVOS
+        //store_manager_script.set_back_button_focus();
         store_manager_script.setStoreCoinText();
     }
 
