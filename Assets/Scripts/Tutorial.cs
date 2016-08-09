@@ -7,6 +7,7 @@ public class Tutorial : MonoBehaviour {
 
     public GameObject swipe_tutorial_go;        // Game object containing tutorial instructions for swiping control
     public GameObject classic_tutorial_go;      // Game object containing tutorial instructions for tap control
+    public GameObject arrow_tutorial_go;        // Game object containing tutorial instructions for arrow control
     public bool tutorial_active = false;        // Indicates whether the tutorial is active
 
 	// Use this for initialization
@@ -60,6 +61,15 @@ public class Tutorial : MonoBehaviour {
         tutorial_active = true;
     }
 
+    
+    // Activate the arrow tutorial
+    public void activateArrowTutorial()
+    {
+        Time.timeScale = 0;
+        arrow_tutorial_go.SetActive(true);
+        tutorial_active = true;
+    }
+
 
     // Deactivate the tutorials
     public void deactivateTutorial()
@@ -67,6 +77,7 @@ public class Tutorial : MonoBehaviour {
         Time.timeScale = 1;
         swipe_tutorial_go.SetActive(false);
         classic_tutorial_go.SetActive(false);
+        arrow_tutorial_go.SetActive(false);
         tutorial_active = false;
     }
 }

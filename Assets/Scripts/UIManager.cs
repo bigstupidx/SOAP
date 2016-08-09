@@ -105,7 +105,8 @@ public class UIManager : MonoBehaviour {
             arrow_container = GameObject.Find("control_canvas/arrow_ui_gr");
 
             // Get arrow container game object - used to show arrows when arrow control selected
-            if (control_type == TouchInput.arrow_control && arrow_load_count < 1)
+            //if (control_type == TouchInput.arrow_control && arrow_load_count < 1)
+            if (control_type == TouchInput.arrow_control)
             {
                 toggleArrowUI(true);
                 arrow_load_count++;
@@ -193,6 +194,7 @@ public class UIManager : MonoBehaviour {
 
             else if (control_type == TouchInput.arrow_control)
             {
+                tutorial_script.activateArrowTutorial();
                 toggleArrowUI(true);
             }
         }
