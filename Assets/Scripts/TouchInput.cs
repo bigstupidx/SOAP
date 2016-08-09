@@ -156,94 +156,40 @@ public class TouchInput : MonoBehaviour {
 			{
 				float x_delta = initial_touch.position.x - touch.position.x;
 				float y_delta = initial_touch.position.y - touch.position.y;
-				bool swiped_sidways = Mathf.Abs(x_delta) > Mathf.Abs(y_delta);
+				bool swiped_sideways = Mathf.Abs(x_delta) > Mathf.Abs(y_delta);
 				swipe_distance = Mathf.Sqrt((x_delta * x_delta) + (y_delta * y_delta));
 
 				if (swipe_distance > 10f)
 				{
 					// Swipe left
-					if (swiped_sidways && x_delta > 0)
+					if (swiped_sideways && x_delta > 0)
 					{
 
 						if (initial_touch.position.x <= (Screen.width - Screen.width * 0.05))
 						{
-							if (avatar_controller_script.previous_vector_avatar_direction == Vector3.up)
-							{
-								avatar_controller_script.rotate_avatar(Mathf.PI/2);
-							}
-
-							else if (avatar_controller_script.previous_vector_avatar_direction == Vector3.down)
-							{
-								avatar_controller_script.rotate_avatar(-Mathf.PI/2);
-							}
-
-							else
-							{
-
-							}
+                            avatar_controller_script.simpleRotateAvatar("left");
 						}
 					}
 
 					// Swipe Right
-					else if (swiped_sidways && x_delta < 0)
+					else if (swiped_sideways && x_delta < 0)
 					{
 						if (initial_touch.position.x >= Screen.width * 0.05)
 						{
-							if (avatar_controller_script.previous_vector_avatar_direction == Vector3.up)
-							{
-								avatar_controller_script.rotate_avatar(-Mathf.PI/2);
-							}
-
-							else if (avatar_controller_script.previous_vector_avatar_direction == Vector3.down)
-							{
-								avatar_controller_script.rotate_avatar(Mathf.PI/2);
-							}
-
-							else
-							{
-
-							}
+                            avatar_controller_script.simpleRotateAvatar("right");
 						}
 					}
 
 					// Swipe Down
-					else if (!swiped_sidways && y_delta > 0)
+					else if (!swiped_sideways && y_delta > 0)
 					{
-
-						if (avatar_controller_script.previous_vector_avatar_direction == Vector3.left)
-						{
-							avatar_controller_script.rotate_avatar(Mathf.PI/2);
-						}
-
-						else if (avatar_controller_script.previous_vector_avatar_direction == Vector3.right)
-						{
-							avatar_controller_script.rotate_avatar(-Mathf.PI/2);
-						}
-
-						else
-						{
-
-						}
+                        avatar_controller_script.simpleRotateAvatar("down");
 					}
 
 					// Swipe Up
-					else if (!swiped_sidways && y_delta < 0)
+					else if (!swiped_sideways && y_delta < 0)
 					{
-
-						if (avatar_controller_script.previous_vector_avatar_direction == Vector3.left)
-						{
-							avatar_controller_script.rotate_avatar(-Mathf.PI/2);
-						}
-
-						else if (avatar_controller_script.previous_vector_avatar_direction == Vector3.right)
-						{
-							avatar_controller_script.rotate_avatar(Mathf.PI/2);
-						}
-
-						else
-						{
-
-						}
+                        avatar_controller_script.simpleRotateAvatar("up");
 					}
 
 					has_swiped = true;
@@ -257,7 +203,6 @@ public class TouchInput : MonoBehaviour {
 			}
         }
 	}
-
 }
 
 
