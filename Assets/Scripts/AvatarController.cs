@@ -35,10 +35,15 @@ public class AvatarController : MonoBehaviour {
         //InvokeRepeating("moveAvatar", 0.5f, 0.5f);
 	}
 
+	void Update()
+	{
+		moveAvatar();
+	}
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        moveAvatar();
+        //moveAvatar();
 
         float current_distance = Vector3.Distance(transform.position, previous_avatar_position);
 
