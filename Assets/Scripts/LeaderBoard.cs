@@ -24,13 +24,15 @@ public class LeaderBoard : MonoBehaviour {
 
     void Start ()
     {
-        // recommended for debugging:
-        PlayGamesPlatform.DebugLogEnabled = true;
+        #if UNITY_ANDROID
+            // recommended for debugging:
+            PlayGamesPlatform.DebugLogEnabled = true;
 
-        // Activate the Google Play Games platform
-        PlayGamesPlatform.Activate();
+            // Activate the Google Play Games platform
+            PlayGamesPlatform.Activate();
 
-        point_manager_script = this.GetComponent<PointManager>();
+            point_manager_script = this.GetComponent<PointManager>();
+        #endif
     }
 
 

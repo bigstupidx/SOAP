@@ -48,12 +48,16 @@ public class SOAPStoreEvents : MonoBehaviour {
         if (avatar_id.Contains("avatar"))
         {
             store_manager_script.updatePrices(avatar_id);
-            Achievements.massiveFacialReconstructionAchievement();
+            #if UNITY_ANDROID
+                Achievements.massiveFacialReconstructionAchievement();
+            #endif
         }
         else if (avatar_id.Contains("tail"))
         {
             store_manager_script.updatePrices(avatar_id);
-            Achievements.sheddingSeasonAchievement();
+            #if UNITY_ANDROID
+                Achievements.sheddingSeasonAchievement();
+            #endif
         }
         
         // Give rocketman avatar and tail for removing ads
@@ -81,16 +85,18 @@ public class SOAPStoreEvents : MonoBehaviour {
         }
 
         // Unlock achievement for buying an avatar or tail with virtual currency
-        if (avatar_id.Contains("avatar"))
-        {
-            store_manager_script.updatePrices(avatar_id);
-            Achievements.massiveFacialReconstructionAchievement();
-        }
-        else if (avatar_id.Contains("tail"))
-        {
-            store_manager_script.updatePrices(avatar_id);
-            Achievements.sheddingSeasonAchievement();
-        }
+        #if UNITY_ANDROID
+            if (avatar_id.Contains("avatar"))
+            {
+                store_manager_script.updatePrices(avatar_id);
+                Achievements.massiveFacialReconstructionAchievement();
+            }
+            else if (avatar_id.Contains("tail"))
+            {
+                store_manager_script.updatePrices(avatar_id);
+                Achievements.sheddingSeasonAchievement();
+            }
+        #endif
     }
 
 
@@ -105,15 +111,17 @@ public class SOAPStoreEvents : MonoBehaviour {
         store_manager_script.setPauseCoinText();
 
         // Unlock achievement for accumulating coins
-        if (balance >= 20000 && balance < 100000)
-        {
-            Achievements.forARainyDayAchievement();
-        }
+        #if UNITY_ANDROID
+            if (balance >= 20000 && balance < 100000)
+            {
+                Achievements.forARainyDayAchievement();
+            }
 
-        if (balance > 100000)
-        {
-            Achievements.mustHaveThemAllAchievement();
-        }
+            if (balance > 100000)
+            {
+                Achievements.mustHaveThemAllAchievement();
+            }
+        #endif
     }
 
 

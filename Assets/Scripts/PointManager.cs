@@ -35,34 +35,36 @@ public class PointManager : MonoBehaviour {
         current_score++;
         string string_score = current_score.ToString();
 
-        // Unlock achievement for reaching specific scores
-        switch (string_score)
-        {
-            case "5":
-                Achievements.beginnerAchievement();
-                break;
-            case "8":
-                RewardedAvatars.incrementAvatarBalance(RewardedAvatars.alien_avatar_rwd);
-                RewardedAvatars.incrementAvatarBalance(RewardedAvatars.alien_tail_rwd);
-                break;
-            case "10":
-                Achievements.intermediateAchievement();
-                break;
-            case "15":
-                Achievements.proficientAchievement();
-                break;
-            case "20":
-                Achievements.masterAchievement();
-                RewardedAvatars.incrementAvatarBalance(RewardedAvatars.cyborg_avatar_rwd);
-                RewardedAvatars.incrementAvatarBalance(RewardedAvatars.cyborg_tail_rwd);
-                break;
-            case "30":
-                Achievements.expertAchievement();
-                break;
-            case "40":
-                Achievements.orochimarusDiscipleAchievement();
-                break;
-        }
+        #if UNITY_ANDROID
+            // Unlock achievement for reaching specific scores
+            switch (string_score)
+            {
+                case "5":
+                    Achievements.beginnerAchievement();
+                    break;
+                case "8":
+                    RewardedAvatars.incrementAvatarBalance(RewardedAvatars.alien_avatar_rwd);
+                    RewardedAvatars.incrementAvatarBalance(RewardedAvatars.alien_tail_rwd);
+                    break;
+                case "10":
+                    Achievements.intermediateAchievement();
+                    break;
+                case "15":
+                    Achievements.proficientAchievement();
+                    break;
+                case "20":
+                    Achievements.masterAchievement();
+                    RewardedAvatars.incrementAvatarBalance(RewardedAvatars.cyborg_avatar_rwd);
+                    RewardedAvatars.incrementAvatarBalance(RewardedAvatars.cyborg_tail_rwd);
+                    break;
+                case "30":
+                    Achievements.expertAchievement();
+                    break;
+                case "40":
+                    Achievements.orochimarusDiscipleAchievement();
+                    break;
+            }
+        #endif
 
         // Update the game screen score text
         game_screen_score.text = current_score.ToString();
