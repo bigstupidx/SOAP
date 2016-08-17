@@ -125,7 +125,7 @@ public class AvatarTailSwap : MonoBehaviour {
         avatar_name_to_sprite_name.Add("ninja_avatar", avatar_sprite_list[5]);
         avatar_name_to_sprite_name.Add("nightman_avatar", avatar_sprite_list[6]);
         avatar_name_to_sprite_name.Add("nightmare_avatar", avatar_sprite_list[7]);
-        avatar_name_to_sprite_name.Add("oh yea_avatar", avatar_sprite_list[8]);
+        avatar_name_to_sprite_name.Add("ohyeah_avatar", avatar_sprite_list[8]);
         avatar_name_to_sprite_name.Add("pirate_avatar", avatar_sprite_list[9]);
         avatar_name_to_sprite_name.Add("ranger_avatar", avatar_sprite_list[10]);
         avatar_name_to_sprite_name.Add("skull_avatar", avatar_sprite_list[11]);
@@ -154,7 +154,7 @@ public class AvatarTailSwap : MonoBehaviour {
         tail_name_to_sprite_name.Add("ninja_tail", tail_sprite_list[5]);
         tail_name_to_sprite_name.Add("nightman_tail", tail_sprite_list[6]);
         tail_name_to_sprite_name.Add("nightmare_tail", tail_sprite_list[7]);
-        tail_name_to_sprite_name.Add("oh yea_tail", tail_sprite_list[8]);
+        tail_name_to_sprite_name.Add("ohyeah_tail", tail_sprite_list[8]);
         tail_name_to_sprite_name.Add("pirate_tail", tail_sprite_list[9]);
         tail_name_to_sprite_name.Add("ranger_tail", tail_sprite_list[10]);
         tail_name_to_sprite_name.Add("skull_tail", tail_sprite_list[11]);
