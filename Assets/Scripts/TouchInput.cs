@@ -41,7 +41,8 @@ public class TouchInput : MonoBehaviour {
         //    sideTouched();
         //}
 
-        if (control_type == TouchInput.swipe_control)
+        // Activate swipe control if not in pause menu
+        if (control_type == TouchInput.swipe_control && !UIManager.is_paused)
         {
             swipe_controls();
         }

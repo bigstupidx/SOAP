@@ -31,6 +31,8 @@ public class UIManager : MonoBehaviour {
 	private Button pause_play_btn;
 	private Button go_play_btn;
 
+    public static bool is_paused = false;       // Used in TouchInput to ignore swipe when in pause menu
+
 	// Get reference to store manager and don't destroy the UI gameobject
 	void Start () 
     {
@@ -163,6 +165,7 @@ public class UIManager : MonoBehaviour {
         point_manager_script.updateCurrentScoreText();
 		pause_play_btn = GameObject.Find("pause_play_btn").GetComponent<Button>();
 		pause_play_btn.Select();
+        is_paused = true;
     }
 
 
@@ -174,6 +177,7 @@ public class UIManager : MonoBehaviour {
         game_screen_score_text.SetActive(true);
         pause_menu.SetActive(false);
         avatar_swap_script.refresh_sprites();
+        is_paused = false;
 
         if (activate_tutorial)
         {
