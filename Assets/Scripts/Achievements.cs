@@ -24,17 +24,19 @@ public class Achievements : MonoBehaviour {
 
         // TODO: Remove if this messes up leaderboards
         // log the user in
-        Social.localUser.Authenticate((bool success) =>
-        {
-            if (success)
+        #if UNITY_ANDROID
+            Social.localUser.Authenticate((bool success) =>
             {
-                Debug.Log("Login success");
-            }
-            else
-            {
-                Debug.Log("Login failed");
-            }
-        });
+                if (success)
+                {
+                    Debug.Log("Login success");
+                }
+                else
+                {
+                    Debug.Log("Login failed");
+                }
+            });
+        #endif
 	}
 	
 

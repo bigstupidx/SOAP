@@ -66,7 +66,9 @@ public class ChallengeRoomLogic : MonoBehaviour
         }
 
         // Check for achievement qualifications met
-        checkAchievements();
+        #if UNITY_ANDROID
+            checkAchievements();
+        #endif
 
         // Show next grow object
 		if (grow_counter < grow_obj_list.Length)
