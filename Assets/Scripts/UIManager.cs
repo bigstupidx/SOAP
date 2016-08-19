@@ -10,15 +10,16 @@ public class UIManager : MonoBehaviour {
     public GameObject start_menu;
     public GameObject store_menu;
     public GameObject pause_menu;
+    public GameObject option_menu;
     public GameObject game_over_menu;
     public GameObject pause_button;
     public GameObject game_screen_score_text;
     public static GameObject game_screen_grow_counter_text;
     public AvatarTailSwap avatar_swap_script;
     public Tutorial tutorial_script;
-    public Toggle classic_toggle;
-    public Toggle swipe_toogle;
-    public Toggle arrow_toogle;
+    public Toggle option_classic_toggle;
+    public Toggle option_swipe_toogle;
+    public Toggle option_arrow_toogle;
 
     private bool isPaused = false;
     private SOAPStoreManager store_manager_script;
@@ -52,29 +53,8 @@ public class UIManager : MonoBehaviour {
             PlayerPrefs.SetString("ControlType", TouchInput.swipe_control);
         }
 
-        // Toogle the control type in the pause screen
-        string control_type = PlayerPrefs.GetString("ControlType");
-
-        if (control_type == TouchInput.swipe_control)
-        {
-            swipe_toogle.isOn = true;
-            classic_toggle.isOn = false;
-            arrow_toogle.isOn = false;
-        }
-
-        else if (control_type == TouchInput.classic_control)
-        {
-            classic_toggle.isOn = true;
-            swipe_toogle.isOn = false;
-            arrow_toogle.isOn = false;
-        }
-
-        else if (control_type == TouchInput.arrow_control)
-        {
-            arrow_toogle.isOn = true;
-            classic_toggle.isOn = false;
-            swipe_toogle.isOn = false;
-        }
+        // Toogle the control type in the option screen
+        syncToggle();
 	}
 
 	// Update is called once per frame
@@ -117,6 +97,35 @@ public class UIManager : MonoBehaviour {
     }
 
 
+    // Set the option control toggle
+    public void syncToggle()
+    {
+        string control_type = PlayerPrefs.GetString("ControlType");
+
+        if (control_type == TouchInput.swipe_control)
+        {
+
+            option_swipe_toogle.isOn = true;
+            option_classic_toggle.isOn = false;
+            option_arrow_toogle.isOn = false;
+        }
+
+        else if (control_type == TouchInput.classic_control)
+        {
+            option_swipe_toogle.isOn = false;
+            option_classic_toggle.isOn = true;
+            option_arrow_toogle.isOn = false;
+        }
+
+        else if (control_type == TouchInput.arrow_control)
+        {
+            option_swipe_toogle.isOn = false;
+            option_classic_toggle.isOn = false;
+            option_arrow_toogle.isOn = true;
+        }
+    }
+
+
     // Activate the game over menu and update the coin balance text
     public void activate_game_over_menu()
     {
@@ -145,9 +154,24 @@ public class UIManager : MonoBehaviour {
     }
 
 
+    // Exit the store menu
     public void deactivate_store_menu()
     {
         store_menu.SetActive(false);
+    }
+
+    
+    // Enter the options menu
+    public void activate_options_menu()
+    {
+        option_menu.SetActive(true);
+    }
+
+
+    // Exit the options menu
+    public void deactivate_options_menu()
+    {
+        option_menu.SetActive(false);
     }
 
 
@@ -181,29 +205,36 @@ public class UIManager : MonoBehaviour {
 
         if (activate_tutorial)
         {
-            string control_type = PlayerPrefs.GetString("ControlType");
-
-            // Wait for unpause then activate the tutorial
-            if (control_type == TouchInput.swipe_control)
-            {
-                tutorial_script.activateSwipeTutorial();
-                toggleArrowUI(false);
-            }
-
-            else if (control_type == TouchInput.classic_control)
-            {
-                tutorial_script.activateClassicTutorial();
-                toggleArrowUI(false);
-            }
-
-            else if (control_type == TouchInput.arrow_control)
-            {
-                tutorial_script.activateArrowTutorial();
-                toggleArrowUI(true);
-            }
+            activateTutorial();
         }
 
         activate_tutorial = false;
+    }
+
+
+    // Turn on the tutorial
+    public void activateTutorial()
+    {
+        string control_type = PlayerPrefs.GetString("ControlType");
+
+        // Wait for unpause then activate the tutorial
+        if (control_type == TouchInput.swipe_control)
+        {
+            tutorial_script.activateSwipeTutorial();
+            toggleArrowUI(false);
+        }
+
+        else if (control_type == TouchInput.classic_control)
+        {
+            tutorial_script.activateClassicTutorial();
+            toggleArrowUI(false);
+        }
+
+        else if (control_type == TouchInput.arrow_control)
+        {
+            tutorial_script.activateArrowTutorial();
+            toggleArrowUI(true);
+        }
     }
 
 
@@ -224,6 +255,14 @@ public class UIManager : MonoBehaviour {
         pause_button.SetActive(true);
         game_screen_score_text.SetActive(true);
         point_manager_script.resetScore();
+
+        if (activate_tutorial)
+        {
+            activateTutorial();
+        }
+
+        activate_tutorial = false;
+
         //game_screen_grow_counter_text.SetActive(true);
         //unPause();
     }
@@ -238,6 +277,7 @@ public class UIManager : MonoBehaviour {
         // Activate the tutorial for the controls
         activate_tutorial = true;
     }
+
 
     // Activate the grow counter text
     public static void setGrowCounterState(bool state)
