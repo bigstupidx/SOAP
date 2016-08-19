@@ -16,7 +16,7 @@ public class SOAPStoreAssets : IStoreAssets {
     /// <returns>the version of your specific <c>IStoreAssets</c>.</returns>
     public int GetVersion()
     {
-        return 2;
+        return 3;
     }
 
     /// <summary>
