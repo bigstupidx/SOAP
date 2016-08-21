@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour {
 	private Button go_play_btn;
 
     public static bool is_paused = false;       // Used in TouchInput to ignore swipe when in pause menu
+    private bool from_sync;                     // Determines whether the toggle switch is from syncing toggle function
 
 	// Get reference to store manager and don't destroy the UI gameobject
 	void Start () 
@@ -102,25 +103,27 @@ public class UIManager : MonoBehaviour {
     {
         string control_type = PlayerPrefs.GetString("ControlType");
 
+        from_sync = true;
+
         if (control_type == TouchInput.swipe_control)
         {
 
             option_swipe_toogle.isOn = true;
-            option_classic_toggle.isOn = false;
-            option_arrow_toogle.isOn = false;
+            //option_classic_toggle.isOn = false;
+            //option_arrow_toogle.isOn = false;
         }
 
         else if (control_type == TouchInput.classic_control)
         {
-            option_swipe_toogle.isOn = false;
+            //option_swipe_toogle.isOn = false;
             option_classic_toggle.isOn = true;
-            option_arrow_toogle.isOn = false;
+            //option_arrow_toogle.isOn = false;
         }
 
         else if (control_type == TouchInput.arrow_control)
         {
-            option_swipe_toogle.isOn = false;
-            option_classic_toggle.isOn = false;
+            //option_swipe_toogle.isOn = false;
+            //option_classic_toggle.isOn = false;
             option_arrow_toogle.isOn = true;
         }
     }
@@ -275,7 +278,9 @@ public class UIManager : MonoBehaviour {
         TouchInput.control_type = control_type;
 
         // Activate the tutorial for the controls
-        activate_tutorial = true;
+        if (!from_sync) { activate_tutorial = true; }
+        else { from_sync = false;  }
+        
     }
 
 

@@ -19,14 +19,16 @@ public class Tutorial : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {   
+        // Changed the tuturial screens into buttons - button presses call deactivate 
+        //
         // If the tutorial is active listen for a tap and then deactivate the tutorial
-        if (tutorial_active)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                deactivateTutorial();
-            }
-        }
+        //if (tutorial_active)
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //        deactivateTutorial();
+        //    }
+        //}
 	}
 
 
