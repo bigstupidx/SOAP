@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using ChartboostSDK;
+using Soomla.Store;
 
 public class CBAds : MonoBehaviour {
 
@@ -45,7 +46,7 @@ public class CBAds : MonoBehaviour {
             }
         #endif
 
-        if (go_count % ad_frequency == 0)
+        if (go_count % ad_frequency == 0 && StoreInventory.GetItemBalance(SOAPStoreAssets.NO_ADS_LIFETIME_PRODUCT_ID) == 0)
         {
             Chartboost.showInterstitial(CBLocation.GameOver);
             Debug.Log("show the ads now!");
